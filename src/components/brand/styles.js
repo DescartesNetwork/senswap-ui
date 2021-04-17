@@ -1,5 +1,6 @@
-// eslint-disable-next-line
-export default theme => ({
+import { makeStyles } from '@material-ui/core/styles';
+
+export default makeStyles(theme => ({
   noWrap: {
     flexWrap: 'noWrap',
   },
@@ -15,4 +16,4 @@ export default theme => ({
     fontWeight: theme.typography.fontWeightLight,
     color: theme.palette.text.secondary
   },
-});
+}));

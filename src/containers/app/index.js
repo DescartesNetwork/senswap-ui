@@ -10,10 +10,10 @@ import Grid from '@material-ui/core/Grid';
 import Drain from 'components/drain';
 
 // Static component
-import Header from 'containers/header';
+import Sidebar from 'containers/sidebar';
 import UiUx from 'containers/uiux';
 // Pages
-import Home from 'containers/home';
+import GettingStarted from 'containers/gettingStarted';
 import NotFound from 'containers/404';
 
 // CSS
@@ -26,22 +26,31 @@ class App extends Component {
 
   render() {
     const { classes } = this.props;
+
     return <ThemeProvider theme={theme}>
-      <Grid container justify="center" spacing={2}>
-        <Grid item xs={12} className={classes.safe} /> {/* Safe space */}
+      <Grid container spacing={2}>
         <Grid item xs={12}>
-          <Header />
-        </Grid>
-        <Grid item xs={12}>
-          <Drain />
-        </Grid>
-        {/* Pages */}
-        <Grid item xs={12}>
-          <Switch>
-            <Redirect exact from="/" to="/home" />
-            <Route exact path='/home' component={Home} />
-            <Route exact path='*' component={NotFound} />
-          </Switch>
+          <Grid container spacing={2} className={classes.noWrap}>
+            <Grid item>
+              <Sidebar />
+            </Grid>
+            <Grid item className={classes.stretch}>
+              <Grid container spacing={2}>
+                {/* Safe space */}
+                <Grid item xs={12}>
+                  <Drain size={0} />
+                </Grid>
+                {/* Pages */}
+                <Grid item xs={12}>
+                  <Switch>
+                    <Redirect exact from="/" to="/getting-started" />
+                    <Route path='/getting-started' component={GettingStarted} />
+                    <Route exact path='*' component={NotFound} />
+                  </Switch>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Grid>
         </Grid>
         {/* Application */}
         <Grid item xs={12} >

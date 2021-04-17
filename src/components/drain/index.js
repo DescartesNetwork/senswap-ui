@@ -1,32 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
-import styles from './styles';
+import useStyles from './styles';
 
-class Drain extends Component {
-  render() {
-    let { classes, small, large } = this.props;
-    if (small)
-      return <Grid container className={classes.small} />
-    if (large)
-      return <Grid container className={classes.large} />
-    return <Grid container className={classes.default} />
-  }
+function Drain(props) {
+  const classes = useStyles();
+  const { size } = props;
+
+  return <Grid container className={classes.fullWidth} style={{ height: size * 8 }} />
 }
 
 Drain.defaultProps = {
-  small: false,
-  large: false,
-  default: true
+  size: 6,
 }
 
 Drain.propTypes = {
-  small: PropTypes.bool,
-  large: PropTypes.bool,
-  default: PropTypes.bool,
+  size: PropTypes.number,
 }
 
-export default withStyles(styles)(Drain);
+export default Drain;
