@@ -4,11 +4,9 @@ import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router-dom';
 
 import { withStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
 
-import { } from '@material-ui/icons';
-
-import Typography from 'components/typography';
+import Grid from 'components/grid';
 import Drain from 'components/drain';
 
 import styles from './styles';
@@ -21,7 +19,7 @@ class TypographyComponent extends Component {
 
     return <Grid container spacing={2}>
       <Grid item xs={12}>
-        <Typography variant="h6">Typography</Typography>
+        <Typography variant="h4">Typography</Typography>
       </Grid>
       <Grid item xs={12}>
         <Drain size={2} />
@@ -33,8 +31,11 @@ class TypographyComponent extends Component {
         <Typography variant="h4">h4</Typography>
         <Typography variant="h5">h5</Typography>
         <Typography variant="h6">h6</Typography>
+        <Typography variant="subtitle1">subtitle1</Typography>
+        <Typography variant="subtitle2">subtitle2</Typography>
         <Typography variant="body1">body1</Typography>
         <Typography variant="body2">body2</Typography>
+        <Typography variant="caption">caption</Typography>
       </Grid>
     </Grid>
   }

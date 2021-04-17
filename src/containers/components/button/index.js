@@ -4,13 +4,11 @@ import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router-dom';
 
 import { withStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 
-import { } from '@material-ui/icons';
-
-import Typography from 'components/typography';
+import Grid from 'components/grid';
 import Drain from 'components/drain';
-import Button from 'components/button';
 
 import styles from './styles';
 
@@ -22,13 +20,13 @@ class ButtonComponent extends Component {
 
     return <Grid container spacing={2}>
       <Grid item xs={12}>
-        <Typography variant="h6">Button</Typography>
+        <Typography variant="h4">Button</Typography>
       </Grid>
       <Grid item xs={12}>
         <Drain size={2} />
       </Grid>
       <Grid item xs={12}>
-        <Typography variant="body2">Text buttons</Typography>
+        <Typography variant="subtitle1">Text buttons</Typography>
       </Grid>
       <Grid item xs={12}>
         <Grid container spacing={2}>
@@ -55,7 +53,7 @@ class ButtonComponent extends Component {
         </Grid>
       </Grid>
       <Grid item xs={12}>
-        <Typography variant="body2">Contained buttons</Typography>
+        <Typography variant="subtitle1">Contained buttons</Typography>
       </Grid>
       <Grid item xs={12}>
         <Grid container spacing={2}>
@@ -82,7 +80,7 @@ class ButtonComponent extends Component {
         </Grid>
       </Grid>
       <Grid item xs={12}>
-        <Typography variant="body2">Outlined buttons</Typography>
+        <Typography variant="subtitle1">Outlined buttons</Typography>
       </Grid>
       <Grid item xs={12}>
         <Grid container spacing={2}>

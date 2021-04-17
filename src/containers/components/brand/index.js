@@ -4,11 +4,11 @@ import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router-dom';
 
 import { withStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
 
 import { } from '@material-ui/icons';
 
-import Typography from 'components/typography';
+import Grid from 'components/grid';
 import Drain from 'components/drain';
 import Brand from 'components/brand';
 
@@ -22,19 +22,19 @@ class BrandComponent extends Component {
 
     return <Grid container spacing={2}>
       <Grid item xs={12}>
-        <Typography variant="h6">Brand</Typography>
+        <Typography variant="h4">Brand</Typography>
       </Grid>
       <Grid item xs={12}>
         <Drain size={2} />
       </Grid>
       <Grid item xs={12}>
-        <Typography variant="body2">Standard brand</Typography>
+        <Typography variant="subtitle1">Standard brand</Typography>
       </Grid>
       <Grid item xs={12}>
         <Brand />
       </Grid>
       <Grid item xs={12}>
-        <Typography variant="body2">Brand with subtitle</Typography>
+        <Typography variant="subtitle1">Brand with subtitle</Typography>
       </Grid>
       <Grid item xs={12}>
         <Brand subtitle="subtitle" />

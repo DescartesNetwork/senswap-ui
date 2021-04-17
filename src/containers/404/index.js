@@ -4,10 +4,9 @@ import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router-dom';
 
 import { withStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
-import { } from '@material-ui/icons';
+import Grid from 'components/grid';
 
 import styles from './styles';
 

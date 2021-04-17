@@ -4,11 +4,11 @@ import { bindActionCreators } from 'redux';
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 
 import { withStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
 
 import { } from '@material-ui/icons';
 
-import Typography from 'components/typography';
+import Grid from 'components/grid';
 import Drain from 'components/drain';
 
 import Installation from './installation';
@@ -24,7 +24,7 @@ class GettingStarted extends Component {
 
     return <Grid container spacing={2}>
       <Grid item xs={12}>
-        <Typography variant="h4">Getting Started</Typography>
+        <Typography variant="h1">Getting Started</Typography>
       </Grid>
       <Grid item xs={12}>
         <Drain />

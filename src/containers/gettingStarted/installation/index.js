@@ -4,11 +4,9 @@ import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router-dom';
 
 import { withStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
 
-import { } from '@material-ui/icons';
-
-import Typography from 'components/typography';
+import Grid from 'components/grid';
 import Drain from 'components/drain';
 
 import styles from './styles';
@@ -21,18 +19,18 @@ class Installation extends Component {
 
     return <Grid container spacing={2}>
       <Grid item xs={12}>
-        <Typography variant="h6">Installation</Typography>
+        <Typography variant="h4">Installation</Typography>
       </Grid>
       <Grid item xs={12}>
         <Drain size={2} />
       </Grid>
       <Grid item xs={12}>
-        <Typography variant="body2">Npm</Typography>
+        <Typography variant="subtitle1">Npm</Typography>
         <Typography><code>npm i senswap-ui</code></Typography>
       </Grid>
       <Grid item xs={12}>
-        <Typography variant="body2">Fonts</Typography>
-        <Typography><code>{'<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,700;1,300;1,700&display=swap" rel="stylesheet">'}</code></Typography>
+        <Typography variant="subtitle1">Fonts</Typography>
+        <Typography><code>{'<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">'}</code></Typography>
         <Typography>Add the CDN link above to your HTML file.</Typography>
       </Grid>
     </Grid>

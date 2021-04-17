@@ -4,12 +4,12 @@ import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router-dom';
 
 import { withStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
 import Drawer from '@material-ui/core/Drawer';
+import Typography from '@material-ui/core/Typography';
 
 import { } from '@material-ui/icons';
 
-import Typography from 'components/typography';
+import Grid from 'components/grid';
 import Drain from 'components/drain';
 import Brand from 'components/brand';
 import Link from 'components/link';
@@ -28,7 +28,7 @@ class Header extends Component {
         <Drain />
       </Grid>
       <Grid item xs={12}>
-        <Typography variant="body2">Getting Started</Typography>
+        <Typography variant="h6">Getting Started</Typography>
       </Grid>
       <Grid item xs={12}>
         <Link to="/getting-started/installation" >
@@ -41,7 +41,7 @@ class Header extends Component {
         </Link>
       </Grid>
       <Grid item xs={12}>
-        <Typography variant="body2">Components</Typography>
+        <Typography variant="h6">Components</Typography>
       </Grid>
       <Grid item xs={12}>
         <Link to="/components/brand" >

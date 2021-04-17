@@ -5,8 +5,8 @@ import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 
 import { withStyles } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
 
+import Grid from 'components/grid';
 import Drain from 'components/drain';
 
 // Static component
