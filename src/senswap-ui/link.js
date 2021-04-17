@@ -2,14 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link as RouterLink } from 'react-router-dom';
 
-import Typography from '@material-ui/core/Typography';
+import { makeStyles } from 'senswap-ui/styles';
+import Typography from 'senswap-ui/typography';
 
-import useStyles from './styles';
+const useStyles = makeStyles(theme => ({
+  link: {
+    color: theme.palette.text.primary,
+    textDecoration: 'none'
+  }
+}));
 
 function Link(props) {
   const classes = useStyles();
   const { children, to } = props;
-  return <Typography component={RouterLink} to={to} className={classes.link}>{children}</Typography>
+  return <Typography
+    component={RouterLink}
+    to={to}
+    className={classes.link}
+  >{children}</Typography>
 }
 
 Link.defaultProps = {

@@ -3,10 +3,9 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router-dom';
 
-import { withStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-
-import Grid from 'components/grid';
+import { withStyles } from 'senswap-ui/styles';
+import Grid from 'senswap-ui/grid';
+import Typography from 'senswap-ui/typography';
 
 import styles from './styles';
 

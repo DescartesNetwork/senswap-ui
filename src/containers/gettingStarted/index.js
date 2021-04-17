@@ -3,13 +3,10 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 
-import { withStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-
-import { } from '@material-ui/icons';
-
-import Grid from 'components/grid';
-import Drain from 'components/drain';
+import { withStyles } from 'senswap-ui/styles';
+import Grid from 'senswap-ui/grid';
+import Typography from 'senswap-ui/typography';
+import Drain from 'senswap-ui/drain';
 
 import Installation from './installation';
 import Usage from './usage';

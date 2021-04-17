@@ -8,11 +8,12 @@ export default makeStyles(theme => ({
     flex: '1 1 auto',
   },
   logo: {
-    cursor: 'pointer'
+    cursor: 'pointer',
+    width: 36,
   },
   subtitle: {
     fontSize: 9,
-    marginBottom: -7,
+    marginBottom: -4,
     fontWeight: theme.typography.fontWeightLight,
     color: theme.palette.text.secondary
   },
