@@ -19,7 +19,7 @@ class Installation extends Component {
 
     return <Grid container spacing={2}>
       <Grid item xs={12}>
-        <Typography variant="h6">Installation</Typography>
+        <Typography variant="h6">Brand</Typography>
       </Grid>
       <Grid item xs={12}>
       </Grid>

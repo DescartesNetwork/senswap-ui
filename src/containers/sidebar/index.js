@@ -40,6 +40,14 @@ class Header extends Component {
           <Typography>Usage</Typography>
         </Link>
       </Grid>
+      <Grid item xs={12}>
+        <Typography variant="body2">Components</Typography>
+      </Grid>
+      <Grid item xs={12}>
+        <Link to="/components/brand" >
+          <Typography>Brand</Typography>
+        </Link>
+      </Grid>
     </Grid>
   }
 

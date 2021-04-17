@@ -14,6 +14,7 @@ import Sidebar from 'containers/sidebar';
 import UiUx from 'containers/uiux';
 // Pages
 import GettingStarted from 'containers/gettingStarted';
+import Components from 'containers/components';
 import NotFound from 'containers/404';
 
 // CSS
@@ -45,6 +46,7 @@ class App extends Component {
                   <Switch>
                     <Redirect exact from="/" to="/getting-started" />
                     <Route path='/getting-started' component={GettingStarted} />
+                    <Route path='/components' component={Components} />
                     <Route exact path='*' component={NotFound} />
                   </Switch>
                 </Grid>

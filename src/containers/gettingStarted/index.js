@@ -11,6 +11,7 @@ import { } from '@material-ui/icons';
 
 import Drain from 'components/drain';
 import Installation from './installation';
+import Usage from './usage';
 
 import styles from './styles';
 
@@ -22,7 +23,7 @@ class GettingStarted extends Component {
 
     return <Grid container spacing={2}>
       <Grid item xs={12}>
-        <Typography variant="h4">Home</Typography>
+        <Typography variant="h4">Getting Started</Typography>
       </Grid>
       <Grid item xs={12}>
         <Drain />
@@ -31,6 +32,7 @@ class GettingStarted extends Component {
         <Switch>
           <Redirect exact from="/getting-started" to="/getting-started/installation" />
           <Route path='/getting-started/installation' component={Installation} />
+          <Route path='/getting-started/usage' component={Usage} />
         </Switch>
       </Grid>
     </Grid>

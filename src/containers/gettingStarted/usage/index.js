@@ -12,14 +12,14 @@ import { } from '@material-ui/icons';
 import styles from './styles';
 
 
-class Installation extends Component {
+class Usage extends Component {
 
   render() {
     // const { classes } = this.props;
 
     return <Grid container spacing={2}>
       <Grid item xs={12}>
-        <Typography variant="h6">Installation</Typography>
+        <Typography variant="h6">Usage</Typography>
       </Grid>
       <Grid item xs={12}>
       </Grid>
@@ -37,4 +37,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(withStyles(styles)(Installation)));
+)(withStyles(styles)(Usage)));
