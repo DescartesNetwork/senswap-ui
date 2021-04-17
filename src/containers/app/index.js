@@ -13,6 +13,7 @@ import Drain from 'components/drain';
 import Header from 'containers/header';
 import UiUx from 'containers/uiux';
 // Pages
+import Home from 'containers/home';
 import NotFound from 'containers/404';
 
 // CSS
@@ -38,6 +39,7 @@ class App extends Component {
         <Grid item xs={12}>
           <Switch>
             <Redirect exact from="/" to="/home" />
+            <Route exact path='/home' component={Home} />
             <Route exact path='*' component={NotFound} />
           </Switch>
         </Grid>
