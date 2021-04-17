@@ -9,10 +9,13 @@ import Typography from '@material-ui/core/Typography';
 
 import { } from '@material-ui/icons';
 
+import Drain from 'components/drain';
+import Brand from 'components/brand';
+
 import styles from './styles';
 
 
-class Installation extends Component {
+class BrandComponent extends Component {
 
   render() {
     // const { classes } = this.props;
@@ -22,6 +25,19 @@ class Installation extends Component {
         <Typography variant="h6">Brand</Typography>
       </Grid>
       <Grid item xs={12}>
+        <Drain size={2} />
+      </Grid>
+      <Grid item xs={12}>
+        <Typography variant="body2">Standard brand</Typography>
+      </Grid>
+      <Grid item xs={12}>
+        <Brand />
+      </Grid>
+      <Grid item xs={12}>
+        <Typography variant="body2">Brand with subtitle</Typography>
+      </Grid>
+      <Grid item xs={12}>
+        <Brand subtitle="subtitle" />
       </Grid>
     </Grid>
   }
@@ -37,4 +53,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(withStyles(styles)(Installation)));
+)(withStyles(styles)(BrandComponent)));

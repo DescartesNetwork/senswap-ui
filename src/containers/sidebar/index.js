@@ -48,6 +48,11 @@ class Header extends Component {
           <Typography>Brand</Typography>
         </Link>
       </Grid>
+      <Grid item xs={12}>
+        <Link to="/components/button" >
+          <Typography>Button</Typography>
+        </Link>
+      </Grid>
     </Grid>
   }
 
