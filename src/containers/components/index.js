@@ -5,13 +5,15 @@ import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
 
 import { } from '@material-ui/icons';
 
+import Typography from 'components/typography';
 import Drain from 'components/drain';
+
 import BrandComponent from './brand';
 import ButtonComponent from './button';
+import TypographyComponent from './typography';
 
 import styles from './styles';
 
@@ -33,6 +35,7 @@ class Components extends Component {
           <Redirect exact from="/components" to="/components/brand" />
           <Route path='/components/brand' component={BrandComponent} />
           <Route path='/components/button' component={ButtonComponent} />
+          <Route path='/components/typography' component={TypographyComponent} />
         </Switch>
       </Grid>
     </Grid>

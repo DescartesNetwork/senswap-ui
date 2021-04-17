@@ -5,11 +5,11 @@ import { withRouter } from 'react-router-dom';
 
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
 import Drawer from '@material-ui/core/Drawer';
 
 import { } from '@material-ui/icons';
 
+import Typography from 'components/typography';
 import Drain from 'components/drain';
 import Brand from 'components/brand';
 import Link from 'components/link';
@@ -51,6 +51,11 @@ class Header extends Component {
       <Grid item xs={12}>
         <Link to="/components/button" >
           <Typography>Button</Typography>
+        </Link>
+      </Grid>
+      <Grid item xs={12}>
+        <Link to="/components/typography" >
+          <Typography>Typography</Typography>
         </Link>
       </Grid>
     </Grid>

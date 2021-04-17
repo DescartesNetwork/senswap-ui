@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
@@ -11,30 +11,30 @@ import { } from '@material-ui/icons';
 import Typography from 'components/typography';
 import Drain from 'components/drain';
 
-import Installation from './installation';
-import Usage from './usage';
-
 import styles from './styles';
 
 
-class GettingStarted extends Component {
+class TypographyComponent extends Component {
 
   render() {
     // const { classes } = this.props;
 
     return <Grid container spacing={2}>
       <Grid item xs={12}>
-        <Typography variant="h4">Getting Started</Typography>
+        <Typography variant="h6">Typography</Typography>
       </Grid>
       <Grid item xs={12}>
-        <Drain />
+        <Drain size={2} />
       </Grid>
       <Grid item xs={12}>
-        <Switch>
-          <Redirect exact from="/getting-started" to="/getting-started/installation" />
-          <Route path='/getting-started/installation' component={Installation} />
-          <Route path='/getting-started/usage' component={Usage} />
-        </Switch>
+        <Typography variant="h1">h1</Typography>
+        <Typography variant="h2">h2</Typography>
+        <Typography variant="h3">h3</Typography>
+        <Typography variant="h4">h4</Typography>
+        <Typography variant="h5">h5</Typography>
+        <Typography variant="h6">h6</Typography>
+        <Typography variant="body1">body1</Typography>
+        <Typography variant="body2">body2</Typography>
       </Grid>
     </Grid>
   }
@@ -50,4 +50,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(withStyles(styles)(GettingStarted)));
+)(withStyles(styles)(TypographyComponent)));
