@@ -3,19 +3,18 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router-dom';
 
-import Drawer from '@material-ui/core/Drawer';
-
 import { withStyles } from 'senswap-ui/styles';
 import Grid from 'senswap-ui/grid';
 import Typography from 'senswap-ui/typography';
 import Drain from 'senswap-ui/drain';
 import Brand from 'senswap-ui/brand';
 import Link from 'senswap-ui/link';
+import Drawer from 'senswap-ui/drawer';
 
 import styles from './styles';
 
 
-class Header extends Component {
+class Sidebar extends Component {
 
   core = () => {
     return <Grid container spacing={2}>
@@ -42,6 +41,11 @@ class Header extends Component {
         <Typography variant="h6">Components</Typography>
       </Grid>
       <Grid item xs={12}>
+        <Link to="/components/avatar" >
+          <Typography>Avatar</Typography>
+        </Link>
+      </Grid>
+      <Grid item xs={12}>
         <Link to="/components/brand" >
           <Typography>Brand</Typography>
         </Link>
@@ -49,6 +53,26 @@ class Header extends Component {
       <Grid item xs={12}>
         <Link to="/components/button" >
           <Typography>Button</Typography>
+        </Link>
+      </Grid>
+      <Grid item xs={12}>
+        <Link to="/components/grid" >
+          <Typography>Grid</Typography>
+        </Link>
+      </Grid>
+      <Grid item xs={12}>
+        <Link to="/components/icons" >
+          <Typography>Icons</Typography>
+        </Link>
+      </Grid>
+      <Grid item xs={12}>
+        <Link to="/components/logo" >
+          <Typography>Logo</Typography>
+        </Link>
+      </Grid>
+      <Grid item xs={12}>
+        <Link to="/components/paper" >
+          <Typography>Paper</Typography>
         </Link>
       </Grid>
       <Grid item xs={12}>
@@ -88,4 +112,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(withStyles(styles)(Header)));
+)(withStyles(styles)(Sidebar)));

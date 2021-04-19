@@ -5,7 +5,7 @@ import Image from 'material-ui-image';
 
 import Grid from 'senswap-ui/grid';
 import Typography from 'senswap-ui/typography';
-import CircularProgress from 'senswap-ui/CircularProgress';
+import CircularProgress from 'senswap-ui/circularProgress';
 
 import useStyles from './styles';
 import SEN_LOGO from './logo.svg';
