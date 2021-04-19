@@ -20,11 +20,15 @@
     "react-scripts": "4.0.3",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
+    "serve": "^11.3.2",
     "web-vitals": "^1.1.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "REACT_APP_ENV=development react-scripts start",
+    "build": "REACT_APP_ENV=development react-scripts build",
+    "stag": "REACT_APP_ENV=staging react-scripts build",
+    "prod": "REACT_APP_ENV=production react-scripts build",
+    "serve": "serve -s build -l 80",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
