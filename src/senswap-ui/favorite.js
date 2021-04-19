@@ -1,4 +1,3 @@
-
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -9,21 +8,15 @@ import Grid from 'senswap-ui/grid';
 
 
 function Favorite(props) {
-
   const { checked, onChange } = props;
-
   const onChecked = e => onChange(e.target.checked);
 
-  return <Grid container>
-    <Grid>
-      <MuiCheckbox
-        icon={<StarOutlineRounded />}
-        checkedIcon={<StarRounded color='primary' />}
-        checked={checked}
-        onChange={onChecked}
-      />
-    </Grid>
-  </Grid>
+  return <MuiCheckbox
+    icon={<StarOutlineRounded />}
+    checkedIcon={<StarRounded color='primary' />}
+    checked={checked}
+    onChange={onChecked}
+  />
 }
 
 Favorite.defaultProps = {
