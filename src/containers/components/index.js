@@ -12,6 +12,7 @@ import GridComponent from './grid';
 import BrandComponent from './brand';
 import ButtonComponent from './button';
 import TypographyComponent from './typography';
+import CheckboxComponent from './checkbox';
 
 import styles from './styles';
 
@@ -35,6 +36,7 @@ class Components extends Component {
           <Route path='/components/brand' component={BrandComponent} />
           <Route path='/components/button' component={ButtonComponent} />
           <Route path='/components/typography' component={TypographyComponent} />
+          <Route path='/components/checkbox' component={CheckboxComponent} />
         </Switch>
       </Grid>
     </Grid>
