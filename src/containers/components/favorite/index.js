@@ -13,36 +13,23 @@ import { withStyles } from 'senswap-ui/styles';
 import styles from './styles';
 
 
-class FavoriteComponent extends Component {
+const FavoriteComponent = () => {
+  const [checked, setChecked] = useState(false);
 
-  constructor() {
-    super();
-
-    this.state = {
-      checked: true,
-    }
-  }
-
-  onChecked = checked => this.setState({ checked });
-
-  render() {
-    const { checked } = this.state;
-
-    return <Grid container spacing={2}>
-      <Grid item xs={12}>
-        <Typography variant="h4">Favorite</Typography>
-      </Grid>
-      <Grid item xs={12}>
-        <Drain size={2} />
-      </Grid>
-      <Grid item xs={12}>
-        <Typography variant="subtitle1">Standard favorite</Typography>
-      </Grid>
-      <Grid item xs={12}>
-        <Favorite checked={checked} onChange={this.onChecked} />
-      </Grid>
+  return <Grid container spacing={2}>
+    <Grid item xs={12}>
+      <Typography variant="h4">Favorite</Typography>
     </Grid>
-  }
+    <Grid item xs={12}>
+      <Drain size={2} />
+    </Grid>
+    <Grid item xs={12}>
+      <Typography variant="subtitle1">Standard favorite</Typography>
+    </Grid>
+    <Grid item xs={12}>
+    <Favorite checked={checked} onChange={setChecked} />
+    </Grid>
+  </Grid>
 }
 
 const mapStateToProps = state => ({
