@@ -8,10 +8,11 @@ import Grid from 'senswap-ui/grid';
 import Typography from 'senswap-ui/typography';
 import Drain from 'senswap-ui/drain';
 
-import GridComponent from './grid';
+import GridComponent from './favorite/grid';
 import BrandComponent from './brand';
 import ButtonComponent from './button';
 import TypographyComponent from './typography';
+import Favorite from './favorite';
 
 import styles from './styles';
 
@@ -35,6 +36,7 @@ class Components extends Component {
           <Route path='/components/brand' component={BrandComponent} />
           <Route path='/components/button' component={ButtonComponent} />
           <Route path='/components/typography' component={TypographyComponent} />
+          <Route path='/components/favorite' component={Favorite} />
         </Switch>
       </Grid>
     </Grid>
