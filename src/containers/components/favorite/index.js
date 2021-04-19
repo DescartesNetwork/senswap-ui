@@ -56,4 +56,3 @@ export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
 )(withStyles(styles)(FavoriteComponent)));
-
