@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router-dom';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { a11yDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 import { withStyles } from 'senswap-ui/styles';
 import Grid from 'senswap-ui/grid';
@@ -25,12 +27,20 @@ class Installation extends Component {
       </Grid>
       <Grid item xs={12}>
         <Typography variant="subtitle1">Npm</Typography>
-        <Typography><code>npm i senswap-ui</code></Typography>
+      </Grid>
+      <Grid item xs={12}>
+        <SyntaxHighlighter language="bash" style={a11yDark} showLineNumbers wrapLongLines>
+          {'npm i senswap-ui'}
+        </SyntaxHighlighter>
       </Grid>
       <Grid item xs={12}>
         <Typography variant="subtitle1">Fonts</Typography>
-        <Typography><code>{'<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">'}</code></Typography>
-        <Typography>Add the CDN link above to your HTML file.</Typography>
+        <Typography>Add the CDN link below to your HTML file.</Typography>
+      </Grid>
+      <Grid item xs={12}>
+        <SyntaxHighlighter language="htmlbars" style={a11yDark} showLineNumbers wrapLongLines>
+          {'<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">'}
+        </SyntaxHighlighter>
       </Grid>
     </Grid>
   }
