@@ -29,7 +29,7 @@ class Sidebar extends Component {
       </Grid>
       <Grid item xs={12}>
         <Link to="/getting-started/installation" >
-          <Typography>Intallation</Typography>
+          <Typography>Installation</Typography>
         </Link>
       </Grid>
       <Grid item xs={12}>

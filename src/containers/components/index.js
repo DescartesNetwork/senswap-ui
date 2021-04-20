@@ -12,7 +12,7 @@ import GridComponent from './favorite/grid';
 import BrandComponent from './brand';
 import ButtonComponent from './button';
 import TypographyComponent from './typography';
-import Favorite from './favorite';
+import FavoriteComponent from './favorite';
 
 import styles from './styles';
 
@@ -36,7 +36,7 @@ class Components extends Component {
           <Route path='/components/brand' component={BrandComponent} />
           <Route path='/components/button' component={ButtonComponent} />
           <Route path='/components/typography' component={TypographyComponent} />
-          <Route path='/components/favorite' component={Favorite} />
+          <Route path='/components/favorite' component={FavoriteComponent} />
         </Switch>
       </Grid>
     </Grid>
