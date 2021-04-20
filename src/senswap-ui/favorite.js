@@ -10,7 +10,7 @@ import { makeStyles } from './styles';
 const useStyles = makeStyles({
   root: {
     '& span': {
-      color: props => props.color ? props.color : '#ed423b'
+      color: props => props.color
     }
   }
 });
@@ -32,7 +32,7 @@ function Favorite(props) {
 Favorite.defaultProps = {
   checked: false,
   onChange: () => { },
-  // color: '#ed423b',
+  color: '#ed423b',
 }
 
 Favorite.propTypes = {

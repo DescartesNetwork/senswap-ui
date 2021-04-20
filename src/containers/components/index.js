@@ -8,7 +8,7 @@ import Grid from 'senswap-ui/grid';
 import Typography from 'senswap-ui/typography';
 import Drain from 'senswap-ui/drain';
 
-import GridComponent from './favorite/grid';
+import GridComponent from './grid';
 import BrandComponent from './brand';
 import ButtonComponent from './button';
 import TypographyComponent from './typography';
