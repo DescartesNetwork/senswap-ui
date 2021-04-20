@@ -33,6 +33,8 @@ const FavoriteComponent = () => {
     </Grid>
     <Grid item xs={12}>
       <Typography variant="subtitle1">Custom color favorite</Typography>
+    </Grid>
+    <Grid item xs={12}>
       <Grid container spacing={2}>
         <Grid item>
           <Typography>White
