@@ -85,6 +85,11 @@ class Sidebar extends Component {
           <Typography>Checkbox</Typography>
         </Link>
       </Grid>
+      <Grid item xs={12}>
+        <Link to="/components/pagination" >
+          <Typography>Pagination</Typography>
+        </Link>
+      </Grid>
     </Grid>
   }
 
