@@ -91,11 +91,6 @@ class Sidebar extends Component {
         </Link>
       </Grid>
       <Grid item xs={12}>
-        <Link to="/components/avatar" >
-          <Typography>Avatar</Typography>
-        </Link>
-      </Grid>
-      <Grid item xs={12}>
         <Link to="/components/card" >
           <Typography>Card</Typography>
         </Link>

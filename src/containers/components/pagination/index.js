@@ -18,7 +18,7 @@ class Pagination extends Component {
             page: 3,
             count: 8,
             isShow: false,
-            size: 'medium',    
+            size: 'medium',
         }
     }
     onChangePagination = (val) => {
@@ -27,20 +27,28 @@ class Pagination extends Component {
         });
     }
     render() {
-        const { page,count,isShow,size,shape } = this.state;
-        return <Grid container direction="column">
-            <Typography variant="h4">Pagination</Typography>
+        const { page, count, isShow, size, shape } = this.state;
+        return <Grid container spacing={2}>
+            <Grid item xs={12}>
+                <Typography variant="h4">Pagination</Typography>
+            </Grid>
             <Drain />
-            <Grid>
-                <Typography>Standard</Typography>
-                <Pagina
-                    page={page}
-                    count={count}
-                    isShow={isShow}
-                    size={size}
-                    shape={shape}
-                    onChangePagination={this.onChangePagination}
-                />
+            <Grid item xs={12}>
+                <Grid container spacing={2}>
+                    <Grid item xs={12}>
+                        <Typography>Standard</Typography>
+                    </Grid>
+                    <Grid item xs={12}>
+                        <Pagina
+                            page={page}
+                            count={count}
+                            isShow={isShow}
+                            size={size}
+                            shape={shape}
+                            onChangePagination={this.onChangePagination}
+                        />
+                    </Grid>
+                </Grid>
             </Grid>
         </Grid>
     }
@@ -48,12 +56,12 @@ class Pagination extends Component {
 
 const mapStateToProps = state => ({
     ui: state.ui,
-  });
-  
-  const mapDispatchToProps = dispatch => bindActionCreators({
-  }, dispatch);
-  
-  export default withRouter(connect(
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+}, dispatch);
+
+export default withRouter(connect(
     mapStateToProps,
     mapDispatchToProps
-  )(withStyles(styles)(Pagination)));
+)(withStyles(styles)(Pagination)));
