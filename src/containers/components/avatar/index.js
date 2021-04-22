@@ -55,12 +55,13 @@ class AvatarComponent extends Component {
             type: 'px',
           }
         },
-      ]
+      ],
+      subtitle: 'Subtitle'
     }
   }
 
   render() {
-    const { elements } = this.state;
+    const { elements,subtitle} = this.state;
     const elementsAvatar = elements.map((e, idx) => {
       return <Grid container spacing={2} key={idx}>
         <Grid item xs={12}>
@@ -85,6 +86,20 @@ class AvatarComponent extends Component {
       <Grid item>
         {elementsAvatar}
       </Grid>
+      <Grid item xs={12}>
+        <Grid container spacing={2}>
+          <Grid item xs={12}>
+              <Typography variant="subtitle1">Avatar with label</Typography>
+            </Grid>
+            <Grid item xs={12}>
+              <Grid container>
+                <Grid item>
+                  <Avatar size="medium" variant="circular" src={Icon} subtitle={subtitle} />
+                </Grid>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
     </Grid>
   }
 }

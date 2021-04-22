@@ -14,7 +14,7 @@ import styles from './styles'
 class MuiCard extends Component {
     constructor() {
         super();
-        this.state = {  
+        this.state = {
         }
     }
     render() {
@@ -23,8 +23,12 @@ class MuiCard extends Component {
             <Drain />
             <Grid>
                 <Typography>Standard</Typography>
-                <Drain size={2}/>
-                <Card />
+                <Drain size={2} />
+                <Grid container>
+                    <Grid item xs={3}>
+                        <Card />
+                    </Grid>
+                </Grid>
             </Grid>
         </Grid>
     }
@@ -32,12 +36,12 @@ class MuiCard extends Component {
 
 const mapStateToProps = state => ({
     ui: state.ui,
-  });
-  
-  const mapDispatchToProps = dispatch => bindActionCreators({
-  }, dispatch);
-  
-  export default withRouter(connect(
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+}, dispatch);
+
+export default withRouter(connect(
     mapStateToProps,
     mapDispatchToProps
-  )(withStyles(styles)(MuiCard)));
+)(withStyles(styles)(MuiCard)));
