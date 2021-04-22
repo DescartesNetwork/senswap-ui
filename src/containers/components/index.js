@@ -16,6 +16,8 @@ import FavoriteComponent from './favorite';
 import LogoComponent from './logo';
 import CheckboxComponent from './checkbox';
 import PaginationComponent from './pagination';
+import CardComponent from './card';
+import AvatarComponent from './avatar';
 
 import styles from './styles';
 
@@ -43,6 +45,8 @@ class Components extends Component {
           <Route path='/components/logo' component={LogoComponent} />
           <Route path='/components/checkbox' component={CheckboxComponent} />
           <Route path='/components/pagination' component={PaginationComponent} />
+          <Route path='/components/card' component={CardComponent} />
+          <Route path='/components/avatar' component={AvatarComponent} />
         </Switch>
       </Grid>
     </Grid>
