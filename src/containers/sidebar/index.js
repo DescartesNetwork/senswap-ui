@@ -29,7 +29,7 @@ class Sidebar extends Component {
       </Grid>
       <Grid item xs={12}>
         <Link to="/getting-started/installation" >
-          <Typography>Intallation</Typography>
+          <Typography>Installation</Typography>
         </Link>
       </Grid>
       <Grid item xs={12}>
@@ -68,6 +68,11 @@ class Sidebar extends Component {
       <Grid item xs={12}>
         <Link to="/components/logo" >
           <Typography>Logo</Typography>
+        </Link>
+      </Grid>
+      <Grid item xs={12}>
+        <Link to="/components/favorite" >
+          <Typography>Favorite</Typography>
         </Link>
       </Grid>
       <Grid item xs={12}>

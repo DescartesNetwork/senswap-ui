@@ -12,6 +12,8 @@ import GridComponent from './grid';
 import BrandComponent from './brand';
 import ButtonComponent from './button';
 import TypographyComponent from './typography';
+import FavoriteComponent from './favorite';
+import LogoComponent from './logo';
 import CheckboxComponent from './checkbox';
 import PaginationComponent from './pagination';
 
@@ -37,6 +39,8 @@ class Components extends Component {
           <Route path='/components/brand' component={BrandComponent} />
           <Route path='/components/button' component={ButtonComponent} />
           <Route path='/components/typography' component={TypographyComponent} />
+          <Route path='/components/favorite' component={FavoriteComponent} />
+          <Route path='/components/logo' component={LogoComponent} />
           <Route path='/components/checkbox' component={CheckboxComponent} />
           <Route path='/components/pagination' component={PaginationComponent} />
         </Switch>
