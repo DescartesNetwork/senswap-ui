@@ -6,6 +6,7 @@ import { withRouter } from 'react-router-dom';
 import { withStyles } from 'senswap-ui/styles';
 import Grid from 'senswap-ui/grid';
 import Typography from 'senswap-ui/typography';
+import Drain from 'senswap-ui/drain';
 import Pagina from 'senswap-ui/pagination';
 
 import styles from './styles';
@@ -27,16 +28,20 @@ class Pagination extends Component {
     }
     render() {
         const { page,count,isShow,size,shape } = this.state;
-        return <Grid container>
-            <Typography>Pagination</Typography>
-            <Pagina
-                page={page}
-                count={count}
-                isShow={isShow}
-                size={size}
-                shape={shape}
-                onChangePagination={this.onChangePagination}
-            />
+        return <Grid container direction="column">
+            <Typography variant="h4">Pagination</Typography>
+            <Drain />
+            <Grid>
+                <Typography>Standard</Typography>
+                <Pagina
+                    page={page}
+                    count={count}
+                    isShow={isShow}
+                    size={size}
+                    shape={shape}
+                    onChangePagination={this.onChangePagination}
+                />
+            </Grid>
         </Grid>
     }
 }
