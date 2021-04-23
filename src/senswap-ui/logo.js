@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 import MuiAvatar from '@material-ui/core/Avatar';
 
-
 import { makeStyles } from './styles';
 
 // Theme dependence

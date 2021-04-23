@@ -3,13 +3,12 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router-dom';
 
-import Avatar from 'senswap-ui/avatar';
 import Icon from 'static/images/img-avatar.jpeg'
-
 import { withStyles } from 'senswap-ui/styles';
 import Grid from 'senswap-ui/grid';
 import Typography from 'senswap-ui/typography';
 import Drain from 'senswap-ui/drain';
+import Avatar from 'senswap-ui/avatar';
 
 import styles from './styles';
 
@@ -61,7 +60,7 @@ class AvatarComponent extends Component {
   }
 
   render() {
-    const { elements,subtitle} = this.state;
+    const { elements, subtitle } = this.state;
     const elementsAvatar = elements.map((e, idx) => {
       return <Grid container spacing={2} key={idx}>
         <Grid item xs={12}>
@@ -70,11 +69,11 @@ class AvatarComponent extends Component {
         <Grid item xs={12}>
           <Grid container>
             <Grid item>
-              <Avatar size={e.size} variant={e.variant} src={e.src ? e.src : Icon} customSize={e.customSize?e.customSize:null} />
+              <Avatar size={e.size} variant={e.variant} src={e.src ? e.src : Icon} customSize={e.customSize ? e.customSize : null} />
             </Grid>
           </Grid>
         </Grid>
-        </Grid>
+      </Grid>
     });
     return <Grid container>
       <Grid item xs={12}>
@@ -89,17 +88,17 @@ class AvatarComponent extends Component {
       <Grid item xs={12}>
         <Grid container spacing={2}>
           <Grid item xs={12}>
-              <Typography variant="subtitle1">Avatar with label</Typography>
-            </Grid>
-            <Grid item xs={12}>
-              <Grid container>
-                <Grid item>
-                  <Avatar size="medium" variant="circular" src={Icon} subtitle={subtitle} />
-                </Grid>
+            <Typography variant="subtitle1">Avatar with label</Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <Grid container>
+              <Grid item>
+                <Avatar size="medium" variant="circular" src={Icon} subtitle={subtitle} />
               </Grid>
             </Grid>
           </Grid>
         </Grid>
+      </Grid>
     </Grid>
   }
 }

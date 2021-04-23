@@ -1,22 +1,22 @@
 import React from 'react';
 import MuiAvatar from '@material-ui/core/Avatar';
-import Proptype from 'prop-types';
-
+import PropTypes from 'prop-types';
 
 import Grid from 'senswap-ui/grid';
+import Typography from 'senswap-ui/typography';
 
 import useStyles from './style';
-import { Typography } from '@material-ui/core';
+
 
 function Avatar(props) {
   const classes = useStyles();
   const { size, variant, src, customSize, subtitle } = props;
 
-  function CustomSize(size) {
-    if (size) {
+  function CustomSize(customizedSize) {
+    if (customizedSize) {
       return {
-        width: `${size.width}${size.type ? size.type : 'px'}`,
-        height: `${size.height}${size.type ? size.type : 'px'}`,
+        width: `${customizedSize.width}${customizedSize.type ? customizedSize.type : 'px'}`,
+        height: `${customizedSize.height}${customizedSize.type ? customizedSize.type : 'px'}`,
       }
     }
   }
@@ -43,10 +43,10 @@ function Avatar(props) {
 }
 
 Avatar.propTypes = {
-  size: Proptype.string,
-  variant: Proptype.string,
-  src: Proptype.string,
-  customSize: Proptype.object,
+  size: PropTypes.string,
+  variant: PropTypes.string,
+  src: PropTypes.string,
+  customSize: PropTypes.object,
 }
 Avatar.defaultProps = {
   size: 'small',
