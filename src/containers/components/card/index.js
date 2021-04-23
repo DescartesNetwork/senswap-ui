@@ -3,11 +3,12 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router-dom';
 
+import { Card, CardBalance } from 'senswap-ui/card';
+
 import { withStyles } from 'senswap-ui/styles';
 import Grid from 'senswap-ui/grid';
 import Typography from 'senswap-ui/typography';
 import Drain from 'senswap-ui/drain';
-import Card from 'senswap-ui/card'
 
 import styles from './styles'
 
@@ -74,10 +75,20 @@ class MuiCard extends Component {
       <Typography variant="h4">Card</Typography>
       <Drain />
       <Grid>
-        <Typography>Standard</Typography>
+        <Typography>Card details</Typography>
         <Drain size={2} />
         <Grid container>
           {cardElements}
+        </Grid>
+      </Grid>
+      <Drain />
+      <Grid>
+        <Typography>Card balance</Typography>
+        <Drain size={2} />
+        <Grid container>
+          <Grid item>
+            <CardBalance />
+          </Grid>
         </Grid>
       </Grid>
     </Grid>
