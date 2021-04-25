@@ -32,9 +32,7 @@ class App extends Component {
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <Grid container spacing={2} className={classes.noWrap}>
-            <Grid item>
-              <Sidebar />
-            </Grid>
+            <Sidebar />
             <Grid item className={classes.stretch}>
               <Grid container spacing={2}>
                 {/* Safe space */}

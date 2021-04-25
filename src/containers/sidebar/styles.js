@@ -1,5 +1,3 @@
-const SIDEBAR_WIDTH = 15;
-
 // eslint-disable-next-line
 export default theme => ({
   noWrap: {
@@ -10,13 +8,5 @@ export default theme => ({
   },
   logo: {
     cursor: 'pointer'
-  },
-  sidebar: {
-    width: theme.spacing(2) * SIDEBAR_WIDTH,
-    flexShrink: 0,
-  },
-  paper: {
-    width: theme.spacing(2) * (SIDEBAR_WIDTH - 2),
-    padding: theme.spacing(2),
   },
 });

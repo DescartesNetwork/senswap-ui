@@ -58,7 +58,7 @@ class MuiCard extends Component {
   }
   render() {
     const { cards, button } = this.state;
-    function handleClickCard(e){
+    function handleClickCard(e) {
       console.log(e)
     }
     var cardElements = cards.map((e, idx) => {
@@ -71,25 +71,35 @@ class MuiCard extends Component {
         />
       </Grid>
     });
-    return <Grid container direction="column">
-      <Typography variant="h4">Card</Typography>
-      <Drain />
-      <Grid>
+    return <Grid container>
+      <Grid item xs={12}>
+        <Typography variant="h4">Card</Typography>
+      </Grid>
+      <Grid item xs={12}>
+        <Drain />
+      </Grid>
+      <Grid item xs={12}>
         <Typography>Card details</Typography>
+      </Grid>
+      <Grid item xs={12}>
         <Drain size={2} />
+      </Grid>
+      <Grid item xs={12}>
         <Grid container>
           {cardElements}
         </Grid>
       </Grid>
-      <Drain />
-      <Grid>
+      <Grid item xs={12}>
+        <Drain />
+      </Grid>
+      <Grid item xs={12}>
         <Typography>Card balance</Typography>
+      </Grid>
+      <Grid item xs={12}>
         <Drain size={2} />
-        <Grid container>
-          <Grid item>
-            <CardBalance />
-          </Grid>
-        </Grid>
+      </Grid>
+      <Grid item xs={12}>
+        <CardBalance />
       </Grid>
     </Grid>
   }

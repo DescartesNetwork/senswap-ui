@@ -99,21 +99,10 @@ class Sidebar extends Component {
   }
 
   render() {
-    const { classes } = this.props;
-
-    return <Grid container spacing={2}>
-      <Grid item xs={12}>
-        <Drawer
-          variant="permanent"
-          className={classes.sidebar}
-          classes={{
-            paper: classes.paper,
-          }}
-        >
-          {this.core()}
-        </Drawer>
-      </Grid>
-    </Grid>
+    // const { classes } = this.props;
+    return <Drawer>
+      {this.core()}
+    </Drawer>
   }
 }
 
