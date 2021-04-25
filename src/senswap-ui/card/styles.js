@@ -30,12 +30,6 @@ export default makeStyles(theme => ({
   cardAction: {
     padding: '8px 24px',
     backgroundColor: '#2B2D3A',
-    '& p': {
-      fontSize: '12px',
-      fontWeight: '400',
-      lineHeight: '12px',
-      marginBottom: '0'
-    },
     '&:hover $focusHighlight': {
       opacity: 0,
       // backgroundColor: "red",
