@@ -28,7 +28,7 @@ function Brand(props) {
             loading={<CircularProgress size={17} />}
           />
         </Grid>
-        <Grid item>
+        <Grid item className={classes.cursor} onClick={onHome}>
           {subtitle ? <Typography className={classes.subtitle}>{subtitle}</Typography> : null}
           <Typography>SenSwap</Typography>
         </Grid>

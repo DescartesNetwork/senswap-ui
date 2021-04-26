@@ -11,6 +11,9 @@ export default makeStyles(theme => ({
     cursor: 'pointer',
     width: 36,
   },
+  cursor: {
+    cursor: 'pointer',
+  },
   subtitle: {
     fontSize: 9,
     marginBottom: -4,
