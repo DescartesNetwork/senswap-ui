@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import MuiAvatar from '@material-ui/core/Avatar';
 import PropTypes from 'prop-types';
 
@@ -8,7 +8,7 @@ import Typography from 'senswap-ui/typography';
 import useStyles from './style';
 
 
-function Avatar(props) {
+const Avatar = forwardRef((props, ref) => {
   const classes = useStyles();
 
   const { size, variant, src, subtitle, className, ...others } = props;
@@ -20,13 +20,14 @@ function Avatar(props) {
         src={src}
         className={`${classes[size]} ${className}`}
         {...others}
+        ref={ref}
       />
     </Grid>
     {subtitle ? <Grid item>
       <Typography>{subtitle}</Typography>
     </Grid> : null}
   </Grid>
-}
+})
 
 Avatar.defaultProps = {
   size: 'small',
