@@ -54,13 +54,28 @@ class MuiCard extends Component {
           description: 'ATOM earned',
         }
       ],
+      cardBalance: {
+        title: 'Total Balance',
+        color: '#FF9F38',
+        amount: '12.23148',
+        exchange: '1,700.96 USD',
+        badge: 'ETH'
+      }
     }
   }
   render() {
-    const { cards, button } = this.state;
-    function handleClickCard(e){
+    const { cards, button, cardBalance } = this.state;
+
+    function handleClickCard(e) {
       console.log(e)
     }
+    function handleClickDeposit(e) {
+      console.log('<<<====== click', e);
+    }
+    function handleClickWithDraw(e) {
+      console.log('<<<====== click', e);
+    }
+
     var cardElements = cards.map((e, idx) => {
       return <Grid item xs={4} key={idx}>
         <Card
@@ -71,6 +86,7 @@ class MuiCard extends Component {
         />
       </Grid>
     });
+
     return <Grid container direction="column">
       <Typography variant="h4">Card</Typography>
       <Drain />
@@ -86,8 +102,12 @@ class MuiCard extends Component {
         <Typography>Card balance</Typography>
         <Drain size={2} />
         <Grid container>
-          <Grid item>
-            <CardBalance />
+          <Grid item xs={3}>
+            <CardBalance
+              cardData={cardBalance}
+              onClickDeposit={handleClickDeposit}
+              onClickWithDraw={handleClickWithDraw}
+            />
           </Grid>
         </Grid>
       </Grid>
