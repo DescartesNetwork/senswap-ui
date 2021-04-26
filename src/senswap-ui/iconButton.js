@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import MuiIconButton from '@material-ui/core/IconButton';
 
-function IconButton(props) {
-  return <MuiIconButton {...props} />
-}
+const IconButton = forwardRef((props, ref) => {
+  return <MuiIconButton {...props} ref={ref} />
+});
 
 export default IconButton;

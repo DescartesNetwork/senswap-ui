@@ -10,7 +10,6 @@ import useStyles from './style';
 
 const Avatar = forwardRef((props, ref) => {
   const classes = useStyles();
-
   const { size, variant, src, subtitle, className, ...others } = props;
 
   return <Grid container spacing={1} alignItems="center">
