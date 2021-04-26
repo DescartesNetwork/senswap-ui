@@ -17,8 +17,11 @@ import LogoComponent from './logo';
 import PaginationComponent from './pagination';
 import CardComponent from './card';
 import AvatarComponent from './avatar';
+<<<<<<< HEAD
 import BadgeComponent from './badge';
+=======
 import ListComponent from './list';
+>>>>>>> master
 
 import styles from './styles';
 
