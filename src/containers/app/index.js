@@ -26,6 +26,7 @@ class App extends Component {
 
     return <ThemeProvider variant="dark">
       <Grid container spacing={2}>
+        {/* View */}
         <Grid item xs={12}>
           <Grid container spacing={2} className={classes.noWrap}>
             <Sidebar />
