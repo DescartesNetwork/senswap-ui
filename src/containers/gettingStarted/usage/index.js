@@ -11,7 +11,7 @@ import Typography from 'senswap-ui/typography';
 
 import styles from './styles';
 
-const THEME_PROVIDER = `import ThemeProvider from 'senswap-ui';
+const THEME_PROVIDER = `import { ThemeProvider } from 'senswap-ui/styles';
 
 class App extends Component {
 

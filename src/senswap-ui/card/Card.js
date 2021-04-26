@@ -15,7 +15,7 @@ function MuiCard(props) {
   const { size, customSize, src, variant, subtitle, cardData, onClickCardDetails, button } = props;
 
   function handleClick() {
-   return onClickCardDetails(cardData);
+    return onClickCardDetails(cardData);
   }
   return <Grid container spacing={2}>
     <Grid item xs={12}>
@@ -30,32 +30,32 @@ function MuiCard(props) {
         <CardContent className={classes.cardContent}>
           <Grid container spacing={0}>
             <Grid item xs={12}>
-              <Typography variant="h5">{cardData.earned}</Typography>
+              <Typography variant="h4">{cardData.earned}</Typography>
             </Grid>
             <Grid item xs={12}>
               <Typography>{cardData.description}</Typography>
             </Grid>
           </Grid>
         </CardContent>
-        <CardActionArea classes={{root: classes.cardAction, focusHighlight: classes.focusHighlight}} className={classes.cardAction}>
+        <CardActionArea classes={{ root: classes.cardAction, focusHighlight: classes.focusHighlight }} className={classes.cardAction}>
           <Grid container spacing={1}>
             <Grid item xs={12}>
               <Grid container spacing={0}>
                 <Grid item xs={6}>
-                  <Typography>APR:</Typography>
+                  <Typography variant="body2">APR:</Typography>
                 </Grid>
                 <Grid item xs={6}>
-                  <Typography align="right">{cardData.apr}</Typography>
+                  <Typography align="right" variant="body2">{cardData.apr}</Typography>
                 </Grid>
               </Grid>
             </Grid>
             <Grid item xs={12}>
               <Grid container spacing={0}>
                 <Grid item xs={6}>
-                  <Typography>Your stake:</Typography>
+                  <Typography variant="body2">Your stake:</Typography>
                 </Grid>
                 <Grid item xs={6}>
-                  <Typography align="right">{cardData.stake}</Typography>
+                  <Typography align="right" variant="body2">{cardData.stake}</Typography>
                 </Grid>
               </Grid>
             </Grid>
@@ -63,7 +63,7 @@ function MuiCard(props) {
           <Grid container spacing={0} className={classes.buttonDetails}>
             <Grid item>
               <Link href="#" onClick={handleClick}>
-              <Typography>{button}</Typography>
+                <Typography>{button}</Typography>
               </Link>
             </Grid>
           </Grid>
@@ -96,7 +96,7 @@ MuiCard.defaultProps = {
     description: 'Bitcoin earned',
   },
   button: 'Details',
-  onClickCardDetails: (e) => {},
+  onClickCardDetails: (e) => { },
 }
 
 export default MuiCard;

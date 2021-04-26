@@ -3,9 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 
-import { ThemeProvider } from '@material-ui/core/styles';
-
-import { withStyles } from 'senswap-ui/styles';
+import { ThemeProvider, withStyles } from 'senswap-ui/styles';
 import Grid from 'senswap-ui/grid';
 import Drain from 'senswap-ui/drain';
 
@@ -18,8 +16,6 @@ import Components from 'containers/components';
 import NotFound from 'containers/404';
 
 // CSS
-import theme from 'static/styles/theme';
-import 'static/styles/index.css';
 import styles from './styles';
 
 
@@ -28,13 +24,12 @@ class App extends Component {
   render() {
     const { classes } = this.props;
 
-    return <ThemeProvider theme={theme}>
+    return <ThemeProvider variant="dark">
       <Grid container spacing={2}>
+        {/* View */}
         <Grid item xs={12}>
           <Grid container spacing={2} className={classes.noWrap}>
-            <Grid item>
-              <Sidebar />
-            </Grid>
+            <Sidebar />
             <Grid item className={classes.stretch}>
               <Grid container spacing={2}>
                 {/* Safe space */}

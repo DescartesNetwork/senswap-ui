@@ -24,17 +24,18 @@ class TypographyComponent extends Component {
         <Drain size={2} />
       </Grid>
       <Grid item xs={12}>
-        <Typography variant="h1">h1</Typography>
-        <Typography variant="h2">h2</Typography>
-        <Typography variant="h3">h3</Typography>
-        <Typography variant="h4">h4</Typography>
-        <Typography variant="h5">h5</Typography>
-        <Typography variant="h6">h6</Typography>
-        <Typography variant="subtitle1">subtitle1</Typography>
-        <Typography variant="subtitle2">subtitle2</Typography>
-        <Typography variant="body1">body1</Typography>
-        <Typography variant="body2">body2</Typography>
-        <Typography variant="caption">caption</Typography>
+        <Typography>variant: font/weight/size</Typography>
+        <Typography variant="h1">h1: Poppins/600/48</Typography>
+        <Typography variant="h2">h2: Poppins/700/40</Typography>
+        <Typography variant="h3">h3: Inter/500/40</Typography>
+        <Typography variant="h4">h4: Poppins/600/36</Typography>
+        <Typography variant="h5">h5: Inter/500/24</Typography>
+        <Typography variant="h6">h6: Poppins/600/18</Typography>
+        <Typography variant="subtitle1">subtitle1: Inter/500/18</Typography>
+        <Typography variant="subtitle2">subtitle2: Poppins/500/12</Typography>
+        <Typography variant="body1">body1: Inter/400/14</Typography>
+        <Typography variant="body2">body2: Inter/300/12</Typography>
+        <Typography variant="caption">caption: Inter/300/9</Typography>
       </Grid>
     </Grid>
   }

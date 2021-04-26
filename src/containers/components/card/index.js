@@ -92,14 +92,22 @@ class MuiCard extends Component {
       <Drain />
       <Grid>
         <Typography>Card details</Typography>
+      </Grid>
+      <Grid item xs={12}>
         <Drain size={2} />
+      </Grid>
+      <Grid item xs={12}>
         <Grid container>
           {cardElements}
         </Grid>
       </Grid>
-      <Drain />
-      <Grid>
+      <Grid item xs={12}>
+        <Drain />
+      </Grid>
+      <Grid item xs={12}>
         <Typography>Card balance</Typography>
+      </Grid>
+      <Grid item xs={12}>
         <Drain size={2} />
         <Grid container>
           <Grid item xs={3}>
