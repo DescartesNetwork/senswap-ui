@@ -6,7 +6,7 @@ import { withRouter } from 'react-router-dom';
 import Grid from 'senswap-ui/grid';
 import Typography from 'senswap-ui/typography';
 import Drain from 'senswap-ui/drain';
-import LatestActivity from 'senswap-ui/latestActivity'
+import ActivitiesList from 'senswap-ui/list/activitiesList'
 import { withStyles } from 'senswap-ui/styles';
 
 import styles from './styles';
@@ -34,6 +34,27 @@ const ListComponent = () => {
       status: "inProgress",
       amount: 0.531676712,
       coinUnit: "BTC",
+    },
+    {
+      id: 4,
+      action: "deposit",
+      status: "complete",
+      amount: 0.69696969,
+      coinUnit: "ETH",
+    },
+    {
+      id: 5,
+      action: "withdraw",
+      status: "complete",
+      amount: 969.69696969,
+      coinUnit: "ETH",
+    },
+    {
+      id: 6,
+      action: "withdraw",
+      status: "complete",
+      amount: 969.69696969,
+      coinUnit: "ETH",
     }
   ];
 
@@ -45,13 +66,9 @@ const ListComponent = () => {
       <Drain size={2} />
     </Grid>
     <Grid item xs={12}>
-      <Typography variant="subtitle1">Latest activities</Typography>
+      <Typography variant="subtitle1">Latest Activities</Typography>
     </Grid>
-    <Grid item xs={12}>
-      {
-        data.map(value => <LatestActivity key={value.id} {...value} />)
-      }
-    </Grid>
+    <ActivitiesList data={data} />
   </Grid>
 }
 

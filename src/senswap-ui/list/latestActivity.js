@@ -1,19 +1,19 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
 import Divider from '@material-ui/core/Divider';
+import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 
 import Grid from 'senswap-ui/grid';
 import Drain from 'senswap-ui/drain';
 import Typography from 'senswap-ui/typography';
-import WITHDRAW_LOGO from '../static/images/withdraw.svg';
-import DEPOSIT_LOGO from '../static/images/deposit.svg';
+import WITHDRAW_LOGO from '../../static/images/withdraw.svg';
+import DEPOSIT_LOGO from '../../static/images/deposit.svg';
 
-import Logo from './logo';
-import { makeStyles } from './styles';
+import Logo from '../logo';
+import { makeStyles } from '../styles';
 
 const useStyles = makeStyles((theme) => ({
   root: {
