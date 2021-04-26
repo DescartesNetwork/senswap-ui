@@ -9,7 +9,7 @@ import Typography from 'senswap-ui/typography';
 import Drain from 'senswap-ui/drain';
 import Card from 'senswap-ui/card'
 
-import styles from './styles'
+import styles from './styles';
 
 class MuiCard extends Component {
     constructor() {

@@ -28,7 +28,7 @@ const LogoComponent = () => {
     <Grid item xs={12}>
       <Typography variant="subtitle2">Large</Typography>
       <Drain size={2} />
-      <Logo src={BITCOIN_LOGO} classes='large' />
+      <Logo src={BITCOIN_LOGO} logoSize='large' />
     </Grid>
     <Grid item xs={12}>
       <Typography variant="subtitle2">Default</Typography>
@@ -38,16 +38,16 @@ const LogoComponent = () => {
     <Grid item xs={12}>
       <Typography variant="subtitle2">Medium</Typography>
       <Drain size={2} />
-      <Logo src={BITCOIN_LOGO} classes='medium' />
+      <Logo src={BITCOIN_LOGO} logoSize='medium' />
     </Grid>
     <Grid item xs={12}>
       <Typography variant="subtitle2">Small</Typography>
       <Drain size={2} />
-      <Logo src={BITCOIN_LOGO} classes='small' />
+      <Logo src={BITCOIN_LOGO} logoSize='small' />
     </Grid>    <Grid item xs={12}>
       <Typography variant="subtitle2">Tiny</Typography>
       <Drain size={2} />
-      <Logo src={BITCOIN_LOGO} classes='tiny' />
+      <Logo src={BITCOIN_LOGO} logoSize='tiny' />
     </Grid>
   </Grid>
 }
