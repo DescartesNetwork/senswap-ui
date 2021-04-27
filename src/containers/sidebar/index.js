@@ -100,6 +100,11 @@ class Sidebar extends Component {
           <Typography>Card</Typography>
         </Link>
       </Grid>
+      <Grid item xs={12}>
+        <Link to="/components/form" >
+          <Typography>Form</Typography>
+        </Link>
+      </Grid>
     </Grid>
   }
 

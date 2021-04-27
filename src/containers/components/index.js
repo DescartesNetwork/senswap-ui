@@ -18,6 +18,7 @@ import PaginationComponent from './pagination';
 import CardComponent from './card';
 import AvatarComponent from './avatar';
 import BadgeComponent from './badge';
+import FormComponent from './form';
 
 import styles from './styles';
 
@@ -47,6 +48,7 @@ class Components extends Component {
           <Route path='/components/card' component={CardComponent} />
           <Route path='/components/badge' component={BadgeComponent} />
           <Route path='/components/avatar' component={AvatarComponent} />
+          <Route path='/components/form' component={FormComponent} />
         </Switch>
       </Grid>
     </Grid>
