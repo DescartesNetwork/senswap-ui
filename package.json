@@ -1,6 +1,6 @@
 {
   "name": "senswap-ui",
-  "version": "0.2.23",
+  "version": "0.2.24",
   "main": "index.js",
   "description": "SenSwap UI maintains the consistency in theme, components and styles for all SenSwap's products",
   "dependencies": {
@@ -29,7 +29,6 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "stag": "react-scripts build",
-    "prod": "react-scripts build",
     "serve": "serve -s build -l 80",
     "prod": "npm run clean && babel src/senswap-ui -d dist --copy-files",
     "clean": "rm -rf ./dist",

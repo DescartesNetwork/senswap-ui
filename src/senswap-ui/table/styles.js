@@ -26,8 +26,6 @@ export default makeStyles(theme => ({
     },
   },
   cell: {
-    paddingTop: theme.spacing(3),
-    paddingBottom: theme.spacing(3),
     border: 'none'
   },
   cellHead: {
