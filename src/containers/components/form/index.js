@@ -7,8 +7,7 @@ import { withStyles } from 'senswap-ui/styles';
 import Grid from 'senswap-ui/grid';
 import Typography from 'senswap-ui/typography';
 import Drain from 'senswap-ui/drain';
-import Badge from 'senswap-ui/badge';
-import Link from 'senswap-ui/link';
+import Form from 'senswap-ui/form';
 
 import styles from './styles';
 
@@ -16,35 +15,24 @@ import styles from './styles';
 class BrandComponent extends Component {
 
   render() {
+    function handleConnectWallet(e) {
+      console.log(e, '=====>>>>');
+    }
 
     return <Grid container spacing={2}>
       <Grid item xs={12}>
-        <Typography variant="h4">Badge</Typography>
+        <Typography variant="h4">Form</Typography>
       </Grid>
       <Grid item xs={12}>
         <Drain size={2} />
       </Grid>
       <Grid item xs={12}>
-        <Typography variant="subtitle1">References</Typography>
+        <Typography variant="subtitle1">Form</Typography>
       </Grid>
-      <Grid item xs={12}>
-        <Link href="https://material-ui.com/components/badges/">Material Badge System</Link>
-      </Grid>
-
-      <Grid item xs={12}>
-        <Typography variant="subtitle1">Custom color badge</Typography>
-      </Grid>
-      <Grid item xs={12}>
-        <Badge cuscolor="#FF9F38" badgeContent="#FF9F38"/>
-      </Grid>
-      <Grid item xs={12}>
-        <Badge cuscolor="orange" badgeContent="orange" />
-      </Grid>
-      <Grid item xs={12}>
-        <Badge cuscolor="blue" badgeContent="blue"/>
-      </Grid>
-      <Grid item xs={12}>
-        <Badge cuscolor="green" badgeContent="green"/>
+      <Grid item xs={5}>
+        <Form
+          onConnectWallet={handleConnectWallet}
+        />
       </Grid>
     </Grid>
   }

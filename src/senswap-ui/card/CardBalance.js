@@ -6,7 +6,7 @@ import TypeProps from 'prop-types';
 
 import Grid from 'senswap-ui/grid';
 import Typography from 'senswap-ui/typography';
-import Badge from 'senswap-ui/badge';
+import Chip from 'senswap-ui/chip';
 
 import useStyle from './styles';
 
@@ -53,8 +53,8 @@ function CardBalance(props) {
                 <Grid item xs={12} align="center">
                   <Typography variant="subtitle1">{ cardData.title }</Typography>
                 </Grid>
-                <Grid item xs={12} align="center" className={classes.badge}>
-                  <Badge cuscolor={cardData.color} badgeContent={ cardData.badge } />
+                <Grid item xs={12} align="center" className={classes.chip}>
+                  <Chip cuscolor={cardData.color} label={ cardData.chip } />
                 </Grid>
                 {isEyeOff ?
                   <Grid item xs={12} align="center">
@@ -92,7 +92,7 @@ CardBalance.defaultProps = {
     color: '#FF9F38',
     amount: '0.16231428',
     exchange: '3,700.96 USD',
-    badge: 'BTC'
+    chip: 'BTC'
   },
   onClickDeposit: () => {},
   onClickWithdraw: () => {}

@@ -91,8 +91,8 @@ class Sidebar extends Component {
         </Link>
       </Grid>
       <Grid item xs={12}>
-        <Link to="/components/badge" >
-          <Typography>Badge</Typography>
+        <Link to="/components/chip" >
+          <Typography>Chip</Typography>
         </Link>
       </Grid>
       <Grid item xs={12}>
@@ -104,6 +104,29 @@ class Sidebar extends Component {
         <Link to="/components/list" >
           <Typography>List</Typography>
         </Link>
+      </Grid>
+      <Grid item xs={12}>
+        <Link to="/components/drawer" >
+          <Typography>Drawer</Typography>
+        </Link>
+      </Grid>
+      <Grid item xs={12}>
+        <Link to="/components/table" >
+          <Typography>Table</Typography>
+        </Link>
+      </Grid>
+      <Grid item xs={12}>
+        <Link to="/components/form" >
+          <Typography>Form</Typography>
+        </Link>
+      </Grid>
+      <Grid item xs={12}>
+        <Link to="/components/tooltip" >
+          <Typography>Tooltip</Typography>
+        </Link>
+      </Grid>
+      <Grid item xs={12}>
+        <Drain size={2} />
       </Grid>
     </Grid>
   }

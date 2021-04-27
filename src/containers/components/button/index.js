@@ -3,12 +3,14 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router-dom';
 
-import Button from '@material-ui/core/Button';
 
 import { withStyles } from 'senswap-ui/styles';
 import Grid from 'senswap-ui/grid';
 import Typography from 'senswap-ui/typography';
 import Drain from 'senswap-ui/drain';
+import Button, { IconButton } from 'senswap-ui/button';
+
+import { HomeRounded } from 'senswap-ui/icons'
 
 import styles from './styles';
 
@@ -103,6 +105,18 @@ class ButtonComponent extends Component {
             <Button variant="outlined" disabled>
               <Typography>Button</Typography>
             </Button>
+          </Grid>
+        </Grid>
+      </Grid>
+      <Grid item xs={12}>
+        <Typography variant="subtitle1">Icon buttons</Typography>
+      </Grid>
+      <Grid item xs={12}>
+        <Grid container>
+          <Grid item>
+            <IconButton>
+              <HomeRounded />
+            </IconButton>
           </Grid>
         </Grid>
       </Grid>

@@ -18,7 +18,7 @@ function Drawer(props) {
   const combinedClassName = `${classes.sidebar} ${userClassName}`;
   const { paper: userPaper, ...otherClasses } = userClasses;
   const combinedClasses = { paper: `${classes.paper} ${userPaper}`, ...otherClasses }
-  const combinedStyle = { ...(userStyle || {}), ...(open ? {} : { width: 0 }) }
+  const combinedStyle = { ...userStyle, ...(open ? {} : { width: 0 }) }
 
   return <MuiDrawer
     open={open}
@@ -35,6 +35,7 @@ Drawer.defaultProps = {
   variant: 'persistent',
   className: '',
   classes: {},
+  style: {}
 }
 
 Drawer.propTypes = {
@@ -42,6 +43,7 @@ Drawer.propTypes = {
   variant: PropTypes.string,
   className: PropTypes.string,
   classes: PropTypes.object,
+  style: PropTypes.object,
 }
 
 export default Drawer;

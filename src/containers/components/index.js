@@ -17,9 +17,13 @@ import LogoComponent from './logo';
 import PaginationComponent from './pagination';
 import CardComponent from './card';
 import AvatarComponent from './avatar';
-import BadgeComponent from './badge';
+import ChipComponent from './chip';
 import ListComponent from './list';
 import IconsComponent from './icons';
+import DrawerComponent from './drawer';
+import TableComponent from './table';
+import FormComponent from './form';
+import TooltipComponent from './tooltip';
 
 import styles from './styles';
 
@@ -47,10 +51,14 @@ class Components extends Component {
           <Route path='/components/logo' component={LogoComponent} />
           <Route path='/components/pagination' component={PaginationComponent} />
           <Route path='/components/card' component={CardComponent} />
-          <Route path='/components/badge' component={BadgeComponent} />
+          <Route path='/components/chip' component={ChipComponent} />
           <Route path='/components/avatar' component={AvatarComponent} />
           <Route path='/components/list' component={ListComponent} />
           <Route path='/components/icons' component={IconsComponent} />
+          <Route path='/components/drawer' component={DrawerComponent} />
+          <Route path='/components/table' component={TableComponent} />
+          <Route path='/components/form' component={FormComponent} />
+          <Route path='/components/tooltip' component={TooltipComponent} />
         </Switch>
       </Grid>
     </Grid>

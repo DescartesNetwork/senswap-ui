@@ -5,11 +5,7 @@ import Divider from '@material-ui/core/Divider';
 import Grid from 'senswap-ui/grid';
 import Drain from 'senswap-ui/drain';
 import Typography from 'senswap-ui/typography';
-import List from 'senswap-ui/list';
-import ListItem from 'senswap-ui/listItem';
-import ListItemText from 'senswap-ui/listItemText';
-import ListItemIcon from 'senswap-ui/listItemIcon';
-import { DepositIcon, WithdrawIcon } from 'senswap-ui/supplementIcons';
+import List, { ListItem, ListItemIcon, ListItemText } from 'senswap-ui/list';
 
 import { makeStyles } from './styles';
 
@@ -40,32 +36,11 @@ const dateFormat = { year: 'numeric', month: 'short', day: 'numeric' };
 const ListItemHistory = props => {
   const classes = useStyles();
   const { variant, status, amount, units, ...others } = props;
-  const date = props?.date === 0 ? Date.now() : props.date;
+  // const date = props?.date === 0 ? Date.now() : props.date;
 
   return <List className={classes.root}>
-    <ListItem alignItems="flex-start" {...others} button>
-      <ListItemIcon>
-        {variant === 'deposit' ? <DepositIcon /> : <WithdrawIcon />}
-      </ListItemIcon>
-      <ListItemText disableTypography
-        primary={
-          <Grid container spacing={2}>
-            <Grid item xs={6}>
-              <Typography>{ACTION[variant]}</Typography>
-            </Grid>
-            <Grid item xs={6}>
-              <Typography align="right">{new Date(date).toLocaleString("en-US", dateFormat)}</Typography>
-            </Grid>
-          </Grid>
-        }
-        secondary={
-          <Grid item xs={12}>
-            <Typography className={classes[status]}>{status}</Typography>
-            <Drain size={2} />
-            <Typography color="textPrimary">{amount} {units}</Typography>
-          </Grid>
-        }
-      />
+    <ListItem alignItems="flex-start" {...others}>
+      {/*** TODO ***/}
     </ListItem>
     <Divider variant="inset" component="li" />
   </List>
