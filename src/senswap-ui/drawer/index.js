@@ -11,21 +11,19 @@ function Drawer(props) {
     variant, open,
     className: userClassName,
     classes: userClasses,
-    style: userStyle,
     ...others
   } = props;
 
   const combinedClassName = `${classes.sidebar} ${userClassName}`;
   const { paper: userPaper, ...otherClasses } = userClasses;
   const combinedClasses = { paper: `${classes.paper} ${userPaper}`, ...otherClasses }
-  const combinedStyle = { ...(userStyle || {}), ...(open ? {} : { width: 0 }) }
 
   return <MuiDrawer
     open={open}
     variant={variant}
     className={combinedClassName}
     classes={combinedClasses}
-    style={combinedStyle}
+    style={open ? null : { width: 0 }}
     {...others}
   />
 }
