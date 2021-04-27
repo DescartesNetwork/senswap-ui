@@ -1,4 +1,7 @@
+import PropTypes from 'prop-types';
+
 import SvgIcon from '@material-ui/core/SvgIcon';
+
 
 function WithdrawIcon(props) {
   const { style, ...others } = props;
