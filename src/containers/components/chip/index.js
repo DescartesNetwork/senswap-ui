@@ -7,7 +7,7 @@ import { withStyles } from 'senswap-ui/styles';
 import Grid from 'senswap-ui/grid';
 import Typography from 'senswap-ui/typography';
 import Drain from 'senswap-ui/drain';
-import Badge from 'senswap-ui/badge';
+import Chip from 'senswap-ui/chip';
 import Link from 'senswap-ui/link';
 
 import styles from './styles';
@@ -19,7 +19,7 @@ class BrandComponent extends Component {
 
     return <Grid container spacing={2}>
       <Grid item xs={12}>
-        <Typography variant="h4">Badge</Typography>
+        <Typography variant="h4">Chip</Typography>
       </Grid>
       <Grid item xs={12}>
         <Drain size={2} />
@@ -28,23 +28,23 @@ class BrandComponent extends Component {
         <Typography variant="subtitle1">References</Typography>
       </Grid>
       <Grid item xs={12}>
-        <Link href="https://material-ui.com/components/badges/">Material Badge System</Link>
+        <Link href="https://material-ui.com/components/chips/">Material Chip System</Link>
       </Grid>
 
       <Grid item xs={12}>
-        <Typography variant="subtitle1">Custom color badge</Typography>
+        <Typography variant="subtitle1">Custom color chip</Typography>
       </Grid>
       <Grid item xs={12}>
-        <Badge cuscolor="#FF9F38" badgeContent="#FF9F38"/>
+        <Chip cuscolor="#FF9F38" label="#FF9F38"/>
       </Grid>
       <Grid item xs={12}>
-        <Badge cuscolor="orange" badgeContent="orange" />
+        <Chip cuscolor="orange" label="orange" />
       </Grid>
       <Grid item xs={12}>
-        <Badge cuscolor="blue" badgeContent="blue"/>
+        <Chip cuscolor="blue" label="blue"/>
       </Grid>
       <Grid item xs={12}>
-        <Badge cuscolor="green" badgeContent="green"/>
+        <Chip cuscolor="green" label="green"/>
       </Grid>
     </Grid>
   }

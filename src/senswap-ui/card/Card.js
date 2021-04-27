@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Card, CardActionArea, CardContent } from '@material-ui/core';
-import { Link } from '@material-ui/core';
 
 import Grid from 'senswap-ui/grid';
 import Typography from 'senswap-ui/typography';
@@ -23,7 +22,14 @@ function MuiCard(props) {
         <CardContent className={classes.cardContent}>
           <Grid container>
             <Grid item xs={12}>
-              <Avatar src={src} size={size} variant={variant} subtitle={subtitle} />
+              <Grid container spacing={0} alignItems="center">
+                <Grid item>
+                  <Avatar src={src} size={size} variant={variant} />
+                </Grid>
+                <Grid item className={classes.title}>
+                  <Typography>{subtitle}</Typography>
+                </Grid>
+              </Grid>
             </Grid>
           </Grid>
         </CardContent>
@@ -62,9 +68,9 @@ function MuiCard(props) {
           </Grid>
           <Grid container spacing={0} className={classes.buttonDetails}>
             <Grid item>
-              <Link href="#" onClick={handleClick}>
+              <Grid container alignItems="center" justify="center" onClick={handleClick} spacing={0}>
                 <Typography>{button}</Typography>
-              </Link>
+              </Grid>
             </Grid>
           </Grid>
         </CardActionArea>
@@ -94,7 +100,7 @@ MuiCard.defaultProps = {
     stake: '0.0000',
     description: 'Bitcoin earned',
   },
-  button: 'Details',
+  button: 'See details',
   onClickCardDetails: (e) => { },
 }
 

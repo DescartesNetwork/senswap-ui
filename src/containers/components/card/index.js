@@ -16,7 +16,7 @@ class MuiCard extends Component {
   constructor() {
     super();
     this.state = {
-      button: 'Details',
+      button: 'See details',
       cards: [
         {
           subtitle: 'Bitcoin',
@@ -59,7 +59,7 @@ class MuiCard extends Component {
         color: '#FF9F38',
         amount: '12.23148',
         exchange: '1,700.96 USD',
-        badge: 'ETH'
+        chip: 'ETH'
       }
     }
   }
@@ -77,7 +77,7 @@ class MuiCard extends Component {
     }
 
     var cardElements = cards.map((e, idx) => {
-      return <Grid item xs={4} key={idx}>
+      return <Grid item xs={3} key={idx}>
         <Card
           cardData={e}
           subtitle={e.subtitle}

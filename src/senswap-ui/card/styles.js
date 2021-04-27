@@ -48,14 +48,12 @@ export default makeStyles(theme => ({
     position: 'absolute',
     width: '100%',
     height: '100%',
-    // top: '0',
     left: '0',
     bottom: '-100%',
-    // display: 'none',
     backgroundColor: 'red',
     transition: '.1s linear',
     '& *:not(p)': {
-      with: '100%',
+      width: '100%',
       height: '100%',
     },
     '& a': {
@@ -67,7 +65,7 @@ export default makeStyles(theme => ({
       '& p': {
         margin: '0',
         fontSize: '14px',
-        fontWeight: '500',
+        fontWeight: '700',
         lineHeight: '18px',
       }
     }
@@ -125,7 +123,7 @@ export default makeStyles(theme => ({
       marginBottom: '16px',
     }
   },
-  badge: {
+  chip: {
     padding: '0 !important',
     'span': {
       color: '#fff',
@@ -143,6 +141,14 @@ export default makeStyles(theme => ({
       lineHeight: '24px',
       fontWeight: '500',
       textTransform: 'unset'
+    }
+  },
+  title: {
+    paddingLeft: '12px',
+    '& p': {
+      fontSize: '18px',
+      fontWeight: '500',
+      lineHeight: '24px',
     }
   }
 }));
