@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import MuiCheckbox from '@material-ui/core/Checkbox';
-import { StarOutlineRounded, StarRounded } from '@material-ui/icons';
 
+import { StarOutlineRounded, StarRounded } from './icons';
 import { makeStyles } from './styles';
 
 // Theme independence

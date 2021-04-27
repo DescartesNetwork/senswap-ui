@@ -50,7 +50,7 @@ class ListComponent extends Component {
         <Typography variant="subtitle1">References</Typography>
       </Grid>
       <Grid item xs={12}>
-        <Link href="https://material-ui.com/components/list/">Material UI Grid System</Link>
+        <Link href="https://material-ui.com/components/lists/">Material UI Lists System</Link>
       </Grid>
     </Grid>
   }

@@ -19,6 +19,7 @@ import CardComponent from './card';
 import AvatarComponent from './avatar';
 import BadgeComponent from './badge';
 import ListComponent from './list';
+import IconsComponent from './icons';
 
 import styles from './styles';
 
@@ -49,6 +50,7 @@ class Components extends Component {
           <Route path='/components/badge' component={BadgeComponent} />
           <Route path='/components/avatar' component={AvatarComponent} />
           <Route path='/components/list' component={ListComponent} />
+          <Route path='/components/icons' component={IconsComponent} />
         </Switch>
       </Grid>
     </Grid>

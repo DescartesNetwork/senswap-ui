@@ -72,7 +72,7 @@ class MuiCard extends Component {
     function handleClickDeposit(e) {
       console.log('<<<====== click', e);
     }
-    function handleClickWithDraw(e) {
+    function handleClickWithdraw(e) {
       console.log('<<<====== click', e);
     }
 
@@ -114,7 +114,7 @@ class MuiCard extends Component {
             <CardBalance
               cardData={cardBalance}
               onClickDeposit={handleClickDeposit}
-              onClickWithDraw={handleClickWithDraw}
+              onClickWithdraw={handleClickWithdraw}
             />
           </Grid>
         </Grid>
