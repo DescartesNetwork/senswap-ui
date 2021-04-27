@@ -3,17 +3,17 @@ import { createMuiTheme } from '@material-ui/core/styles';
 const theme = createMuiTheme({
   palette: {
     type: 'dark',
-    primary: { main: '#ed423b' },
-    secondary: { main: '#1F2128' },
+    primary: { main: '#ff3122' },
+    secondary: { main: '#1f2128' },
     text: {
-      primary: '#FFFFFF',
+      primary: '#ffffff',
       secondary: '#808191',
-      hint: '#FFFFFF',
+      hint: '#ffffff',
       disabled: '#808191',
     },
     background: {
       default: '#161920',
-      paper: '#21232F'
+      paper: '#21232f'
     }
   },
   shape: {
