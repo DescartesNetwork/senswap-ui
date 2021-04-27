@@ -12,33 +12,28 @@ const List = forwardRef((props, ref) => {
   return <MuiList {...props} ref={ref} />
 });
 
-const ListItem = forwardRef((props, ref) => {
+export default List;
+
+export const ListItem = forwardRef((props, ref) => {
   return <MuiListItem {...props} ref={ref} />
 });
 
-const ListItemAvatar = forwardRef((props, ref) => {
+export const ListItemAvatar = forwardRef((props, ref) => {
   return <MuiListItemAvatar {...props} ref={ref} />
 });
 
-const ListItemIcon = forwardRef((props, ref) => {
+export const ListItemIcon = forwardRef((props, ref) => {
   return <MuiListItemIcon {...props} ref={ref} />
 });
 
-const ListItemSecondaryAction = forwardRef((props, ref) => {
+export const ListItemSecondaryAction = forwardRef((props, ref) => {
   return <MuiListItemSecondaryAction {...props} ref={ref} />
 });
 
-const ListItemText = forwardRef((props, ref) => {
+export const ListItemText = forwardRef((props, ref) => {
   return <MuiListItemText {...props} ref={ref} />
 });
 
-const ListSubheader = forwardRef((props, ref) => {
+export const ListSubheader = forwardRef((props, ref) => {
   return <MuiListSubheader {...props} ref={ref} />
 });
-
-
-export default List;
-export {
-  ListItem, ListItemAvatar, ListItemIcon,
-  ListItemSecondaryAction, ListItemText, ListSubheader
-}
