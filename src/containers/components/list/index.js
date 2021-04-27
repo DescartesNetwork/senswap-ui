@@ -8,10 +8,7 @@ import Grid from 'senswap-ui/grid';
 import Typography from 'senswap-ui/typography';
 import Drain from 'senswap-ui/drain';
 import Link from 'senswap-ui/link';
-import List from 'senswap-ui/list';
-import ListItem from 'senswap-ui/listItem';
-import ListItemIcon from 'senswap-ui/listItemIcon';
-import ListItemText from 'senswap-ui/listItemText';
+import List, { ListItem, ListItemIcon, ListItemText } from 'senswap-ui/list';
 
 import { InboxRounded, DraftsRounded } from 'senswap-ui/icons';
 
