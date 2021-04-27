@@ -94,7 +94,6 @@ function Form(props) {
             value={toValue}
             onChange={handleToSelect}
             renderValue={value => {
-              console.log(value, 'value');
               return renderOption(value)
             }}
           >

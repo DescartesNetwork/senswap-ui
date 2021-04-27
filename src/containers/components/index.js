@@ -17,7 +17,7 @@ import LogoComponent from './logo';
 import PaginationComponent from './pagination';
 import CardComponent from './card';
 import AvatarComponent from './avatar';
-import BadgeComponent from './badge';
+import ChipComponent from './chip';
 import ListComponent from './list';
 import DrawerComponent from './drawer';
 import TableComponent from './table';
@@ -49,7 +49,7 @@ class Components extends Component {
           <Route path='/components/logo' component={LogoComponent} />
           <Route path='/components/pagination' component={PaginationComponent} />
           <Route path='/components/card' component={CardComponent} />
-          <Route path='/components/badge' component={BadgeComponent} />
+          <Route path='/components/chip' component={ChipComponent} />
           <Route path='/components/avatar' component={AvatarComponent} />
           <Route path='/components/list' component={ListComponent} />
           <Route path='/components/drawer' component={DrawerComponent} />
