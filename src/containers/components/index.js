@@ -23,6 +23,7 @@ import DrawerComponent from './drawer';
 import TableComponent from './table';
 import FormComponent from './form';
 import TooltipComponent from './tooltip';
+import IconsComponent from './icons';
 
 import styles from './styles';
 
@@ -57,6 +58,7 @@ class Components extends Component {
           <Route path='/components/table' component={TableComponent} />
           <Route path='/components/form' component={FormComponent} />
           <Route path='/components/tooltip' component={TooltipComponent} />
+          <Route path='/components/icons' component={IconsComponent} />
         </Switch>
       </Grid>
     </Grid>

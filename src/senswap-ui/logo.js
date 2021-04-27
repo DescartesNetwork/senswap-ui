@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 import MuiAvatar from '@material-ui/core/Avatar';
 
-
 import { makeStyles } from './styles';
 
 // Theme dependence
@@ -38,11 +37,11 @@ const useStyles = makeStyles((theme) => ({
 
 function Logo(props) {
   const styleClasses = useStyles();
-  const { alt, src, variant, classes } = props;
+  const { alt, src, variant, logoSize } = props;
 
   return <MuiAvatar alt={alt} src={src}
     variant={variant}
-    className={classes ? styleClasses[classes] : styleClasses.default}
+    className={logoSize ? styleClasses[logoSize] : styleClasses.default}
   />
 }
 

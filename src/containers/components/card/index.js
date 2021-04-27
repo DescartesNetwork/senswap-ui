@@ -10,7 +10,7 @@ import Grid from 'senswap-ui/grid';
 import Typography from 'senswap-ui/typography';
 import Drain from 'senswap-ui/drain';
 
-import styles from './styles'
+import styles from './styles';
 
 class MuiCard extends Component {
   constructor() {
@@ -72,7 +72,7 @@ class MuiCard extends Component {
     function handleClickDeposit(e) {
       console.log('<<<====== click', e);
     }
-    function handleClickWithDraw(e) {
+    function handleClickWithdraw(e) {
       console.log('<<<====== click', e);
     }
 
@@ -114,7 +114,7 @@ class MuiCard extends Component {
             <CardBalance
               cardData={cardBalance}
               onClickDeposit={handleClickDeposit}
-              onClickWithDraw={handleClickWithDraw}
+              onClickWithdraw={handleClickWithdraw}
             />
           </Grid>
         </Grid>

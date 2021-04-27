@@ -3,13 +3,12 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router-dom';
 
-import Avatar from 'senswap-ui/avatar';
 import Icon from 'static/images/img-avatar.jpeg'
-
 import { withStyles } from 'senswap-ui/styles';
 import Grid from 'senswap-ui/grid';
 import Typography from 'senswap-ui/typography';
 import Drain from 'senswap-ui/drain';
+import Avatar from 'senswap-ui/avatar';
 
 import styles from './styles';
 

@@ -13,7 +13,7 @@ import useStyle from './styles';
 function CardBalance(props) {
   const classes = useStyle();
 
-  const { cardData, onClickDeposit, onClickWithDraw } = props;
+  const { cardData, onClickDeposit, onClickWithdraw } = props;
 
   const [isEyeOff, setEyeOff] = useState(false);
   const [isExpand, setExpand] = useState(false);
@@ -29,8 +29,8 @@ function CardBalance(props) {
   function handleDeposit() {
     onClickDeposit();
   }
-  function handleWithDraw() {
-    onClickWithDraw();
+  function handleWithdraw() {
+    onClickWithdraw();
   }
 
   return <Grid container spacing={0}>
@@ -69,7 +69,7 @@ function CardBalance(props) {
                 }
                 <Grid item xs={12} className={classes.buttonBalance}>
                   <Button onClick={ handleDeposit } variant="outlined">Deposit</Button>
-                  <Button onClick={ handleWithDraw } variant="outlined">WithDraw</Button>
+                  <Button onClick={ handleWithdraw } variant="outlined">Withdraw</Button>
                 </Grid>
               </Grid>
             </Grid>
@@ -83,7 +83,7 @@ function CardBalance(props) {
 CardBalance.propsType = {
   cardData: TypeProps.object,
   onClickDeposit: TypeProps.func,
-  onClickWithDraw: TypeProps.func
+  onClickWithdraw: TypeProps.func
 }
 
 CardBalance.defaultProps = {
@@ -95,7 +95,7 @@ CardBalance.defaultProps = {
     chip: 'BTC'
   },
   onClickDeposit: () => {},
-  onClickWithDraw: () => {}
+  onClickWithdraw: () => {}
 }
 
 export default CardBalance;
