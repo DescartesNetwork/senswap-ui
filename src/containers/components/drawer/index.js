@@ -8,46 +8,27 @@ import Grid from 'senswap-ui/grid';
 import Typography from 'senswap-ui/typography';
 import Drain from 'senswap-ui/drain';
 import Link from 'senswap-ui/link';
-import List, { ListItem, ListItemIcon, ListItemText } from 'senswap-ui/list';
-
-import { InboxRounded, DraftsRounded } from 'senswap-ui/icons';
 
 import styles from './styles';
 
 
-class ListComponent extends Component {
+class DrawerComponent extends Component {
 
   render() {
     // const { classes } = this.props;
 
-    return <Grid container>
+    return <Grid container spacing={2}>
       <Grid item xs={12}>
-        <Typography variant="h4">List</Typography>
+        <Typography variant="h4">Drawer</Typography>
       </Grid>
       <Grid item xs={12}>
         <Drain size={2} />
       </Grid>
       <Grid item xs={12}>
-        <List>
-          <ListItem button>
-            <ListItemIcon>
-              <InboxRounded />
-            </ListItemIcon>
-            <ListItemText primary="Inbox" />
-          </ListItem>
-          <ListItem button>
-            <ListItemIcon>
-              <DraftsRounded />
-            </ListItemIcon>
-            <ListItemText primary="Drafts" />
-          </ListItem>
-        </List>
-      </Grid>
-      <Grid item xs={12}>
         <Typography variant="subtitle1">References</Typography>
       </Grid>
       <Grid item xs={12}>
-        <Link href="https://material-ui.com/components/list/">Material UI Grid System</Link>
+        <Link href="https://material-ui.com/components/drawers/">Material UI Drawer component</Link>
       </Grid>
     </Grid>
   }
@@ -63,4 +44,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(withStyles(styles)(ListComponent)));
+)(withStyles(styles)(DrawerComponent)));
