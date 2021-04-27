@@ -91,34 +91,28 @@ class Sidebar extends Component {
         </Link>
       </Grid>
       <Grid item xs={12}>
+        <Link to="/components/badge" >
+          <Typography>Badge</Typography>
+        </Link>
+      </Grid>
+      <Grid item xs={12}>
         <Link to="/components/card" >
           <Typography>Card</Typography>
         </Link>
       </Grid>
       <Grid item xs={12}>
         <Link to="/components/list" >
-          <Typography>Latest activities</Typography>
+          <Typography>List</Typography>
         </Link>
       </Grid>
     </Grid>
   }
 
   render() {
-    const { classes } = this.props;
-
-    return <Grid container spacing={2}>
-      <Grid item xs={12}>
-        <Drawer
-          variant="permanent"
-          className={classes.sidebar}
-          classes={{
-            paper: classes.paper,
-          }}
-        >
-          {this.core()}
-        </Drawer>
-      </Grid>
-    </Grid>
+    // const { classes } = this.props;
+    return <Drawer>
+      {this.core()}
+    </Drawer>
   }
 }
 

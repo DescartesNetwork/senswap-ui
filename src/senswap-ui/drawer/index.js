@@ -7,19 +7,41 @@ import useStyles from './styles';
 
 function Drawer(props) {
   const classes = useStyles();
-  const { variant, classes: userClasses, ...others } = props;
-  const { paper: userPaper, ...otherClasses } = userClasses;
-  const defaultClasses = { paper: `${classes.paper} ${userPaper}`, ...otherClasses }
+  const {
+    variant, open,
+    className: userClassName,
+    classes: userClasses,
+    style: userStyle,
+    ...others
+  } = props;
 
-  return <MuiDrawer variant={variant} classes={defaultClasses} {...others} />
+  const combinedClassName = `${classes.sidebar} ${userClassName}`;
+  const { paper: userPaper, ...otherClasses } = userClasses;
+  const combinedClasses = { paper: `${classes.paper} ${userPaper}`, ...otherClasses }
+  const combinedStyle = { ...(userStyle || {}), ...(open ? {} : { width: 0 }) }
+
+  return <MuiDrawer
+    open={open}
+    variant={variant}
+    className={combinedClassName}
+    classes={combinedClasses}
+    style={combinedStyle}
+    {...others}
+  />
 }
 
 Drawer.defaultProps = {
+  open: true,
   variant: 'persistent',
+  className: '',
+  classes: {},
 }
 
 Drawer.propTypes = {
+  open: PropTypes.bool,
   variant: PropTypes.string,
+  className: PropTypes.string,
+  classes: PropTypes.object,
 }
 
 export default Drawer;

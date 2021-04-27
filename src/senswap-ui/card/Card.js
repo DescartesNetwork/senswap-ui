@@ -1,5 +1,5 @@
 import React from 'react';
-import Proptype from 'prop-types';
+import PropTypes from 'prop-types';
 import { Card, CardActionArea, CardContent } from '@material-ui/core';
 import { Link } from '@material-ui/core';
 
@@ -12,7 +12,7 @@ import useStyles from './styles';
 
 function MuiCard(props) {
   const classes = useStyles();
-  const { size, customSize, src, variant, subtitle, cardData, onClickCardDetails, button } = props;
+  const { size, src, variant, subtitle, cardData, onClickCardDetails, button } = props;
 
   function handleClick() {
     return onClickCardDetails(cardData);
@@ -23,14 +23,14 @@ function MuiCard(props) {
         <CardContent className={classes.cardContent}>
           <Grid container>
             <Grid item xs={12}>
-              <Avatar src={src} size={size} customSize={customSize} variant={variant} subtitle={subtitle} />
+              <Avatar src={src} size={size} variant={variant} subtitle={subtitle} />
             </Grid>
           </Grid>
         </CardContent>
         <CardContent className={classes.cardContent}>
           <Grid container spacing={0}>
             <Grid item xs={12}>
-              <Typography variant="h5">{cardData.earned}</Typography>
+              <Typography variant="h4">{cardData.earned}</Typography>
             </Grid>
             <Grid item xs={12}>
               <Typography>{cardData.description}</Typography>
@@ -42,20 +42,20 @@ function MuiCard(props) {
             <Grid item xs={12}>
               <Grid container spacing={0}>
                 <Grid item xs={6}>
-                  <Typography>APR:</Typography>
+                  <Typography variant="body2">APR:</Typography>
                 </Grid>
                 <Grid item xs={6}>
-                  <Typography align="right">{cardData.apr}</Typography>
+                  <Typography align="right" variant="body2">{cardData.apr}</Typography>
                 </Grid>
               </Grid>
             </Grid>
             <Grid item xs={12}>
               <Grid container spacing={0}>
                 <Grid item xs={6}>
-                  <Typography>Your stake:</Typography>
+                  <Typography variant="body2">Your stake:</Typography>
                 </Grid>
                 <Grid item xs={6}>
-                  <Typography align="right">{cardData.stake}</Typography>
+                  <Typography align="right" variant="body2">{cardData.stake}</Typography>
                 </Grid>
               </Grid>
             </Grid>
@@ -74,18 +74,17 @@ function MuiCard(props) {
 }
 
 MuiCard.propsType = {
-  size: Proptype.string,
-  customSize: Proptype.object,
-  src: Proptype.string,
-  variant: Proptype.string,
-  subtitle: Proptype.string,
-  cardData: Proptype.object,
-  onClickCardDetails: Proptype.func,
-  button: Proptype.string,
+  size: PropTypes.string,
+  src: PropTypes.string,
+  variant: PropTypes.string,
+  subtitle: PropTypes.string,
+  cardData: PropTypes.object,
+  onClickCardDetails: PropTypes.func,
+  button: PropTypes.string,
 }
+
 MuiCard.defaultProps = {
   size: 'medium',
-  customSize: {},
   src: '',
   variant: 'circular',
   subtitle: 'Header default',

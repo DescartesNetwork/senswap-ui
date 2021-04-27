@@ -1,12 +1,3 @@
 html {
   scroll-behavior: smooth;
-  background-color: #161920;
-}
-
-body {
-  font-family: "Inter";
-}
-
-*:focus {
-  outline: none !important;
 }

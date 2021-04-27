@@ -1,75 +1,59 @@
-import React from 'react'
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router-dom';
 
+import { withStyles } from 'senswap-ui/styles';
 import Grid from 'senswap-ui/grid';
 import Typography from 'senswap-ui/typography';
 import Drain from 'senswap-ui/drain';
-import ActivitiesList from 'senswap-ui/list/activitiesList'
-import { withStyles } from 'senswap-ui/styles';
+import Link from 'senswap-ui/link';
+import List from 'senswap-ui/list';
+import ListItem from 'senswap-ui/listItem';
+import ListItemIcon from 'senswap-ui/listItemIcon';
+import ListItemText from 'senswap-ui/listItemText';
+
+import { InboxRounded, DraftsRounded } from 'senswap-ui/icons';
 
 import styles from './styles';
 
-const ListComponent = () => {
-  // Assume that data is an JSON file
-  const data = [
-    {
-      id: 1,
-      action: "withdraw",
-      status: "complete",
-      amount: 969.06654889,
-      coinUnit: "USDT",
-    },
-    {
-      id: 2,
-      action: "deposit",
-      status: "complete",
-      amount: 0.206654889,
-      coinUnit: "BTC",
-    },
-    {
-      id: 3,
-      action: "deposit",
-      status: "inProgress",
-      amount: 0.531676712,
-      coinUnit: "BTC",
-    },
-    {
-      id: 4,
-      action: "deposit",
-      status: "complete",
-      amount: 0.69696969,
-      coinUnit: "ETH",
-    },
-    {
-      id: 5,
-      action: "withdraw",
-      status: "complete",
-      amount: 969.69696969,
-      coinUnit: "ETH",
-    },
-    {
-      id: 6,
-      action: "withdraw",
-      status: "complete",
-      amount: 969.69696969,
-      coinUnit: "ETH",
-    }
-  ];
 
-  return <Grid container spacing={2}>
-    <Grid item xs={12}>
-      <Typography variant="h4">Latest activities list</Typography>
+class ListComponent extends Component {
+
+  render() {
+    // const { classes } = this.props;
+
+    return <Grid container>
+      <Grid item xs={12}>
+        <Typography variant="h4">List</Typography>
+      </Grid>
+      <Grid item xs={12}>
+        <Drain size={2} />
+      </Grid>
+      <Grid item xs={12}>
+        <List>
+          <ListItem button>
+            <ListItemIcon>
+              <InboxRounded />
+            </ListItemIcon>
+            <ListItemText primary="Inbox" />
+          </ListItem>
+          <ListItem button>
+            <ListItemIcon>
+              <DraftsRounded />
+            </ListItemIcon>
+            <ListItemText primary="Drafts" />
+          </ListItem>
+        </List>
+      </Grid>
+      <Grid item xs={12}>
+        <Typography variant="subtitle1">References</Typography>
+      </Grid>
+      <Grid item xs={12}>
+        <Link href="https://material-ui.com/components/list/">Material UI Grid System</Link>
+      </Grid>
     </Grid>
-    <Grid item xs={12}>
-      <Drain size={2} />
-    </Grid>
-    <Grid item xs={12}>
-      <Typography variant="subtitle1">Latest Activities</Typography>
-    </Grid>
-    <ActivitiesList data={data} />
-  </Grid>
+  }
 }
 
 const mapStateToProps = state => ({

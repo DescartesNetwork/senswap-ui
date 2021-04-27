@@ -43,17 +43,6 @@ class AvatarComponent extends Component {
           variant: 'circular',
           src: '',
         },
-        {
-          size: '',
-          label: 'Custom size avatar',
-          variant: 'circular',
-          src: '',
-          customSize: {
-            width: 80,
-            height: 80,
-            type: 'px',
-          }
-        },
       ],
       subtitle: 'Subtitle'
     }
@@ -69,7 +58,7 @@ class AvatarComponent extends Component {
         <Grid item xs={12}>
           <Grid container>
             <Grid item>
-              <Avatar size={e.size} variant={e.variant} src={e.src ? e.src : Icon} customSize={e.customSize ? e.customSize : null} />
+              <Avatar size={e.size} variant={e.variant} src={e.src ? e.src : Icon} />
             </Grid>
           </Grid>
         </Grid>
