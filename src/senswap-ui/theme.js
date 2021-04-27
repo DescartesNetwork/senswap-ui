@@ -32,7 +32,7 @@ const theme = createMuiTheme({
     subtitle2: { fontFamily: 'Poppins', fontWeight: 500, fontSize: 12, textTransform: 'None' },
     body1: { fontFamily: 'Inter', fontWeight: 400, fontSize: 14, textTransform: 'None' },
     body2: { fontFamily: 'Inter', fontWeight: 300, fontSize: 12, textTransform: 'None' },
-    caption: { fontFamily: 'Inter', fontWeight: 300, fontSize: 9, textTransform: 'None' },
+    caption: { fontFamily: 'Inter', fontWeight: 300, fontSize: 10, textTransform: 'None' },
   },
 });
 

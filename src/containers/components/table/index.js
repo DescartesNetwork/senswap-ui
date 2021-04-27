@@ -45,11 +45,21 @@ class TableComponent extends Component {
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell>Dessert (100g serving)</TableCell>
-                <TableCell align="right">Calories</TableCell>
-                <TableCell align="right">Fat&nbsp;(g)</TableCell>
-                <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-                <TableCell align="right">Protein&nbsp;(g)</TableCell>
+                <TableCell>
+                  <Typography variant="caption">Dessert (100g serving)</Typography>
+                </TableCell>
+                <TableCell align="right">
+                  <Typography variant="caption">Calories</Typography>
+                </TableCell>
+                <TableCell align="right">
+                  <Typography variant="caption">Fat&nbsp;(g)</Typography>
+                </TableCell>
+                <TableCell align="right">
+                  <Typography variant="caption">Carbs&nbsp;(g)</Typography>
+                </TableCell>
+                <TableCell align="right">
+                  <Typography variant="caption">Protein&nbsp;(g)</Typography>
+                </TableCell>
               </TableRow>
             </TableHead>
             <TableBody>

@@ -26,10 +26,13 @@ export default makeStyles(theme => ({
     },
   },
   cell: {
-    // borderRadius: theme.shape.borderRadius,
+    paddingTop: theme.spacing(3),
+    paddingBottom: theme.spacing(3),
     border: 'none'
   },
   cellHead: {
+    paddingTop: theme.spacing(1),
+    paddingBottom: theme.spacing(1),
     backgroundColor: theme.palette.background.paper,
     border: 'none'
   },
