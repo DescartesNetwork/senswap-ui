@@ -1,8 +1,6 @@
 import { makeStyles } from '@material-ui/styles';
 
 export default makeStyles(theme => ({
-  avatar: {
-  },
   xsmall: {
     width: '25px',
     height: '25px',

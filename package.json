@@ -1,8 +1,8 @@
 {
   "name": "senswap-ui",
-  "version": "0.2.2",
+  "version": "0.2.17",
+  "main": "index.js",
   "description": "SenSwap UI maintains the consistency in theme, components and styles for all SenSwap's products",
-  "main": "dist",
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
@@ -30,9 +30,7 @@
     "build": "REACT_APP_ENV=development react-scripts build",
     "stag": "REACT_APP_ENV=staging react-scripts build",
     "serve": "serve -s build -l 80",
-    "prod": "npm run prod-js",
-    "prod-js": "npm run clean && babel src/senswap-ui -d dist --copy-files",
-    "prod-static": "",
+    "prod": "npm run clean && babel src/senswap-ui -d dist --copy-files",
     "clean": "rm -rf ./dist",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

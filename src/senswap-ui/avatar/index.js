@@ -1,57 +1,43 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import MuiAvatar from '@material-ui/core/Avatar';
-import Proptype from 'prop-types';
-
+import PropTypes from 'prop-types';
 
 import Grid from 'senswap-ui/grid';
+import Typography from 'senswap-ui/typography';
 
 import useStyles from './style';
-import { Typography } from '@material-ui/core';
 
-function Avatar(props) {
+
+const Avatar = forwardRef((props, ref) => {
   const classes = useStyles();
-  const { size, variant, src, customSize, subtitle } = props;
+  const { size, variant, src, subtitle, className, ...others } = props;
 
-  function CustomSize(size) {
-    if (size) {
-      return {
-        width: `${size.width}${size.type ? size.type : 'px'}`,
-        height: `${size.height}${size.type ? size.type : 'px'}`,
-      }
-    }
-  }
-
-  return <Grid container direction="column" spacing={2}>
-    <Grid item>
-      <Grid container spacing={1} alignItems="center">
-        <Grid className={classes.avatar} item>
-          <MuiAvatar
-            variant={variant}
-            src={src}
-            className={classes[size]}
-            style={CustomSize(customSize)}
-          />
-        </Grid>
-        {subtitle ?
-          <Grid item>
-            <Typography>{subtitle}</Typography>
-          </Grid>
-          : null}
-      </Grid>
+  return <Grid container spacing={1} alignItems="center">
+    <Grid className={classes.avatar} item>
+      <MuiAvatar
+        variant={variant}
+        src={src}
+        className={`${classes[size]} ${className}`}
+        {...others}
+        ref={ref}
+      />
     </Grid>
+    {subtitle ? <Grid item>
+      <Typography>{subtitle}</Typography>
+    </Grid> : null}
   </Grid>
-}
+})
 
-Avatar.propTypes = {
-  size: Proptype.string,
-  variant: Proptype.string,
-  src: Proptype.string,
-  customSize: Proptype.object,
-}
 Avatar.defaultProps = {
   size: 'small',
   variant: 'circular',
   src: null,
-  customSize: {},
 }
+
+Avatar.propTypes = {
+  size: PropTypes.string,
+  variant: PropTypes.string,
+  src: PropTypes.string,
+}
+
 export default Avatar;
