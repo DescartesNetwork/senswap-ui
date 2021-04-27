@@ -8,7 +8,6 @@ import Link from 'senswap-ui/link';
 import Drain from 'senswap-ui/drain';
 import Typography from 'senswap-ui/typography';
 import { withStyles } from 'senswap-ui/styles';
-import { DepositIcon, WithdrawIcon } from 'senswap-ui/supplementIcons';
 
 import styles from './styles';
 
@@ -18,27 +17,10 @@ class IconsComponent extends Component {
   render() {
     return <Grid container spacing={2}>
       <Grid item xs={12}>
-        <Typography variant="h4">Icons</Typography>
+        <Typography variant="subtitle1">Material Icons</Typography>
       </Grid>
       <Grid item xs={12}>
         <Drain size={2} />
-      </Grid>
-      <Grid item xs={12}>
-        <Grid container spacing={2}>
-          <Grid item>
-            <Typography variant="subtitle2">Deposit</Typography>
-            <Drain size={1} />
-            <DepositIcon />
-          </Grid>
-          <Grid item>
-            <Typography variant="subtitle2">Withdraw</Typography>
-            <Drain size={1} />
-            <WithdrawIcon style={{ fontSize: 48 }} />
-          </Grid>
-        </Grid>
-      </Grid>
-      <Grid item xs={12}>
-        <Typography variant="subtitle1">Material Icons</Typography>
       </Grid>
       <Grid item xs={12}>
         <Link href="https://material-ui.com/components/material-icons/">Material Icons default set</Link>
