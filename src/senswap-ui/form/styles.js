@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles(theme =>({
   form: {
-    backgroundColor: '#21232F',
+    backgroundColor: theme.palette.background.paper,
     padding: '63px 35px',
     '&.MuiGrid-item': {
       padding: '63px 35px',
@@ -14,7 +14,7 @@ export default makeStyles(theme =>({
   inputForm: {
     padding: '10px 0 10px 8px',
     borderRadius: '4px',
-    backgroundColor: '#2A2D3A',
+    backgroundColor: theme.palette.background.secondary,
     marginBottom: '6px',
     '& .MuiInput-underline': {
       '&::before, &::after': {
@@ -39,7 +39,7 @@ export default makeStyles(theme =>({
         position: 'absolute',
         width: '1px',
         height: '80%',
-        backgroundColor: '#6D6E75',
+        backgroundColor: theme.palette.background.secondaryGray,
         top: '0',
         left: '10px',
         bottom: '0',
@@ -50,7 +50,7 @@ export default makeStyles(theme =>({
         fontSize: '14px',
         fontWeight: '300',
         lineHeight: '24px',
-        color: '#fff',
+        color: theme.palette.text.primary
       }
     }
   },
@@ -85,7 +85,7 @@ export default makeStyles(theme =>({
         fontSize: '16px',
         fontWeight: '700',
         lineHeight: '20px',
-        color: '#fff',
+        color: theme.palette.text.primary,
       }
     }
   },

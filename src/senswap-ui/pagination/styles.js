@@ -17,21 +17,21 @@ export default makeStyles(theme => ({
         '& button': {
           width: '48px',
           height: '48px',
-          color: '#fff',
+          color: theme.palette.text.primary,
           borderRadius: '12px',
           border: '.5px solid',
-          borderColor: '#e4e4e41a !important',
+          borderColor: theme.palette.border.default,
           fontWeight: 'bold',
           fontSize: '14px',
           lineHeight: '24px',
           backgroundColor: 'transparent',
           margin: '0',
           '&.Mui-selected, &.selected': {
-            backgroundColor: '#FF3122',
+            backgroundColor: theme.palette.background.primary,
             fontWeight: '500',
           },
           '&:hover': {
-            backgroundColor: '#ff312280 !important'
+            backgroundColor: theme.palette.background.hover
           },
           '&.disabled': {
             display: 'none',

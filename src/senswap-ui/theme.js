@@ -13,7 +13,15 @@ const theme = createMuiTheme({
     },
     background: {
       default: '#161920',
-      paper: '#21232f'
+      paper: '#21232f',
+      primary: '#ff3122',
+      hover: '#ff312280',
+      secondary: '#2B2D3A',
+      secondaryDark: '#161920',
+      secondaryGray: '#6D6E75',
+    },
+    border: {
+      default: '#e4e4e41a',
     }
   },
   shape: {

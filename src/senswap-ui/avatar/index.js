@@ -9,14 +9,19 @@ import useStyles from './style';
 
 const Avatar = forwardRef((props, ref) => {
   const classes = useStyles();
-  const { size, variant, src, className, ...others } = props;
-
+  const { sizes, variant, src, classes: userClasses,className: userClassName,style: userStyle, ...others } = props;
+  let avatarSize = {};
+  avatarSize[variant] = classes[sizes];
+  const combinedClasses = {...avatarSize, ...userClasses};
+  const combinedStyle = {...userStyle};
   return <Grid container spacing={1} alignItems="center">
-    <Grid className={classes.avatar} item>
+    <Grid item>
       <MuiAvatar
         variant={variant}
         src={src}
-        className={`${classes[size]} ${className}`}
+        className={userClassName}
+        classes={combinedClasses}
+        style={combinedStyle}
         {...others}
         ref={ref}
       />
@@ -25,15 +30,21 @@ const Avatar = forwardRef((props, ref) => {
 })
 
 Avatar.defaultProps = {
-  size: 'small',
+  sizes: 'xsmall',
   variant: 'circular',
   src: null,
+  classes: {},
+  className: '',
+  style: {},
 }
 
 Avatar.propTypes = {
-  size: PropTypes.string,
+  sizes: PropTypes.string,
   variant: PropTypes.string,
   src: PropTypes.string,
+  classes: PropTypes.object,
+  className: PropTypes.string,
+  style: PropTypes.object
 }
 
 export default Avatar;
