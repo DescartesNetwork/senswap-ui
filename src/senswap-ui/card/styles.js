@@ -15,7 +15,7 @@ export default makeStyles(theme => ({
   },
   cardAction: {
     padding: `${theme.spacing(1.5)}px ${theme.spacing(3)}px`,
-    background: theme.palette.background.secondary,
+    backgroundColor: theme.palette.background.secondary,
     '&:hover $activeAction': {
       bottom: 0,
     }
