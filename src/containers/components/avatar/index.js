@@ -57,7 +57,7 @@ class AvatarComponent extends Component {
         <Grid item xs={12}>
           <Grid container>
             <Grid item>
-              <Avatar size={e.size} variant={e.variant} src={e.src ? e.src : Icon} />
+              <Avatar sizes={e.size} variant={e.variant} src={e.src ? e.src : Icon} />
             </Grid>
           </Grid>
         </Grid>

@@ -6,13 +6,15 @@ export default makeStyles(theme => ({
     width: '100%',
     height: '100%',
     borderRadius: '24px',
-    backgroundColor: '#21232F',
+    backgroundColor: theme.palette.background.paper,
     transition: '.3s linear',
   },
   cardContent: {
     padding: '24px',
     '&:first-child': {
-      borderBottom: '1px solid #e4e4e41a',
+      borderBottom: '1px solid',
+      borderColor: theme.palette.border.default
+
     },
     '&:nth-child(2)': {
       padding: '20px 24px',
@@ -32,7 +34,7 @@ export default makeStyles(theme => ({
   },
   cardAction: {
     padding: '8px 24px',
-    backgroundColor: '#2B2D3A',
+    backgroundColor: theme.palette.background.secondary,
     '&:hover $focusHighlight': {
       opacity: 0,
       // backgroundColor: "red",
@@ -91,7 +93,7 @@ export default makeStyles(theme => ({
       minWidth: '24px',
       width: '24px',
       height: '24px',
-      backgroundColor: '#161920',
+      backgroundColor: theme.palette.background.secondaryDark,
       '&:not(:first-child)': {
         marginLeft: '5px',
       },
