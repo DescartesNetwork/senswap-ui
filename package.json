@@ -26,9 +26,9 @@
     "web-vitals": "^1.1.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "stag": "react-scripts build",
+    "start": "REACT_APP_ENV=development react-scripts start",
+    "build": "REACT_APP_ENV=development react-scripts build",
+    "stag": "REACT_APP_ENV=staging react-scripts build",
     "serve": "serve -s build -l 80",
     "prod": "npm run clean && babel src/senswap-ui -d dist --copy-files",
     "clean": "rm -rf ./dist",
