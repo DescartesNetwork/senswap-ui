@@ -9,7 +9,7 @@ import Avatar from 'senswap-ui/avatar';
 
 import useStyles from './styles';
 
-function MuiCard(props) {
+function CardPool(props) {
   const classes = useStyles();
   const { size, src, variant, subtitle, cardData, onClickCardDetails, button } = props;
 
@@ -79,7 +79,7 @@ function MuiCard(props) {
   </Grid>
 }
 
-MuiCard.propsType = {
+CardPool.propsType = {
   size: PropTypes.string,
   src: PropTypes.string,
   variant: PropTypes.string,
@@ -89,7 +89,7 @@ MuiCard.propsType = {
   button: PropTypes.string,
 }
 
-MuiCard.defaultProps = {
+CardPool.defaultProps = {
   size: 'medium',
   src: '',
   variant: 'circular',
@@ -104,4 +104,4 @@ MuiCard.defaultProps = {
   onClickCardDetails: (e) => { },
 }
 
-export default MuiCard;
+export default CardPool;

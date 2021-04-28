@@ -13,7 +13,7 @@ import Link from 'senswap-ui/link';
 import styles from './styles';
 
 
-class BrandComponent extends Component {
+class ChipComponent extends Component {
 
   render() {
 
@@ -35,16 +35,16 @@ class BrandComponent extends Component {
         <Typography variant="subtitle1">Custom color chip</Typography>
       </Grid>
       <Grid item xs={12}>
-        <Chip cuscolor="#FF9F38" label="#FF9F38"/>
+        <Chip cuscolor="#FF9F38" label="#FF9F38" />
       </Grid>
       <Grid item xs={12}>
         <Chip cuscolor="orange" label="orange" />
       </Grid>
       <Grid item xs={12}>
-        <Chip cuscolor="blue" label="blue"/>
+        <Chip cuscolor="blue" label="blue" />
       </Grid>
       <Grid item xs={12}>
-        <Chip cuscolor="green" label="green"/>
+        <Chip cuscolor="green" label="green" />
       </Grid>
     </Grid>
   }
@@ -60,4 +60,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(withStyles(styles)(BrandComponent)));
+)(withStyles(styles)(ChipComponent)));

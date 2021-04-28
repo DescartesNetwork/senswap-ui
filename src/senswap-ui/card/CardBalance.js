@@ -35,7 +35,7 @@ function CardBalance(props) {
 
   return <Grid container spacing={0}>
     <Grid item xs={12}>
-      <Card className={_clsx(classes.card,{[classes.cardExpand]: isExpand})}>
+      <Card className={_clsx(classes.card, { [classes.cardExpand]: isExpand })}>
         <CardContent className={classes.cardBalanceContent}>
           <Grid container>
             <Grid item xs={12} align="right" className={classes.headerButton}>
@@ -43,18 +43,18 @@ function CardBalance(props) {
                 <Button onClick={handleShowBalance}>
                   {isEyeOff ? <VisibilityOff /> : <Visibility />}
                 </Button>
-              : null}
+                : null}
               <Button onClick={handleExpandCard}>
-                <CallReceived className={_clsx(classes.arrowIcon,{[classes.rotate]: isExpand})}/>
+                <CallReceived className={_clsx(classes.arrowIcon, { [classes.rotate]: isExpand })} />
               </Button>
             </Grid>
             <Grid item xs={12}>
               <Grid container>
                 <Grid item xs={12} align="center">
-                  <Typography variant="subtitle1">{ cardData.title }</Typography>
+                  <Typography variant="subtitle1">{cardData.title}</Typography>
                 </Grid>
                 <Grid item xs={12} align="center" className={classes.chip}>
-                  <Chip cuscolor={cardData.color} label={ cardData.chip } />
+                  <Chip cuscolor={cardData.color} label={cardData.chip} />
                 </Grid>
                 {isEyeOff ?
                   <Grid item xs={12} align="center">
@@ -63,13 +63,13 @@ function CardBalance(props) {
                   </Grid>
                   :
                   <Grid item xs={12} align="center">
-                    <Typography variant="h5">{ cardData.amount }</Typography>
-                    <Typography variant="subtitle2">{ cardData.exchange }</Typography>
+                    <Typography variant="h5">{cardData.amount}</Typography>
+                    <Typography variant="subtitle2">{cardData.exchange}</Typography>
                   </Grid>
                 }
                 <Grid item xs={12} className={classes.buttonBalance}>
-                  <Button onClick={ handleDeposit } variant="outlined">Deposit</Button>
-                  <Button onClick={ handleWithdraw } variant="outlined">Withdraw</Button>
+                  <Button onClick={handleDeposit} variant="outlined">Deposit</Button>
+                  <Button onClick={handleWithdraw} variant="outlined">Withdraw</Button>
                 </Grid>
               </Grid>
             </Grid>
@@ -94,8 +94,8 @@ CardBalance.defaultProps = {
     exchange: '3,700.96 USD',
     chip: 'BTC'
   },
-  onClickDeposit: () => {},
-  onClickWithdraw: () => {}
+  onClickDeposit: () => { },
+  onClickWithdraw: () => { }
 }
 
 export default CardBalance;

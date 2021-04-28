@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router-dom';
 
-import { Card, CardBalance } from 'senswap-ui/card';
+import { CardPool, CardBalance } from 'senswap-ui/card';
 
 import { withStyles } from 'senswap-ui/styles';
 import Grid from 'senswap-ui/grid';
@@ -12,7 +12,7 @@ import Drain from 'senswap-ui/drain';
 
 import styles from './styles';
 
-class MuiCard extends Component {
+class CardComponent extends Component {
   constructor() {
     super();
     this.state = {
@@ -78,7 +78,7 @@ class MuiCard extends Component {
 
     var cardElements = cards.map((e, idx) => {
       return <Grid item xs={3} key={idx}>
-        <Card
+        <CardPool
           cardData={e}
           subtitle={e.subtitle}
           button={button}
@@ -133,4 +133,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(withStyles(styles)(MuiCard)));
+)(withStyles(styles)(CardComponent)));

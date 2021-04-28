@@ -1,4 +1,4 @@
-import Card from 'senswap-ui/card/Card';
+import CardPool from 'senswap-ui/card/CardPool';
 import CardBalance from 'senswap-ui/card/CardBalance';
 
-export {Card, CardBalance }
+export { CardPool, CardBalance }
