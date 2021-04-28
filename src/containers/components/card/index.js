@@ -17,43 +17,6 @@ class CardComponent extends Component {
     super();
     this.state = {
       button: 'See details',
-      cards: [
-        {
-          subtitle: 'Bitcoin',
-          earned: '1.21425',
-          apr: '127.90%',
-          stake: '0.0000',
-          description: 'Bitcoin earned',
-        },
-        {
-          subtitle: 'ETH',
-          earned: '1.21425',
-          apr: '127.90%',
-          stake: '0.0000',
-          description: 'Etherium earned',
-        },
-        {
-          subtitle: 'QTU',
-          earned: '1.21425',
-          apr: '127.90%',
-          stake: '0.0000',
-          description: 'QTum earned',
-        },
-        {
-          subtitle: 'ADA',
-          earned: '1.21425',
-          apr: '127.90%',
-          stake: '0.0000',
-          description: 'ADA shelly earned',
-        },
-        {
-          subtitle: 'ATOM',
-          earned: '1.21425',
-          apr: '127.90%',
-          stake: '0.0000',
-          description: 'ATOM earned',
-        }
-      ],
       cardBalance: {
         title: 'Total Balance',
         color: '#FF9F38',
@@ -64,11 +27,8 @@ class CardComponent extends Component {
     }
   }
   render() {
-    const { cards, button, cardBalance } = this.state;
+    const { cardBalance } = this.state;
 
-    function handleClickCard(e) {
-      console.log(e)
-    }
     function handleClickDeposit(e) {
       console.log('<<<====== click', e);
     }
@@ -76,29 +36,33 @@ class CardComponent extends Component {
       console.log('<<<====== click', e);
     }
 
-    var cardElements = cards.map((e, idx) => {
-      return <Grid item xs={3} key={idx}>
-        <CardPool
-          cardData={e}
-          subtitle={e.subtitle}
-          button={button}
-          onClickCardDetails={handleClickCard}
-        />
-      </Grid>
-    });
-
     return <Grid container direction="column">
-      <Typography variant="h4">Card</Typography>
-      <Drain />
-      <Grid>
+      <Grid item xs={12}>
+        <Typography variant="h4">Card</Typography>
+      </Grid>
+      <Grid item xs={12}>
+        <Drain />
+      </Grid>
+      <Grid item xs={12}>
         <Typography>Card details</Typography>
       </Grid>
       <Grid item xs={12}>
-        <Drain size={2} />
+        <Drain size={1} />
       </Grid>
       <Grid item xs={12}>
         <Grid container>
-          {cardElements}
+          {[1, 2, 3, 4].map(i => <Grid item xs={12} md={6} lg={4} key={i}>
+            <CardPool
+              name="Solana"
+              symbol="SOL"
+              icon="https://assets.coingecko.com/coins/images/4128/large/coinmarketcap-solana-200.png?1616489452"
+              earning={1391.03}
+              apr={120.1}
+              stake={500}
+              onClick={() => console.log('Click CardPool')}
+            />
+          </Grid>
+          )}
         </Grid>
       </Grid>
       <Grid item xs={12}>
@@ -108,9 +72,11 @@ class CardComponent extends Component {
         <Typography>Card balance</Typography>
       </Grid>
       <Grid item xs={12}>
-        <Drain size={2} />
+        <Drain size={1} />
+      </Grid>
+      <Grid item xs={12}>
         <Grid container>
-          <Grid item xs={3}>
+          <Grid item xs={12} md={6} lg={4}>
             <CardBalance
               cardData={cardBalance}
               onClickDeposit={handleClickDeposit}

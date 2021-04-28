@@ -1,82 +1,40 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-
 export default makeStyles(theme => ({
+  noWrap: {
+    flexWrap: 'noWrap',
+  },
+  stretch: {
+    flex: '1 1 auto',
+  },
   card: {
-    width: '100%',
-    height: '100%',
-    borderRadius: '24px',
-    backgroundColor: theme.palette.background.paper,
-    transition: '.3s linear',
+    borderRadius: theme.shape.borderRadius * 2,
   },
   cardContent: {
-    padding: '24px',
-    '&:first-child': {
-      borderBottom: '1px solid',
-      borderColor: theme.palette.border.default
-
-    },
-    '&:nth-child(2)': {
-      padding: '20px 24px',
-    },
-    '& h5': {
-      fontSize: '36px',
-      fontWeight: '600',
-      lineHeight: '36px',
-      marginBottom: '6px',
-    },
-    '& p': {
-      fontSize: '12px',
-      fontWeight: '400',
-      lineHeight: '12px',
-      marginBottom: '0',
-    }
+    padding: theme.spacing(3),
   },
   cardAction: {
-    padding: '8px 24px',
+    padding: `${theme.spacing(1.5)}px ${theme.spacing(3)}px`,
     backgroundColor: theme.palette.background.secondary,
-    '&:hover $focusHighlight': {
-      opacity: 0,
-      // backgroundColor: "red",
-    },
-    '&:hover $buttonDetails': {
-      bottom: '0',
-      transition: '.15s linear',
+    '&:hover $activeAction': {
+      bottom: 0,
     }
   },
-  focusHighlight: {},
-  buttonDetails: {
-    display: 'block',
+  activeAction: {
     position: 'absolute',
     width: '100%',
     height: '100%',
-    left: '0',
+    left: 0,
     bottom: '-100%',
-    backgroundColor: 'red',
-    transition: '.1s linear',
-    '& *:not(p)': {
-      width: '100%',
-      height: '100%',
+    backgroundColor: theme.palette.primary.main,
+    transition: theme.transitions.create(),
+    '& > *:first-child': {
+      height: `calc(100% + ${theme.spacing(2)}px)`,
     },
-    '& a': {
-      color: '#fff',
-      textDecoration: 'unset !important',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      '& p': {
-        margin: '0',
-        fontSize: '14px',
-        fontWeight: '700',
-        lineHeight: '18px',
-      }
-    }
   },
   cardExpand: {
     transition: '.2s linear',
-    // width: '56px',
     height: '56px',
-    // borderRadius: '56px',
     overflow: 'hidden'
   },
   arrowIcon: {
@@ -145,12 +103,4 @@ export default makeStyles(theme => ({
       textTransform: 'unset'
     }
   },
-  title: {
-    paddingLeft: '12px',
-    '& p': {
-      fontSize: '18px',
-      fontWeight: '500',
-      lineHeight: '24px',
-    }
-  }
 }));
