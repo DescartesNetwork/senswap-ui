@@ -30,7 +30,6 @@ class CarouselComponent extends Component {
           return {
             title: `About Senswap Pools ${e}`,
             description: 'To celebrate our new multi-chain deposit and withdrawal support for Bitcoin on TRON (BTCTRON), we’re beginning a 30-day net deposit…',
-            onClick: 'func - btn',
             src: ''
           }
         })} />
@@ -46,11 +45,10 @@ class CarouselComponent extends Component {
           return {
             title: `About Senswap Pools ${e}`,
             subtitle: 'Unlock wallet',
-            onClick: 'func - btn',
             button: 'Connect Wallet',
             src: ''
           }
-        })} />
+        })} handleButtonClick={e => console.log('click button')}/>
       </Grid>
     </Grid>
   }

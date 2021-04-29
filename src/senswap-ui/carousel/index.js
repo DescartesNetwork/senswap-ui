@@ -8,7 +8,7 @@ import useStyles from './styles';
 
 function Carousel(props) {
   const classes = useStyles();
-  const { classes: userStyle, data, enableArrowButton, ...others } = props;
+  const { classes: userStyle, data, enableArrowButton, handleButtonClick, ...others } = props;
   const slidesLength = data.length;
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -45,6 +45,10 @@ function Carousel(props) {
     setActiveIndex(index);
   }
 
+  function handleButton() {
+    handleButtonClick();
+  }
+
   return <Grid container spacing={0}>
     <Grid item {...others} className={classes.carousel} xs={12} sm={12} lg={12}>
       <Grid container className="carousel" spacing={0}>
@@ -58,7 +62,7 @@ function Carousel(props) {
               index={index}
               activeIndex={activeIndex}
               slide={slide}
-              onButtonClick={e => console.log(e)}
+              onButtonClick={handleButton}
             />
           )}
         </Grid>
@@ -86,10 +90,12 @@ function Carousel(props) {
 Carousel.propsType = {
   data: PropType.array,
   enableArrowButton: PropType.bool,
+  handleButtonClick: PropType.func,
 }
 Carousel.defaultProps = {
   data: [],
-  enableArrowButton: false
+  enableArrowButton: false,
+  handleButtonClick: () => {},
 }
 
 export default Carousel;
