@@ -19,6 +19,7 @@ const theme = createMuiTheme({
       secondary: '#2B2D3A',
       secondaryDark: '#161920',
       secondaryGray: '#6D6E75',
+      secondaryLight: '#ffffff',
     },
     border: {
       default: '#e4e4e41a',

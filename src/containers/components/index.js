@@ -24,6 +24,7 @@ import TableComponent from './table';
 import FormComponent from './form';
 import TooltipComponent from './tooltip';
 import IconsComponent from './icons';
+import CarouselComponent from './carousel';
 
 import styles from './styles';
 
@@ -59,6 +60,7 @@ class Components extends Component {
           <Route path='/components/form' component={FormComponent} />
           <Route path='/components/tooltip' component={TooltipComponent} />
           <Route path='/components/icons' component={IconsComponent} />
+          <Route path='/components/carousel' component={CarouselComponent} />
         </Switch>
       </Grid>
     </Grid>
