@@ -51,15 +51,21 @@ class CardComponent extends Component {
       </Grid>
       <Grid item xs={12}>
         <Grid container>
-          {[1, 2, 3, 4].map(i => <Grid item xs={12} md={6} lg={4} key={i}>
+          {[1, 2, 3].map(i => <Grid item xs={12} md={6} lg={4} key={i}>
             <CardPool
-              name="Solana"
-              symbol="SOL"
-              icon="https://assets.coingecko.com/coins/images/4128/large/coinmarketcap-solana-200.png?1616489452"
+              symbols={['BTC', 'ETH', 'SOL']}
+              icons={[
+                'https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579',
+                'https://assets.coingecko.com/coins/images/4128/large/coinmarketcap-solana-200.png',
+                'https://assets.coingecko.com/coins/images/279/large/ethereum.png?1595348880',
+              ]}
+              volume={1234567890}
               earning={1391.03}
               apr={120.1}
               stake={500}
-              onClick={() => console.log('Click CardPool')}
+              onConnect={i === 1 ? () => console.log('onConnect') : null}
+              onDeposit={i === 2 || i === 3 ? () => console.log('onDeposit') : null}
+              onWithdraw={i === 3 ? () => console.log('onWithdraw') : null}
             />
           </Grid>
           )}

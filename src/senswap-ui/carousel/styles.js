@@ -60,7 +60,7 @@ export default makeStyles(theme => ({
       cursor: 'pointer',
       opacity: '.75',
       transform: 'translateY(-50%)',
-      transition: 'opacity .15s cubic-bezier(.4, 0, 1, 1)',
+      transition: theme.transitions.create(),
 
       '&:focus': {
         outline: '0',
@@ -86,7 +86,7 @@ export default makeStyles(theme => ({
       bottom: '32px',
       '& li': {
         '&:nth-of-type(n + 2)': {
-          marginLeft: `${theme.spacing(1) / 2}px`,
+          marginLeft: `${theme.spacing(0.5)}px`,
         }
       }
     },
@@ -99,7 +99,7 @@ export default makeStyles(theme => ({
       background: theme.palette.background.secondaryLight,
       cursor: 'pointer',
       opacity: '.15',
-      transition: 'opacity .15s cubic-bezier(.4, 0, 1, 1)',
+      transition: theme.transitions.create(),
 
       '&:hover': {
         opacity: '.5',

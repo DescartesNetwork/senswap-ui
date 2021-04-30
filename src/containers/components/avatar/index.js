@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router-dom';
 
-import Icon from 'static/images/img-avatar.jpeg'
 import { withStyles } from 'senswap-ui/styles';
 import Grid from 'senswap-ui/grid';
 import Typography from 'senswap-ui/typography';
 import Drain from 'senswap-ui/drain';
-import Avatar from 'senswap-ui/avatar';
+import Avatar, { AvatarGroup } from 'senswap-ui/avatar';
 
 import styles from './styles';
+import ICON from 'static/images/img-avatar.jpeg';
 
 
 class AvatarComponent extends Component {
@@ -57,7 +57,7 @@ class AvatarComponent extends Component {
         <Grid item xs={12}>
           <Grid container>
             <Grid item>
-              <Avatar sizes={e.size} variant={e.variant} src={e.src ? e.src : Icon} />
+              <Avatar size={e.size} variant={e.variant} src={e.src || ICON} />
             </Grid>
           </Grid>
         </Grid>
@@ -72,6 +72,14 @@ class AvatarComponent extends Component {
       </Grid>
       <Grid item>
         {elementsAvatar}
+      </Grid>
+      <Grid item xs={12}>
+        <Typography variant="subtitle1">Grouped avatars</Typography>
+      </Grid>
+      <Grid item xs={12}>
+        <AvatarGroup max={4}>
+          {elements.map(e => <Avatar src={e.src || ICON} />)}
+        </AvatarGroup>
       </Grid>
     </Grid>
   }

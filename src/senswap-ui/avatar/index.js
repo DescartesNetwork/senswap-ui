@@ -2,6 +2,7 @@ import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 
 import MuiAvatar from '@material-ui/core/Avatar';
+import MuiAvatarGroup from '@material-ui/lab/AvatarGroup';
 
 import useStyles from './style';
 
@@ -33,3 +34,7 @@ Avatar.propTypes = {
 }
 
 export default Avatar;
+
+export const AvatarGroup = forwardRef((props, ref) => {
+  return <MuiAvatarGroup {...props} ref={ref} />
+});

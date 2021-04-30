@@ -2,100 +2,74 @@ import React, { useState } from 'react';
 import PropType from 'prop-types';
 
 import Grid from 'senswap-ui/grid';
-import { CarouselLeftArrow, CarouselSlide, CarouselRightArrow, CarouselIndicator } from 'senswap-ui/carousel/carousel';
+
+import {
+  CarouselLeftArrow, CarouselSlide, CarouselRightArrow,
+  CarouselIndicator
+} from './carousel';
 
 import useStyles from './styles';
 
+
 function Carousel(props) {
   const classes = useStyles();
-  const { classes: userStyle, data, enableArrowButton, handleButtonClick, ...others } = props;
-  const slidesLength = data.length;
+  const { data, enableArrowButton, onClick } = props;
   const [activeIndex, setActiveIndex] = useState(0);
 
-  function goToSlide(index) {
-    setActiveIndex(index);
-  }
-
-  function goToPrevSlide(e) {
-    e.preventDefault();
-
+  function goToPrevSlide() {
     let index = activeIndex;
-
-    if (index < 1) {
-      index = slidesLength;
-    }
-
-    --index;
-
-    setActiveIndex(index);
+    if (index < 1) index = data.length;
+    return setActiveIndex(--index);
   }
 
-  function goToNextSlide(e) {
-    e.preventDefault();
-
+  function goToNextSlide() {
     let index = activeIndex;
-    let nextLength = slidesLength - 1;
-
-    if (index === nextLength) {
-      index = -1;
-    }
-
-    ++index;
-
-    setActiveIndex(index);
-  }
-
-  function handleButton() {
-    handleButtonClick();
+    if (index === data.length - 1) index = -1;
+    return setActiveIndex(++index);
   }
 
   return <Grid container spacing={0}>
-    <Grid item {...others} className={classes.carousel} xs={12} sm={12} lg={12}>
+    <Grid item className={classes.carousel} xs={12}>
       <Grid container className="carousel" spacing={0}>
-        {enableArrowButton ?
-          <CarouselLeftArrow onClick={(e) => goToPrevSlide(e)} />
-          : null}
-        <Grid className="carousel-slides" component="ul" item xs={12} sm={12} lg={12}>
+        {enableArrowButton ? <CarouselLeftArrow onClick={goToPrevSlide} /> : null}
+        <Grid item component="ul" xs={12} className="carousel-slides" >
           {data.map((slide, index) =>
             <CarouselSlide
               key={index}
               index={index}
               activeIndex={activeIndex}
               slide={slide}
-              onButtonClick={handleButton}
+              onClick={onClick}
             />
           )}
         </Grid>
-        {enableArrowButton ?
-          <CarouselRightArrow onClick={e => goToNextSlide(e)} />
-          : null}
-        {(data.length > 1) ?
-          <Grid container item className="carousel-indicators" component="ul" xs={12} sm={12} lg={12} spacing={0}>
-            {data.map((slide, index) =>
-              <CarouselIndicator
-                key={index}
-                index={index}
-                activeIndex={activeIndex}
-                isActive={activeIndex === index}
-                onClick={e => goToSlide(index)}
-              />
-            )}
+        {enableArrowButton ? <CarouselRightArrow onClick={goToNextSlide} /> : null}
+        {data.length > 1 ? <Grid item xs={12}>
+          <Grid container className="carousel-indicators" component="ul">
+            {data.map((_, index) => <CarouselIndicator
+              key={index}
+              index={index}
+              activeIndex={activeIndex}
+              isActive={activeIndex === index}
+              onClick={e => setActiveIndex(index)}
+            />)}
           </Grid>
-          : null}
+        </Grid> : null}
       </Grid>
     </Grid>
   </Grid>
 }
 
-Carousel.propsType = {
-  data: PropType.array,
-  enableArrowButton: PropType.bool,
-  handleButtonClick: PropType.func,
-}
 Carousel.defaultProps = {
   data: [],
   enableArrowButton: false,
-  handleButtonClick: () => {},
+  onClick: () => { },
+}
+
+Carousel.propsType = {
+  data: PropType.array,
+  enableArrowButton: PropType.bool,
+  onClick: PropType.func,
 }
 
 export default Carousel;

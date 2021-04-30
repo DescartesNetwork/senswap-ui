@@ -20,6 +20,10 @@ export default makeStyles(theme => ({
       bottom: 0,
     }
   },
+  cardInfo:{
+    padding: `${theme.spacing(1.5)}px ${theme.spacing(3)}px`,
+    backgroundColor: theme.palette.background.secondary,
+  },
   activeAction: {
     position: 'absolute',
     width: '100%',

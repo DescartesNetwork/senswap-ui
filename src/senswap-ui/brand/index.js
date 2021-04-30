@@ -18,21 +18,17 @@ function Brand(props) {
     window.location.href = window.location.origin;
   }
 
-  return <Grid container spacing={2}>
-    <Grid item>
-      <Grid container spacing={1} alignItems="center" className={classes.noWrap}>
-        <Grid item className={classes.logo} onClick={onHome}>
-          <Image
-            src={SEN_LOGO}
-            color="#00000000"
-            loading={<CircularProgress size={17} />}
-          />
-        </Grid>
-        <Grid item className={classes.cursor} onClick={onHome}>
-          {subtitle ? <Typography className={classes.subtitle}>{subtitle}</Typography> : null}
-          <Typography>SenSwap</Typography>
-        </Grid>
-      </Grid>
+  return <Grid container spacing={1} alignItems="center" className={classes.noWrap}>
+    <Grid item className={classes.logo} onClick={onHome}>
+      <Image
+        src={SEN_LOGO}
+        color="#00000000"
+        loading={<CircularProgress size={17} />}
+      />
+    </Grid>
+    <Grid item className={classes.cursor} onClick={onHome}>
+      {subtitle ? <Typography className={classes.subtitle}>{subtitle}</Typography> : null}
+      <Typography>SenSwap</Typography>
     </Grid>
   </Grid>
 }
