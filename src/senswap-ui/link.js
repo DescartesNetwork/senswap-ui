@@ -16,18 +16,21 @@ const useStyles = makeStyles(theme => ({
 
 function Link(props) {
   const classes = useStyles();
-  const { children, to, href, ...others } = props;
+  const { children, to, href, className: userClassName, ...others } = props;
+  const combinedClassName = `${classes.link} ${userClassName}`;
+
   if (href) return <Typography
     component={MuiLink}
     href={href}
-    className={classes.link}
+    className={combinedClassName}
     target="_blank" rel="noopener noreferrer"
     {...others}
   >{children}</Typography>
+  
   return <Typography
     component={RouterLink}
     to={to}
-    className={classes.link}
+    className={combinedClassName}
     {...others}
   >{children}</Typography>
 }
