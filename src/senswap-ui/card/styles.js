@@ -62,12 +62,10 @@ export default makeStyles(theme => ({
     }
   },
   chip: {
-    padding: '0 !important',
-    'span': {
-      color: '#fff',
-      fontSize: '16px',
-      fontWeight: '600'
-    }
+    margin: -theme.spacing(1),
+    backgroundColor: '#FF9F38',
+    fontSize: 16,
+    fontWeight: 600
   },
   buttonBalance: {
     display: 'flex',

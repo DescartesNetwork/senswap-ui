@@ -15,24 +15,16 @@ import useStyle from './styles';
 function CardBalance(props) {
   const classes = useStyle();
 
-  const { cardData, onClickDeposit, onClickWithdraw } = props;
+  const { cardData, onDeposit, onWithdraw } = props;
 
   const [isEyeOff, setEyeOff] = useState(false);
   const [isExpand, setExpand] = useState(false);
 
-  function handleShowBalance() {
-    const res = !isEyeOff;
-    setEyeOff(res);
+  function onShowBalance() {
+    return setEyeOff(!isEyeOff);
   }
-  function handleExpandCard() {
-    const res = !isExpand;
-    setExpand(res);
-  }
-  function handleDeposit() {
-    onClickDeposit();
-  }
-  function handleWithdraw() {
-    onClickWithdraw();
+  function onExpandCard() {
+    return setExpand(!isExpand);
   }
 
   return <Grid container spacing={0}>
@@ -41,12 +33,10 @@ function CardBalance(props) {
         <CardContent className={classes.cardBalanceContent}>
           <Grid container>
             <Grid item xs={12} align="right" className={classes.headerButton}>
-              {!isExpand ?
-                <Button onClick={handleShowBalance}>
-                  {isEyeOff ? <VisibilityOff /> : <Visibility />}
-                </Button>
-                : null}
-              <Button onClick={handleExpandCard}>
+              {!isExpand ? <Button onClick={onShowBalance}>
+                {isEyeOff ? <VisibilityOff /> : <Visibility />}
+              </Button> : null}
+              <Button onClick={onExpandCard}>
                 <CallReceived className={_clsx(classes.arrowIcon, { [classes.rotate]: isExpand })} />
               </Button>
             </Grid>
@@ -55,23 +45,19 @@ function CardBalance(props) {
                 <Grid item xs={12} align="center">
                   <Typography variant="subtitle1">{cardData.title}</Typography>
                 </Grid>
-                <Grid item xs={12} align="center" className={classes.chip}>
-                  <Chip cuscolor={cardData.color} label={cardData.chip} />
+                <Grid item xs={12} align="center">
+                  <Chip label={cardData.chip} className={classes.chip} />
                 </Grid>
-                {isEyeOff ?
-                  <Grid item xs={12} align="center">
-                    <Typography variant="h5">**********</Typography>
-                    <Typography variant="subtitle2">*********</Typography>
-                  </Grid>
-                  :
-                  <Grid item xs={12} align="center">
-                    <Typography variant="h5">{cardData.amount}</Typography>
-                    <Typography variant="subtitle2">{cardData.exchange}</Typography>
-                  </Grid>
-                }
+                {isEyeOff ? <Grid item xs={12} align="center">
+                  <Typography variant="h5">***</Typography>
+                  <Typography variant="subtitle2">***</Typography>
+                </Grid> : <Grid item xs={12} align="center">
+                  <Typography variant="h5">{cardData.amount}</Typography>
+                  <Typography variant="subtitle2">{cardData.exchange}</Typography>
+                </Grid>}
                 <Grid item xs={12} className={classes.buttonBalance}>
-                  <Button onClick={handleDeposit} variant="outlined">Deposit</Button>
-                  <Button onClick={handleWithdraw} variant="outlined">Withdraw</Button>
+                  <Button onClick={onDeposit} variant="outlined">Deposit</Button>
+                  <Button onClick={onWithdraw} variant="outlined">Withdraw</Button>
                 </Grid>
               </Grid>
             </Grid>
