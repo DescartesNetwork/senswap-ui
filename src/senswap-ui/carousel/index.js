@@ -67,7 +67,7 @@ Carousel.defaultProps = {
 }
 
 Carousel.propsType = {
-  data: PropType.array,
+  data: PropType.arrayOf(PropType.object),
   enableArrowButton: PropType.bool,
   onClick: PropType.func,
 }

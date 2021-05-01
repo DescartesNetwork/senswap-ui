@@ -9,6 +9,9 @@ import Typography from 'senswap-ui/typography';
 import Drain from 'senswap-ui/drain';
 import Carousel from 'senswap-ui/carousel';
 
+import { AccountBalanceWallet } from 'senswap-ui/icons';
+
+
 import styles from './styles';
 
 
@@ -46,9 +49,10 @@ class CarouselComponent extends Component {
             title: `About Senswap Pools ${e}`,
             subtitle: 'Unlock wallet',
             button: 'Connect Wallet',
+            icon: <AccountBalanceWallet />,
             src: 'https://source.unsplash.com/random'
           }
-        })} onClick={e => console.log('click button')}/>
+        })} onClick={e => console.log('click button')} />
       </Grid>
     </Grid>
   }

@@ -5,7 +5,7 @@ import Typography from 'senswap-ui/typography';
 import Grid from 'senswap-ui/grid';
 import Button from 'senswap-ui/button';
 
-import { ArrowBackIos, ArrowForwardIos, AccountBalanceWallet } from 'senswap-ui/icons';
+import { ArrowBackIos, ArrowForwardIos } from 'senswap-ui/icons';
 
 
 export function CarouselLeftArrow(props) {
@@ -57,7 +57,7 @@ export function CarouselSlide(props) {
         className="carousel-button"
         variant="contained"
         color="primary"
-        startIcon={<AccountBalanceWallet />}
+        startIcon={slide.icon}
         onClick={onClick}
       >
         <Typography variant="body2">{slide.button}</Typography>
