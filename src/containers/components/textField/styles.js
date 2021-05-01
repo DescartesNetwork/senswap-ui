@@ -6,7 +6,7 @@ export default theme => ({
   stretch: {
     flex: '1 1 auto',
   },
-  logo: {
-    cursor: 'pointer'
-  },
+  button: {
+    borderRadius: theme.shape.borderRadius / 2
+  }
 });

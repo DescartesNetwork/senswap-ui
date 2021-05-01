@@ -4,7 +4,7 @@ const SIDEBAR_WIDTH = 16;
 
 export default makeStyles(theme => ({
   noWrap: {
-    flexWrap: 'noWrap',
+    flexWrap: 'nowrap',
   },
   stretch: {
     flex: '1 1 auto',

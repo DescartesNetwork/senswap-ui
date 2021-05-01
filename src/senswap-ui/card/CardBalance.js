@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import { Button, Card, CardContent } from '@material-ui/core';
-import { Visibility, VisibilityOff, CallReceived } from '@material-ui/icons';
-import _clsx from 'clsx';
 import TypeProps from 'prop-types';
+import _clsx from 'clsx';
 
 import Grid from 'senswap-ui/grid';
 import Typography from 'senswap-ui/typography';
 import Chip from 'senswap-ui/chip';
+import Button from 'senswap-ui/button';
+import Card, { CardContent } from 'senswap-ui/card';
+
+import { Visibility, VisibilityOff, CallReceived } from 'senswap-ui/icons';
 
 import useStyle from './styles';
 

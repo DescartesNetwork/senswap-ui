@@ -4,7 +4,7 @@ export default theme => {
 
   return {
     noWrap: {
-      flexWrap: 'noWrap',
+      flexWrap: 'nowrap',
     },
     stretch: {
       flex: '1 1 auto',

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import Link from 'senswap-ui/link';
 import Typography from 'senswap-ui/typography';
@@ -52,17 +52,11 @@ export function CarouselSlide(props) {
     {slide.description ? <Grid item xs={12} md={6}>
       <Typography variant="body1">{slide.description}</Typography>
     </Grid> : null}
-    {slide.action ? <Grid item xs={12}>
-      <Grid container>
-        <Grid item xs={12}>
-          <Drain size={1} />
-        </Grid>
-        <Grid item xs={12}>{slide.action}</Grid>
-        <Grid item xs={12}>
-          <Drain size={8} />
-        </Grid>
-      </Grid>
-    </Grid> : <Grid item xs={12}>
+    {slide.action ? <Fragment>
+      <Grid item xs={12}><Drain size={1} /></Grid>
+      <Grid item xs={12}>{slide.action}</Grid>
+      <Grid item xs={12}><Drain size={8} /></Grid>
+    </Fragment> : <Grid item xs={12}>
       <Drain size={14} />
     </Grid>}
     {slide.src ? <Grid item component="img" className="carousel-background" src={slide.src} />

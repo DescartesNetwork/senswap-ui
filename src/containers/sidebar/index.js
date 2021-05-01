@@ -131,6 +131,11 @@ class Sidebar extends Component {
         </Link>
       </Grid>
       <Grid item xs={12}>
+        <Link to="/components/text-field" >
+          <Typography>Text Field</Typography>
+        </Link>
+      </Grid>
+      <Grid item xs={12}>
         <Drain size={2} />
       </Grid>
     </Grid>
