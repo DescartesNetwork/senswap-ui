@@ -9,7 +9,6 @@ import Typography from 'senswap-ui/typography';
 
 const useStyles = makeStyles(theme => ({
   link: {
-    color: theme.palette.text.primary,
     textDecoration: 'none'
   }
 }));
