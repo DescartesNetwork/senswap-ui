@@ -46,14 +46,14 @@ export function CarouselSlide(props) {
     {slide.subtitle ? <Grid className="carousel-subtitle" item xs={12}>
       <Typography variant="subtitle1">{slide.subtitle}</Typography>
     </Grid> : null}
-    <Grid className="carousel-title" item xs={12} md={6}>
+    <Grid className="carousel-title" item xs={12} md={8} lg={6} xl={4}>
       <Typography variant="h1">{slide.title}</Typography>
     </Grid>
-    {slide.description ? <Grid item xs={12} md={6}>
+    {slide.description ? <Grid item xs={12} md={8} lg={6} xl={4}>
       <Typography variant="body1">{slide.description}</Typography>
     </Grid> : null}
     {slide.action ? <Fragment>
-      <Grid item xs={12}><Drain size={1} /></Grid>
+      <Grid item xs={12}><Drain size={2} /></Grid>
       <Grid item xs={12}>{slide.action}</Grid>
       <Grid item xs={12}><Drain size={8} /></Grid>
     </Fragment> : <Grid item xs={12}>

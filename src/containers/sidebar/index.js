@@ -28,12 +28,12 @@ class Sidebar extends Component {
         <Typography variant="h6">Getting Started</Typography>
       </Grid>
       <Grid item xs={12}>
-        <Link to="/getting-started/installation" >
+        <Link color="textPrimary" to="/getting-started/installation" >
           <Typography>Installation</Typography>
         </Link>
       </Grid>
       <Grid item xs={12}>
-        <Link to="/getting-started/usage" >
+        <Link color="textPrimary" to="/getting-started/usage" >
           <Typography>Usage</Typography>
         </Link>
       </Grid>
@@ -41,97 +41,97 @@ class Sidebar extends Component {
         <Typography variant="h6">Components</Typography>
       </Grid>
       <Grid item xs={12}>
-        <Link to="/components/avatar" >
+        <Link color="textPrimary" to="/components/avatar" >
           <Typography>Avatar</Typography>
         </Link>
       </Grid>
       <Grid item xs={12}>
-        <Link to="/components/brand" >
+        <Link color="textPrimary" to="/components/brand" >
           <Typography>Brand</Typography>
         </Link>
       </Grid>
       <Grid item xs={12}>
-        <Link to="/components/button" >
+        <Link color="textPrimary" to="/components/button" >
           <Typography>Button</Typography>
         </Link>
       </Grid>
       <Grid item xs={12}>
-        <Link to="/components/grid" >
+        <Link color="textPrimary" to="/components/grid" >
           <Typography>Grid</Typography>
         </Link>
       </Grid>
       <Grid item xs={12}>
-        <Link to="/components/icons" >
+        <Link color="textPrimary" to="/components/icons" >
           <Typography>Icons</Typography>
         </Link>
       </Grid>
       <Grid item xs={12}>
-        <Link to="/components/logo" >
+        <Link color="textPrimary" to="/components/logo" >
           <Typography>Logo</Typography>
         </Link>
       </Grid>
       <Grid item xs={12}>
-        <Link to="/components/favorite" >
+        <Link color="textPrimary" to="/components/favorite" >
           <Typography>Favorite</Typography>
         </Link>
       </Grid>
       <Grid item xs={12}>
-        <Link to="/components/paper" >
+        <Link color="textPrimary" to="/components/paper" >
           <Typography>Paper</Typography>
         </Link>
       </Grid>
       <Grid item xs={12}>
-        <Link to="/components/typography" >
+        <Link color="textPrimary" to="/components/typography" >
           <Typography>Typography</Typography>
         </Link>
       </Grid>
       <Grid item xs={12}>
-        <Link to="/components/pagination" >
+        <Link color="textPrimary" to="/components/pagination" >
           <Typography>Pagination</Typography>
         </Link>
       </Grid>
       <Grid item xs={12}>
-        <Link to="/components/chip" >
+        <Link color="textPrimary" to="/components/chip" >
           <Typography>Chip</Typography>
         </Link>
       </Grid>
       <Grid item xs={12}>
-        <Link to="/components/card" >
+        <Link color="textPrimary" to="/components/card" >
           <Typography>Card</Typography>
         </Link>
       </Grid>
       <Grid item xs={12}>
-        <Link to="/components/list" >
+        <Link color="textPrimary" to="/components/list" >
           <Typography>List</Typography>
         </Link>
       </Grid>
       <Grid item xs={12}>
-        <Link to="/components/drawer" >
+        <Link color="textPrimary" to="/components/drawer" >
           <Typography>Drawer</Typography>
         </Link>
       </Grid>
       <Grid item xs={12}>
-        <Link to="/components/table" >
+        <Link color="textPrimary" to="/components/table" >
           <Typography>Table</Typography>
         </Link>
       </Grid>
       <Grid item xs={12}>
-        <Link to="/components/form" >
+        <Link color="textPrimary" to="/components/form" >
           <Typography>Form</Typography>
         </Link>
       </Grid>
       <Grid item xs={12}>
-        <Link to="/components/tooltip" >
+        <Link color="textPrimary" to="/components/tooltip" >
           <Typography>Tooltip</Typography>
         </Link>
       </Grid>
       <Grid item xs={12}>
-        <Link to="/components/carousel" >
+        <Link color="textPrimary" to="/components/carousel" >
           <Typography>Carousel</Typography>
         </Link>
       </Grid>
       <Grid item xs={12}>
-        <Link to="/components/text-field" >
+        <Link color="textPrimary" to="/components/text-field" >
           <Typography>Text Field</Typography>
         </Link>
       </Grid>
