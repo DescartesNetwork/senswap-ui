@@ -13,8 +13,8 @@ import useStyles from './styles';
 
 function Carousel(props) {
   const classes = useStyles();
-  const { data, enableArrowButton, onClick } = props;
   const [activeIndex, setActiveIndex] = useState(0);
+  const { data, enableArrowButton, onClick } = props;
 
   function goToPrevSlide() {
     let index = activeIndex;

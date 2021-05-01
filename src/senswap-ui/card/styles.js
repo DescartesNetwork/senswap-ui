@@ -10,32 +10,6 @@ export default makeStyles(theme => ({
   card: {
     borderRadius: theme.shape.borderRadius * 2,
   },
-  cardContent: {
-    padding: theme.spacing(3),
-  },
-  cardAction: {
-    padding: `${theme.spacing(1.5)}px ${theme.spacing(3)}px`,
-    backgroundColor: theme.palette.background.secondary,
-    '&:hover $activeAction': {
-      bottom: 0,
-    }
-  },
-  cardInfo:{
-    padding: `${theme.spacing(1.5)}px ${theme.spacing(3)}px`,
-    backgroundColor: theme.palette.background.secondary,
-  },
-  activeAction: {
-    position: 'absolute',
-    width: '100%',
-    height: '100%',
-    left: 0,
-    bottom: '-100%',
-    backgroundColor: theme.palette.primary.main,
-    transition: theme.transitions.create(),
-    '& > *:first-child': {
-      height: `calc(100% + ${theme.spacing(2)}px)`,
-    },
-  },
   cardExpand: {
     transition: '.2s linear',
     height: '56px',
