@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'senswap-ui/link';
 import Typography from 'senswap-ui/typography';
 import Grid from 'senswap-ui/grid';
-import Button from 'senswap-ui/button';
+import Drain from 'senswap-ui/drain';
 
 import { ArrowBackIos, ArrowForwardIos } from 'senswap-ui/icons';
 
@@ -36,7 +36,7 @@ export function CarouselIndicator(props) {
 }
 
 export function CarouselSlide(props) {
-  const { index, activeIndex, slide, onClick } = props;
+  const { index, activeIndex, slide } = props;
   return <Grid
     container
     component="li"
@@ -49,20 +49,22 @@ export function CarouselSlide(props) {
     <Grid className="carousel-title" item xs={12} md={6}>
       <Typography variant="h1">{slide.title}</Typography>
     </Grid>
-    {slide.description ? <Grid className="carousel-description" item xs={12} md={6}>
+    {slide.description ? <Grid item xs={12} md={6}>
       <Typography variant="body1">{slide.description}</Typography>
     </Grid> : null}
-    {slide.button ? <Grid item>
-      <Button
-        className="carousel-button"
-        variant="contained"
-        color="primary"
-        startIcon={slide.icon}
-        onClick={onClick}
-      >
-        <Typography variant="body2">{slide.button}</Typography>
-      </Button>
-    </Grid> : null}
+    {slide.action ? <Grid item xs={12}>
+      <Grid container>
+        <Grid item xs={12}>
+          <Drain size={1} />
+        </Grid>
+        <Grid item xs={12}>{slide.action}</Grid>
+        <Grid item xs={12}>
+          <Drain size={8} />
+        </Grid>
+      </Grid>
+    </Grid> : <Grid item xs={12}>
+      <Drain size={14} />
+    </Grid>}
     {slide.src ? <Grid item component="img" className="carousel-background" src={slide.src} />
       : <Grid item className="carousel-background" />}
   </Grid>

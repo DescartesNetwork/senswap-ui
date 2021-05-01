@@ -32,14 +32,6 @@ export default makeStyles(theme => ({
       '& .carousel-title,& .carousel-subtitle': {
         marginBottom: `${theme.spacing(2) - 4}px`,
       },
-      '& .carousel-description': {
-        marginBottom: `${theme.spacing(15) - 5}px`,
-      },
-      '& .carousel-button': {
-        marginTop: `${theme.spacing(3) - 4}px`,
-        padding: `${theme.spacing(2) - 4}px`,
-        borderRadius: `${theme.spacing(2) - 4}px`
-      },
       '& .carousel-background': {
         position: 'absolute',
         width: '100%',

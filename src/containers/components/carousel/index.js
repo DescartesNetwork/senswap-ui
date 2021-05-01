@@ -8,6 +8,7 @@ import Grid from 'senswap-ui/grid';
 import Typography from 'senswap-ui/typography';
 import Drain from 'senswap-ui/drain';
 import Carousel from 'senswap-ui/carousel';
+import Button from 'senswap-ui/button';
 
 import { AccountBalanceWallet } from 'senswap-ui/icons';
 
@@ -33,7 +34,7 @@ class CarouselComponent extends Component {
           return {
             title: `About Senswap Pools ${e}`,
             description: 'To celebrate our new multi-chain deposit and withdrawal support for Bitcoin on TRON (BTCTRON), we’re beginning a 30-day net deposit…',
-            src: 'https://source.unsplash.com/random'
+            src: 'https://source.unsplash.com/random',
           }
         })} />
       </Grid>
@@ -44,15 +45,22 @@ class CarouselComponent extends Component {
         <Typography>Carousel</Typography>
       </Grid>
       <Grid item xs={12} md={12}>
-        <Carousel data={[1].map(e => {
-          return {
-            title: `About Senswap Pools ${e}`,
+        <Carousel
+          data={[1, 2].map(i => ({
+            title: `About Senswap Pools ${i}`,
             subtitle: 'Unlock wallet',
-            button: 'Connect Wallet',
-            icon: <AccountBalanceWallet />,
-            src: 'https://source.unsplash.com/random'
-          }
-        })} onClick={e => console.log('click button')} />
+            src: 'https://source.unsplash.com/random',
+            action: <Button
+              variant="contained"
+              color="primary"
+              size="large"
+              startIcon={<AccountBalanceWallet />}
+            >
+              <Typography variant="body2">Connect Wallet</Typography>
+            </Button>
+          }))}
+          onClick={e => console.log('click button')}
+        />
       </Grid>
     </Grid>
   }
