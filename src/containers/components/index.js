@@ -26,6 +26,7 @@ import TooltipComponent from './tooltip';
 import IconsComponent from './icons';
 import CarouselComponent from './carousel';
 import TextFieldComponent from './textField';
+import DialogComponent from './dialog';
 
 import styles from './styles';
 
@@ -63,6 +64,7 @@ class Components extends Component {
           <Route path='/components/icons' component={IconsComponent} />
           <Route path='/components/carousel' component={CarouselComponent} />
           <Route path='/components/text-field' component={TextFieldComponent} />
+          <Route path='/components/dialog' component={DialogComponent} />
         </Switch>
       </Grid>
     </Grid>

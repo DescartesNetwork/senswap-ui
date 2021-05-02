@@ -1,12 +1,25 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 
+import { makeStyles } from '@material-ui/styles';
 import MuiDialog from '@material-ui/core/Dialog';
 import MuiDialogActions from '@material-ui/core/DialogActions';
 import MuiDialogContent from '@material-ui/core/DialogContent';
 import MuiDialogContentText from '@material-ui/core/DialogContentText';
 import MuiDialogTitle from '@material-ui/core/DialogTitle';
 
-const Dialog = (props) => <MuiDialog {...props} />
+const useStyles = makeStyles(theme => ({
+  dialog: {
+    borderRadius: theme.shape.borderRadius * 2
+  }
+}));
+
+const Dialog = (props) => {
+  const classes = useStyles();
+  const { classes: userClasses, ...others } = props;
+  const combinedClasses = { paper: classes.dialog, ...(userClasses || {}) }
+
+  return <MuiDialog classes={combinedClasses} {...others} />
+}
 
 export default Dialog;
 
