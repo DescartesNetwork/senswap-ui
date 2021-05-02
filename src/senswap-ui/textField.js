@@ -45,6 +45,13 @@ const TextFieldContained = forwardRef((props, ref) => {
     return null;
   }
 
+  const renderSecondaryText = () => {
+    if (helperTextSecondary) return <Grid item xs={(error || helperText || helperTextPrimary) ? 6 : 12}>
+      <Typography variant="body2" align="right">{helperTextSecondary}</Typography>
+    </Grid>
+    return null;
+  }
+
   return <Grid container spacing={1}>
     {label ? <Grid item xs={12}>
       <Typography variant="body2"><strong>{label}</strong></Typography>
@@ -61,11 +68,7 @@ const TextFieldContained = forwardRef((props, ref) => {
       </Paper>
     </Grid>
     {renderPrimaryText()}
-    {
-      helperTextSecondary ? <Grid item xs={6}>
-        <Typography variant="body2" align="right">{helperTextSecondary}</Typography>
-      </Grid> : null
-    }
+    {renderSecondaryText()}
   </Grid >
 });
 
