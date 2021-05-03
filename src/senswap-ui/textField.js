@@ -58,7 +58,7 @@ const TextFieldContained = forwardRef((props, ref) => {
     </Grid> : null}
     <Grid item xs={12}>
       <Paper className={classes.paper}>
-        <Grid container className={classes.noWrap}>
+        <Grid container className={classes.noWrap} alignItems="center">
           {startAdornment ? <Grid item>{startAdornment}</Grid> : null}
           <Grid item className={classes.stretch}>
             <InputBase {...others} ref={ref} fullWidth />
