@@ -12,6 +12,7 @@ const Drawer = forwardRef((props, ref) => {
     className: userClassName,
     classes: userClasses,
     style: userStyle,
+    onWidth,
     ...others
   } = props;
 
@@ -21,13 +22,13 @@ const Drawer = forwardRef((props, ref) => {
   const combinedStyle = { ...userStyle, ...(open ? {} : { width: 0 }) }
 
   return <MuiDrawer
+    ref={ref}
     open={open}
     variant={variant}
     className={combinedClassName}
     classes={combinedClasses}
     style={combinedStyle}
     {...others}
-    ref={ref}
   />
 })
 
@@ -36,7 +37,7 @@ Drawer.defaultProps = {
   variant: 'persistent',
   className: '',
   classes: {},
-  style: {}
+  style: {},
 }
 
 Drawer.propTypes = {
