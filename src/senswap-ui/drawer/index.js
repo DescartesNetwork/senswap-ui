@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 
 import MuiDrawer from '@material-ui/core/Drawer';
 
 import useStyles from './styles';
 
-function Drawer(props) {
+const Drawer = forwardRef((props, ref) => {
   const classes = useStyles();
   const {
     variant, open,
@@ -27,8 +27,9 @@ function Drawer(props) {
     classes={combinedClasses}
     style={combinedStyle}
     {...others}
+    ref={ref}
   />
-}
+})
 
 Drawer.defaultProps = {
   open: true,
