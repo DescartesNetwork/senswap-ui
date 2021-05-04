@@ -17,16 +17,19 @@ class IconsComponent extends Component {
   render() {
     return <Grid container spacing={2}>
       <Grid item xs={12}>
-        <Typography variant="subtitle1">Material Icons</Typography>
+        <Typography variant="h4">Material Icons</Typography>
       </Grid>
       <Grid item xs={12}>
         <Drain size={2} />
       </Grid>
       <Grid item xs={12}>
-        <Link href="https://material-ui.com/components/material-icons/">Material Icons default set</Link>
+        <Typography variant="subtitle1">Supplement Icons</Typography>
       </Grid>
       <Grid item xs={12}>
         <Typography variant="subtitle1">References</Typography>
+      </Grid>
+      <Grid item xs={12}>
+        <Link href="https://material-ui.com/components/material-icons/">Material Icons default set</Link>
       </Grid>
       <Grid item xs={12}>
         <Link href="https://material-ui.com/components/icons/">Material UI Icons System</Link>
