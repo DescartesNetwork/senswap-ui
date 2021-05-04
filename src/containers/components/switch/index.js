@@ -36,10 +36,7 @@ class SwitchComponent extends Component {
         <Typography>Standard switch</Typography>
       </Grid>
       <Grid item xs={12}>
-        <Switch ref={this.switchRef} onChange={onChange}/>
-      </Grid>
-      <Grid item xs={12}>
-        <Drain />
+        <Switch ref={this.switchRef} color="primary" onChange={onChange}/>
       </Grid>
       <Grid item xs={12}>
         <Typography>Senswap switch</Typography>
