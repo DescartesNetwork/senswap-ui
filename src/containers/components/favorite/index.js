@@ -14,6 +14,7 @@ import styles from './styles';
 
 const FavoriteComponent = () => {
   const [checkedStandard, setCheckedStandard] = React.useState(false);
+  const [checkedCustom, setCheckedCustom] = React.useState(false);
 
   return <Grid container spacing={2}>
     <Grid item xs={12}>
@@ -25,8 +26,17 @@ const FavoriteComponent = () => {
     <Grid item xs={12}>
       <Typography variant="subtitle1">Standard favorite</Typography>
     </Grid>
-    <Grid item xs={12}>
+    <Grid item>
       <Favorite checked={checkedStandard} onChange={setCheckedStandard} />
+    </Grid>
+    {/* <Grid item>
+      <Favorite checked={checkedStandard} onChange={setCheckedStandard} color='primary' />
+    </Grid> */}
+    <Grid item xs={12}>
+      <Typography variant="subtitle1">Customizable favorite</Typography>
+    </Grid>
+    <Grid item>
+      <Favorite checked={checkedCustom} onChange={setCheckedCustom} style={{ color: '#eca6f5' }} color='#eca6f5'/>
     </Grid>
   </Grid>
 }
