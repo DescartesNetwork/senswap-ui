@@ -141,6 +141,11 @@ class Sidebar extends Component {
         </Link>
       </Grid>
       <Grid item xs={12}>
+        <Link color="textPrimary" to="/components/switch" >
+          <Typography>Switch</Typography>
+        </Link>
+      </Grid>
+      <Grid item xs={12}>
         <Drain size={2} />
       </Grid>
     </Grid>
