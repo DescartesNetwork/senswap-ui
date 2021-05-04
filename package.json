@@ -27,7 +27,7 @@
     "web-vitals": "^1.1.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "REACT_APP_ENV=development PORT=3002 react-scripts start",
     "build": "REACT_APP_ENV=development react-scripts build",
     "stag": "REACT_APP_ENV=staging react-scripts build",
     "serve": "serve -s build -l 80",
