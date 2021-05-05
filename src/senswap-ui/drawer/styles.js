@@ -11,7 +11,6 @@ export default makeStyles(theme => ({
   },
   sidebar: {
     width: SIDEBAR_WIDTH * theme.spacing(2),
-    flexShrink: 0,
     transition: theme.transitions.create('width', {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,

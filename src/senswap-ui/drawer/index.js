@@ -30,7 +30,7 @@ const Drawer = forwardRef((props, ref) => {
     style={combinedStyle}
     {...others}
   />
-})
+});
 
 Drawer.defaultProps = {
   open: true,
