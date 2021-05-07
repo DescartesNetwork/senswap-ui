@@ -6,16 +6,15 @@ import Grid from 'senswap-ui/grid';
 import Drain from 'senswap-ui/drain';
 import Typography from 'senswap-ui/typography';
 import List, { ListItem, ListItemIcon, ListItemText } from 'senswap-ui/list';
+import SvgIcon from '@material-ui/core/SvgIcon';
 
-import DepositIcon from './depositIcon';
-import WithdrawIcon from './withdrawIcon';
 import { makeStyles } from './styles';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
     maxWidth: '36ch',
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: theme.palette.background.default,
   },
   Complete: {
     color: '#4FBF67',
@@ -37,13 +36,31 @@ const dateFormat = { year: 'numeric', month: 'short', day: 'numeric' };
 
 const ListItemHistory = props => {
   const classes = useStyles();
-  const { variant, status, amount, units, ...others } = props;
+  const { variant, status, amount, units, classes: userClasses, ...others } = props;
   const date = props?.date === 0 ? Date.now() : props.date;
+  const defaultClasses = { root: classes.root, ...userClasses };
 
-  return <List className={classes.root}>
+  return <List className={defaultClasses.root} >
     <ListItem alignItems="flex-start" {...others} >
       <ListItemIcon>
-        {variant === 'deposit' ? <DepositIcon /> : <WithdrawIcon />}
+        {variant === 'deposit' ?
+          <SvgIcon style={{ fontSize: 40 }} // SVG icon for Deposit
+            width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="20" cy="20" r="20" fill="#6C5DD3" />
+            <rect x="12.5" y="16.5" width="15" height="11" rx="1" stroke="white" strokeLinecap="round" strokeLinejoin="round" />
+            <circle cx="20" cy="22" r="2.5" stroke="white" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M14.5 14.5H25.5" stroke="white" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M16.5 12.5H23.5" stroke="white" strokeLinecap="round" strokeLinejoin="round" />
+          </SvgIcon>
+          :
+          <SvgIcon style={{ fontSize: 40 }} // SVG icon for Withdraw
+            width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="20" cy="20" r="20" fill="#4FBF67" />
+            <path d="M22 16.5L24.5 12.5H15.5L18 16.5" stroke="white" strokeLinecap="round" strokeLinejoin="round" />
+            <path fillRule="evenodd" clipRule="evenodd" d="M22 16.5H18C18 16.5 13.5 19.722 13.5 23.056C13.5 25.278 15.125 27.5 20 27.5C24.875 27.5 26.5 25.278 26.5 23.056C26.5 19.722 22 16.5 22 16.5Z" stroke="white" strokeLinecap="round" strokeLinejoin="round" />
+          </SvgIcon>}
       </ListItemIcon>
       <ListItemText disableTypography
         primary={
