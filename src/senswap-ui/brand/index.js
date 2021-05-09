@@ -9,7 +9,7 @@ import CircularProgress from 'senswap-ui/circularProgress';
 
 import useStyles from './styles';
 import SEN_LOGO from './logo.svg';
-import { forwardRef } from 'react';
+
 
 const Brand = forwardRef((props, ref) => {
   const classes = useStyles();
@@ -32,7 +32,7 @@ const Brand = forwardRef((props, ref) => {
       <Typography>SenSwap</Typography>
     </Grid>
   </Grid>
-})
+});
 
 Brand.defaultProps = {
   subtitle: '',
