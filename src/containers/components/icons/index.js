@@ -26,17 +26,21 @@ class IconsComponent extends Component {
       <Grid item xs={12}>
         <Typography variant="subtitle1">Supplement Icons</Typography>
       </Grid>
-      <Grid item>
-        <HomeIcon />
-      </Grid>
-      <Grid item>
-        <SwapIcon />
-      </Grid>
-      <Grid item>
-        <PoolsIcon />
-      </Grid>
-      <Grid item>
-        <WalletIcon htmlColor="#FF3122"/>
+      <Grid item xs={12}>
+        <Grid container spacing={2}>
+          <Grid item>
+            <HomeIcon />
+          </Grid>
+          <Grid item>
+            <SwapIcon />
+          </Grid>
+          <Grid item>
+            <PoolsIcon />
+          </Grid>
+          <Grid item>
+            <WalletIcon htmlColor="#FF3122" />
+          </Grid>
+        </Grid>
       </Grid>
       <Grid item xs={12}>
         <Typography variant="subtitle1">References</Typography>
