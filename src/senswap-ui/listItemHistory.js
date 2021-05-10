@@ -8,6 +8,8 @@ import Typography from 'senswap-ui/typography';
 import List, { ListItem, ListItemIcon, ListItemText } from 'senswap-ui/list';
 import SvgIcon from '@material-ui/core/SvgIcon';
 
+import DepositIcon from './depositIcon';
+import WithdrawIcon from './withdrawIcon';
 import { makeStyles } from './styles';
 
 const useStyles = makeStyles((theme) => ({
