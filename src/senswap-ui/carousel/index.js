@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropType from 'prop-types';
 
 import Grid from 'senswap-ui/grid';
@@ -14,7 +14,9 @@ import useStyles from './styles';
 function Carousel(props) {
   const classes = useStyles();
   const [activeIndex, setActiveIndex] = useState(0);
-  const { data, enableArrowButton, onClick } = props;
+  const [oldIndex, setOldIndex] = useState(0);
+
+  const { data, enableArrowButton,auto,duration,animation, onClick } = props;
 
   function goToPrevSlide() {
     let index = activeIndex;
@@ -28,6 +30,23 @@ function Carousel(props) {
     return setActiveIndex(++index);
   }
 
+  function goToSilde(index) {
+    setOldIndex(activeIndex);
+    return setActiveIndex(index);
+  }
+
+  useEffect(() => {
+    let intervalId = null;
+    if(auto) intervalId = setInterval(() => {
+      let index = activeIndex;
+      if (index === data.length - 1) index = -1;
+      setActiveIndex(++index);
+    }, duration);
+    return () => {
+      clearInterval(intervalId);
+    }
+  },[activeIndex, auto, data.length, duration]);
+
   return <Grid container spacing={0}>
     <Grid item className={classes.carousel} xs={12}>
       <Grid container className="carousel" spacing={0}>
@@ -38,7 +57,9 @@ function Carousel(props) {
               key={index}
               index={index}
               activeIndex={activeIndex}
+              oldIndex={oldIndex}
               slide={slide}
+              animation={animation}
               onClick={onClick}
             />
           )}
@@ -51,7 +72,7 @@ function Carousel(props) {
               index={index}
               activeIndex={activeIndex}
               isActive={activeIndex === index}
-              onClick={e => setActiveIndex(index)}
+              onClick={e => goToSilde(index)}
             />)}
           </Grid>
         </Grid> : null}
@@ -64,12 +85,18 @@ Carousel.defaultProps = {
   data: [],
   enableArrowButton: false,
   onClick: () => { },
+  auto: false,
+  duration: 3000,
+  animation: ''
 }
 
 Carousel.propsType = {
   data: PropType.arrayOf(PropType.object),
   enableArrowButton: PropType.bool,
   onClick: PropType.func,
+  auto: PropType.bool,
+  duration: PropType.number,
+  animation: PropType.string,
 }
 
 export default Carousel;
