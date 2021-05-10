@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import PropType from 'prop-types';
 
 import Grid from 'senswap-ui/grid';
@@ -16,7 +16,18 @@ function Carousel(props) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [oldIndex, setOldIndex] = useState(0);
 
-  const { data, enableArrowButton, auto, duration, animation, onClick } = props;
+  const { data, enableArrowButton, auto, durations: userDuration, animation, onClick } = props;
+
+  const defaultDuration = useCallback(() => {
+    let duration = null;
+    if (typeof userDuration === 'number') duration = userDuration;
+    else
+      if (userDuration && userDuration.endsWith('ms')) duration = Number(userDuration.slice(0, userDuration.length - 2));
+      else if (userDuration && userDuration.endsWith('s')) duration = Number(userDuration.slice(0, userDuration.length - 1)) * 1000;
+      else duration = Number(userDuration) || null;
+    if (duration && duration >= 500) return duration;
+    else return 3000;
+  }, [userDuration]);
 
   function goToPrevSlide() {
     let index = activeIndex;
@@ -41,11 +52,11 @@ function Carousel(props) {
       let index = activeIndex;
       if (index === data.length - 1) index = -1;
       setActiveIndex(++index);
-    }, duration);
+    }, defaultDuration());
     return () => {
       clearInterval(intervalId);
     }
-  }, [activeIndex, auto, data.length, duration]);
+  }, [activeIndex, auto, data.length, defaultDuration]);
 
   return <Grid container spacing={0}>
     <Grid item className={classes.carousel} xs={12}>
@@ -86,7 +97,7 @@ Carousel.defaultProps = {
   enableArrowButton: false,
   onClick: () => { },
   auto: false,
-  duration: 3000,
+  duration: null,
   animation: ''
 }
 
@@ -95,7 +106,10 @@ Carousel.propsType = {
   enableArrowButton: PropType.bool,
   onClick: PropType.func,
   auto: PropType.bool,
-  duration: PropType.number,
+  duration: PropType.oneOfType([
+    PropType.string,
+    PropType.number
+  ]),
   animation: PropType.string,
 }
 

@@ -38,7 +38,7 @@ class CarouselComponent extends Component {
           }
         })}
           auto={true} // enable auto carousel
-          duration={5000} // type milliseconds - if not setup, it will be default is 3000ms
+          durations="2.5s" // type: milliseconds - string / seconds - string / number(milliseconds)
           animation="fade" // fade, zoom, flash
         />
       </Grid>
