@@ -8,6 +8,7 @@ export default makeStyles(theme => ({
       padding: theme.spacing(0),
       margin: theme.spacing(0),
       listStyle: 'none',
+      position: 'relative',
     },
     // Fix for jumping arrows
     '& .carousel-container': {
@@ -24,10 +25,74 @@ export default makeStyles(theme => ({
       display: 'none',
       listStyleType: 'none',
       padding: `${theme.spacing(7) + 3}px ${theme.spacing(4)}px ${theme.spacing(4)}px ${theme.spacing(4)}px`,
-      position: 'relative',
-
+      transition: theme.transitions.create('all', {
+        easing: theme.transitions.easing.sharp,
+        duration: theme.transitions.duration.complex,
+      }),
+      borderRadius: theme.shape.borderRadius * 2,
+      overflow: 'auto',
+      '&.zoom': {
+        display: 'block',
+        position: 'absolute',
+        opacity: 0,
+        left: 0,
+        right: 0,
+        top: 0,
+        bottom: 0,
+        margin: 'auto',
+        transform: 'scale(.7)',
+        zIndex: '-1',
+      },
+      '&.flash': {
+        display: 'block',
+        position: 'absolute',
+        left: 0,
+        top: 0,
+        opacity: 0,
+        zIndex: '-1',
+      },
+      '&.fade': {
+        display: 'block',
+        position: 'absolute',
+        top: 0,
+        opacity: 0,
+        zIndex: '-1',
+        '&--next': {
+          transform: 'translateX(-100%)',
+        },
+        '&--prev': {
+          transform: 'translateX(100%)',
+        },
+      },
+      '&-old': {
+        '&--next': {
+          transform: 'translateX(100%)',
+        },
+        '&--prev': {
+          transform: 'translateX(-100%)',
+        },
+      },
       '&--active': {
         display: 'block',
+        '&.zoom': {
+          position: 'relative',
+          opacity: 1,
+          transform: 'scale(1)',
+          zIndex: 1,
+        },
+        '&.flash': {
+          position: 'relative',
+          opacity: 1,
+          zIndex: 1,
+        },
+        '&.fade': {
+          position: 'relative',
+          opacity: 1,
+          zIndex: 1,
+          '&--next, &--prev': {
+            transform: 'translateX(0) !important',
+          }
+        }
       },
       '& .carousel-title,& .carousel-subtitle': {
         marginBottom: `${theme.spacing(2) - 4}px`,
@@ -76,6 +141,7 @@ export default makeStyles(theme => ({
       position: 'absolute',
       left: '32px',
       bottom: '32px',
+      zIndex: 2,
       '& li': {
         '&:nth-of-type(n + 2)': {
           marginLeft: `${theme.spacing(0.5)}px`,

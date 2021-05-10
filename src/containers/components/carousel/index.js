@@ -36,7 +36,11 @@ class CarouselComponent extends Component {
             description: 'To celebrate our new multi-chain deposit and withdrawal support for Bitcoin on TRON (BTCTRON), we’re beginning a 30-day net deposit…',
             src: 'https://source.unsplash.com/random',
           }
-        })} />
+        })}
+          auto={true} // enable auto carousel
+          durations="2.5s" // type: milliseconds - string / seconds - string / number(milliseconds)
+          animation="fade" // fade, zoom, flash
+        />
       </Grid>
       <Grid item xs={12}>
         <Drain />
