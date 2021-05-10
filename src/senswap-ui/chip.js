@@ -12,10 +12,10 @@ const Chip = forwardRef((props, ref) => {
   return <MuiChip {...combinedStyle} {...others} ref={ref} />
 });
 
-CusPagination.defaultProps = {
+Chip.defaultProps = {
   color: 'default',
 }
-CusPagination.propTypes = {
+Chip.propTypes = {
   color: PropTypes.string,
 }
 
