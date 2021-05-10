@@ -15,14 +15,14 @@ export default makeStyles(theme => ({
           marginRight: '8px',
         },
         '& button': {
-          width: '48px',
-          height: '48px',
+          minWidth: 48,
+          height: 48,
           color: theme.palette.text.primary,
-          borderRadius: '12px',
+          borderRadius: theme.shape.borderRadius,
           border: '.5px solid',
           borderColor: theme.palette.border.default,
           fontWeight: 'bold',
-          fontSize: '14px',
+          fontSize: 14,
           lineHeight: '24px',
           backgroundColor: 'transparent',
           margin: '0',
@@ -38,12 +38,12 @@ export default makeStyles(theme => ({
           },
           '&.btn-control': {
             width: 'auto',
-            paddingLeft: '24px',
-            paddingRight: '24px',
+            paddingLeft: theme.spacing(3),
+            paddingRight: theme.spacing(3),
           }
         },
         '& .dots': {
-          margin: '0',
+          margin: theme.spacing(0),
           lineHeight: '48px',
         },
       }

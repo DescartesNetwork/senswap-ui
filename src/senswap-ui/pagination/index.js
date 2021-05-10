@@ -7,6 +7,7 @@ import Grid from 'senswap-ui/grid';
 import Typography from 'senswap-ui/typography';
 
 import useStyles from './styles';
+import Button from 'senswap-ui/button';
 
 function CusPagination(props) {
   const classes = useStyles();
@@ -25,10 +26,10 @@ function CusPagination(props) {
     return onChangePagination(pages);
   };
 
-  return <Grid>
-    <Grid>
-      <nav className={classes.pagination}>
-        <ul>
+  return <Grid container spacing={0}>
+    <Grid item xs={12} md={12}>
+      <Grid component="nav" className={classes.pagination}>
+        <Grid component="ul">
           {items.map(({ page, type, selected, disabled, onChange, ...item }, index) => {
             let children = null;
             item.onClick = () => { 
@@ -38,22 +39,22 @@ function CusPagination(props) {
               children = dots;
             } else if (type === 'page') {
               children = (
-                <button type="button" className={selected ? 'selected' : ''} {...item}>
+                <Button color="primary" className={selected ? 'selected' : ''} {...item}>
                   {page}
-                </button>
+                </Button>
               );
             } else {
               children = (
-                <button type="button" className={disabled ? 'btn-control disabled' : 'btn-control'} {...item}>
+                <Button className={disabled ? 'btn-control disabled' : 'btn-control'} {...item}>
                   {type === 'next' ? btnNext : btnPrevious}
-                </button>
+                </Button>
               );
             }
 
-            return <li key={index}>{children}</li>;
+            return <Grid component="li" key={index}>{children}</Grid>;
           })}
-        </ul>
-      </nav>
+        </Grid>
+      </Grid>
     </Grid>
   </Grid>
 }
