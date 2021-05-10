@@ -37,9 +37,9 @@ class CarouselComponent extends Component {
             src: 'https://source.unsplash.com/random',
           }
         })}
-        auto={true} // enable auto carousel
-        duration={5000} // default is 3000ms
-        animation="fade" // fade, zoom, flash
+          auto={true} // enable auto carousel
+          duration={5000} // type milliseconds - if not setup, it will be default is 3000ms
+          animation="fade" // fade, zoom, flash
         />
       </Grid>
       <Grid item xs={12}>

@@ -16,7 +16,7 @@ function Carousel(props) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [oldIndex, setOldIndex] = useState(0);
 
-  const { data, enableArrowButton,auto,duration,animation, onClick } = props;
+  const { data, enableArrowButton, auto, duration, animation, onClick } = props;
 
   function goToPrevSlide() {
     let index = activeIndex;
@@ -30,14 +30,14 @@ function Carousel(props) {
     return setActiveIndex(++index);
   }
 
-  function goToSilde(index) {
+  function goToSlide(index) {
     setOldIndex(activeIndex);
     return setActiveIndex(index);
   }
 
   useEffect(() => {
     let intervalId = null;
-    if(auto) intervalId = setInterval(() => {
+    if (auto) intervalId = setInterval(() => {
       let index = activeIndex;
       if (index === data.length - 1) index = -1;
       setActiveIndex(++index);
@@ -45,7 +45,7 @@ function Carousel(props) {
     return () => {
       clearInterval(intervalId);
     }
-  },[activeIndex, auto, data.length, duration]);
+  }, [activeIndex, auto, data.length, duration]);
 
   return <Grid container spacing={0}>
     <Grid item className={classes.carousel} xs={12}>
@@ -72,7 +72,7 @@ function Carousel(props) {
               index={index}
               activeIndex={activeIndex}
               isActive={activeIndex === index}
-              onClick={e => goToSilde(index)}
+              onClick={e => goToSlide(index)}
             />)}
           </Grid>
         </Grid> : null}

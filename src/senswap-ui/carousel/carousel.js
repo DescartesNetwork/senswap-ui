@@ -36,11 +36,11 @@ export function CarouselIndicator(props) {
 }
 
 export function CarouselSlide(props) {
-  const { index, activeIndex, slide,oldIndex, animation } = props;
+  const { index, activeIndex, slide, oldIndex, animation } = props;
   return <Grid
     container
     component="li"
-    className={(index === activeIndex ? 'carousel-slide carousel-slide--active' : "carousel-slide").concat(`${(index === oldIndex && animation === 'fade') ? ' carousel-slide-old'+(oldIndex < activeIndex ? '--prev' : '--next') : ''}`).concat(`${animation ? ' ' + animation + (animation === 'fade' ? (activeIndex < index ? ' fade--prev' : ' fade--next') : '' ) : ''}`)}
+    className={(index === activeIndex ? 'carousel-slide carousel-slide--active' : "carousel-slide").concat(`${(index === oldIndex && animation === 'fade') ? ' carousel-slide-old' + (oldIndex < activeIndex ? '--prev' : '--next') : ''}`).concat(`${animation ? ' ' + animation + (animation === 'fade' ? (activeIndex < index ? ' fade--prev' : ' fade--next') : '') : ''}`)}
     spacing={0}
   >
     {slide.subtitle ? <Grid className="carousel-subtitle" item xs={12}>
