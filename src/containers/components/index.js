@@ -15,7 +15,6 @@ import TypographyComponent from './typography';
 import FavoriteComponent from './favorite';
 import LogoComponent from './logo';
 import PaginationComponent from './pagination';
-import CardComponent from './card';
 import AvatarComponent from './avatar';
 import ChipComponent from './chip';
 import ListComponent from './list';
@@ -54,7 +53,6 @@ class Components extends Component {
           <Route path='/components/favorite' component={FavoriteComponent} />
           <Route path='/components/logo' component={LogoComponent} />
           <Route path='/components/pagination' component={PaginationComponent} />
-          <Route path='/components/card' component={CardComponent} />
           <Route path='/components/chip' component={ChipComponent} />
           <Route path='/components/avatar' component={AvatarComponent} />
           <Route path='/components/list' component={ListComponent} />
