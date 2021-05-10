@@ -25,6 +25,12 @@ export default makeStyles(theme => ({
       display: 'none',
       listStyleType: 'none',
       padding: `${theme.spacing(7) + 3}px ${theme.spacing(4)}px ${theme.spacing(4)}px ${theme.spacing(4)}px`,
+      transition: theme.transitions.create('all', {
+        easing: theme.transitions.easing.sharp,
+        duration: theme.transitions.duration.complex,
+      }),
+      borderRadius: theme.shape.borderRadius * 2,
+      overflow: 'auto',
       '&.zoom': {
         display: 'block',
         position: 'absolute',
@@ -34,13 +40,7 @@ export default makeStyles(theme => ({
         top: 0,
         bottom: 0,
         margin: 'auto',
-        borderRadius: theme.shape.borderRadius * 2,
-        transition: theme.transitions.create('all', {
-          easing: theme.transitions.easing.sharp,
-          duration: theme.transitions.duration.complex,
-        }),
         transform: 'scale(.7)',
-        overflow: 'auto',
         zIndex: '-1',
       },
       '&.flash': {
@@ -49,10 +49,6 @@ export default makeStyles(theme => ({
         left: 0,
         top: 0,
         opacity: 0,
-        transition: theme.transitions.create('all', {
-          easing: theme.transitions.easing.sharp,
-          duration: theme.transitions.duration.complex,
-        }),
         zIndex: '-1',
       },
       '&.fade': {
@@ -60,12 +56,6 @@ export default makeStyles(theme => ({
         position: 'absolute',
         top: 0,
         opacity: 0,
-        borderRadius: theme.shape.borderRadius * 2,
-        transition: theme.transitions.create('all', {
-          easing: theme.transitions.easing.sharp,
-          duration: theme.transitions.duration.complex,
-        }),
-        overflow: 'auto',
         zIndex: '-1',
         '&--next': {
           transform: 'translateX(-100%)',
@@ -87,29 +77,17 @@ export default makeStyles(theme => ({
         '&.zoom': {
           position: 'relative',
           opacity: 1,
-          transition: theme.transitions.create('all', {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.complex,
-          }),
           transform: 'scale(1)',
           zIndex: 1,
         },
         '&.flash': {
           position: 'relative',
           opacity: 1,
-          transition: theme.transitions.create('all', {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.complex,
-          }),
           zIndex: 1,
         },
         '&.fade': {
           position: 'relative',
           opacity: 1,
-          transition: theme.transitions.create('all', {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.complex,
-          }),
           zIndex: 1,
           '&--next, &--prev': {
             transform: 'translateX(0) !important',
