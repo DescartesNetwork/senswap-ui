@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 
 import Image from 'material-ui-image';
@@ -10,7 +10,8 @@ import CircularProgress from 'senswap-ui/circularProgress';
 import useStyles from './styles';
 import SEN_LOGO from './logo.svg';
 
-function Brand(props) {
+
+const Brand = forwardRef((props, ref) => {
   const classes = useStyles();
   const { subtitle } = props;
 
@@ -18,7 +19,7 @@ function Brand(props) {
     window.location.href = window.location.origin;
   }
 
-  return <Grid container spacing={1} alignItems="center" className={classes.noWrap}>
+  return <Grid ref={ref} container spacing={1} alignItems="center" className={classes.noWrap}>
     <Grid item className={classes.logo} onClick={onHome}>
       <Image
         src={SEN_LOGO}
@@ -31,7 +32,7 @@ function Brand(props) {
       <Typography>SenSwap</Typography>
     </Grid>
   </Grid>
-}
+});
 
 Brand.defaultProps = {
   subtitle: '',

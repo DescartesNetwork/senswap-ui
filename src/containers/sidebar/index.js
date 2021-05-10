@@ -15,7 +15,6 @@ import styles from './styles';
 
 
 class Sidebar extends Component {
-
   core = () => {
     return <Grid container spacing={2}>
       <Grid item xs={12}>
@@ -148,6 +147,7 @@ class Sidebar extends Component {
 
   render() {
     // const { classes } = this.props;
+
     return <Drawer>
       {this.core()}
     </Drawer>
