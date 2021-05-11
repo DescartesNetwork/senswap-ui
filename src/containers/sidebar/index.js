@@ -95,11 +95,6 @@ class Sidebar extends Component {
         </Link>
       </Grid>
       <Grid item xs={12}>
-        <Link color="textPrimary" to="/components/card" >
-          <Typography>Card</Typography>
-        </Link>
-      </Grid>
-      <Grid item xs={12}>
         <Link color="textPrimary" to="/components/list" >
           <Typography>List</Typography>
         </Link>
@@ -137,6 +132,11 @@ class Sidebar extends Component {
       <Grid item xs={12}>
         <Link color="textPrimary" to="/components/dialog" >
           <Typography>Dialog</Typography>
+        </Link>
+      </Grid>
+      <Grid item xs={12}>
+        <Link color="textPrimary" to="/components/switch" >
+          <Typography>Switch</Typography>
         </Link>
       </Grid>
       <Grid item xs={12}>

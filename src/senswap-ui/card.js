@@ -7,8 +7,6 @@ import MuiCardContent from '@material-ui/core/CardContent';
 import MuiCardHeader from '@material-ui/core/CardHeader';
 import MuiCardMedia from '@material-ui/core/CardMedia';
 
-import CardPool from 'senswap-ui/card/cardPool';
-import CardBalance from 'senswap-ui/card/CardBalance';
 
 const Card = forwardRef((props, ref) => {
   return <MuiCard {...props} ref={ref} />
@@ -35,5 +33,3 @@ export const CardHeader = forwardRef((props, ref) => {
 export const CardMedia = forwardRef((props, ref) => {
   return <MuiCardMedia {...props} ref={ref} />
 });
-
-export { CardPool, CardBalance }
