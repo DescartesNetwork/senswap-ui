@@ -20,13 +20,14 @@ function Carousel(props) {
 
   const defaultDuration = useCallback(() => {
     let duration = null;
-    if (typeof userDuration === 'number') duration = userDuration;
-    else
-      if (userDuration && userDuration.endsWith('ms')) duration = Number(userDuration.slice(0, userDuration.length - 2));
-      else if (userDuration && userDuration.endsWith('s')) duration = Number(userDuration.slice(0, userDuration.length - 1)) * 1000;
-      else duration = Number(userDuration) || null;
+    (typeof userDuration === 'number') ? duration = userDuration :
+      (userDuration && userDuration.endsWith('ms')) ?
+        duration = Number(userDuration.slice(0, userDuration.length - 2)) :
+        (userDuration && userDuration.endsWith('s')) ?
+          duration = Number(userDuration.slice(0, userDuration.length - 1)) * 1000 :
+          duration = Number(userDuration);
     if (duration && duration >= 500) return duration;
-    else return 3000;
+    return 3000;
   }, [userDuration]);
 
   function goToPrevSlide() {
