@@ -13,8 +13,13 @@ import useStyles from './styles';
 
 function Pagination(props) {
   const classes = useStyles();
-  let { count, page, onChange, size } = props;
-  const { items } = usePagination({ count: count, page: page + 1 });
+  let { count, page, onChange } = props;
+  const { items } = usePagination({
+    count,
+    page: page + 1,
+    boundaryCount: 1,
+    siblingCount: 0
+  });
 
 
   return <Grid container spacing={0}>
@@ -25,7 +30,7 @@ function Pagination(props) {
             others.onClick = () => onChange(page - 1); // Including page 0
 
             if (type === 'start-ellipsis' || type === 'end-ellipsis')
-              return <Grid component="li" key={index} size={size}>
+              return <Grid component="li" key={index}>
                 <Typography className="dots">…</Typography>
               </Grid>
 
@@ -33,7 +38,7 @@ function Pagination(props) {
               <Button
                 variant={selected ? 'contained' : 'outlined'}
                 color={selected ? 'primary' : 'default'}
-                size={size}
+                classes={{ root: classes.button }}
                 {...others}
               >
                 <Typography>{page}</Typography>
@@ -43,11 +48,10 @@ function Pagination(props) {
             return <Grid component="li" key={index}>
               <Button
                 variant="outlined"
-                size={size}
-                {...(type === 'next' ? { endIcon: <ArrowForwardRounded /> } : { startIcon: <ArrowBackRounded /> })}
+                classes={{ root: classes.button }}
                 {...others}
               >
-                {type === 'next' ? <Typography>Next</Typography> : <Typography>Prev</Typography>}
+                {type === 'next' ? <ArrowForwardRounded /> : <ArrowBackRounded />}
               </Button>
             </Grid>
           })}

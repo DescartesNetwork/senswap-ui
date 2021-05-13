@@ -14,15 +14,15 @@ export default makeStyles(theme => ({
         '&:not(:last-child)': {
           marginRight: '8px',
         },
-        '& button': {
-          minWidth: 48,
-          height: 48,
-        },
         '& .dots': {
           margin: `${theme.spacing(0)}px ${theme.spacing(2)}px`,
           lineHeight: '48px',
         },
       }
     }
+  },
+  button: {
+    padding: theme.spacing(1),
+    minWidth: theme.spacing(5),
   }
 }));
