@@ -7,27 +7,25 @@ import { withStyles } from 'senswap-ui/styles';
 import Grid from 'senswap-ui/grid';
 import Typography from 'senswap-ui/typography';
 import Drain from 'senswap-ui/drain';
-import Pagina from 'senswap-ui/pagination';
+import Pagination from 'senswap-ui/pagination';
 
 import styles from './styles';
 
-class Pagination extends Component {
+class PaginationComponent extends Component {
     constructor() {
         super();
         this.state = {
             page: 3,
             count: 8,
-            isShow: false,
-            size: 'medium',
         }
     }
-    onChangePagination = (val) => {
+    onPagination = (val) => {
         this.setState({
             page: val
         });
     }
     render() {
-        const { page, count, isShow, size, shape } = this.state;
+        const { page, count, } = this.state;
         return <Grid container spacing={2}>
             <Grid item xs={12}>
                 <Typography variant="h4">Pagination</Typography>
@@ -39,13 +37,10 @@ class Pagination extends Component {
                         <Typography>Standard</Typography>
                     </Grid>
                     <Grid item xs={12}>
-                        <Pagina
+                        <Pagination
                             page={page}
                             count={count}
-                            isShow={isShow}
-                            size={size}
-                            shape={shape}
-                            onChangePagination={this.onChangePagination}
+                            onChange={this.onPagination}
                         />
                     </Grid>
                 </Grid>
@@ -64,4 +59,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 export default withRouter(connect(
     mapStateToProps,
     mapDispatchToProps
-)(withStyles(styles)(Pagination)));
+)(withStyles(styles)(PaginationComponent)));
