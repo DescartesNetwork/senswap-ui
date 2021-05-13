@@ -13,8 +13,8 @@ import useStyles from './styles';
 
 function Pagination(props) {
   const classes = useStyles();
-  const { count, page, onChange, size } = props;
-  const { items } = usePagination({ count: count, page: page });
+  let { count, page, onChange, size } = props;
+  const { items } = usePagination({ count: count, page: page + 1 });
 
 
   return <Grid container spacing={0}>
@@ -22,8 +22,7 @@ function Pagination(props) {
       <Grid component="nav" className={classes.pagination}>
         <Grid component="ul">
           {items.map(({ page, type, selected, ...others }, index) => {
-            console.log(selected)
-            others.onClick = () => onChange(page);
+            others.onClick = () => onChange(page - 1); // Including page 0
 
             if (type === 'start-ellipsis' || type === 'end-ellipsis')
               return <Grid component="li" key={index} size={size}>
