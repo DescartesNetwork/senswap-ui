@@ -8,11 +8,11 @@ function ThemeProvider(props) {
   const { variant, ...others } = props;
   if (variant === 'light') require('senswap-ui/light.css');
   else require('senswap-ui/dark.css');
-  return <MuiThemeProvider theme={theme} {...others} />
+  return <MuiThemeProvider theme={theme(variant)} {...others} />
 }
 
 ThemeProvider.defaultProps = {
-  variant: "dark",
+  variant: 'dark',
 }
 
 ThemeProvider.propTypes = {
