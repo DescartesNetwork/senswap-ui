@@ -1,13 +1,13 @@
 import React, { forwardRef } from 'react';
-
+import PropTypes from 'prop-types';
 
 import { makeStyles } from 'senswap-ui/styles';
 import Grid from 'senswap-ui/grid';
+import Typography from '@material-ui/typography';
 
 import InputBase from '@material-ui/core/InputBase';
 import MuiTextField from '@material-ui/core/TextField';
 import Paper from '@material-ui/core/Paper';
-import { Typography } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   noWrap: {
@@ -40,14 +40,14 @@ const TextFieldContained = forwardRef((props, ref) => {
       <Typography variant="body2">{helperText}</Typography>
     </Grid>
     if (helperTextPrimary) return <Grid item xs={6}>
-      <Typography variant="body2">{helperTextPrimary}</Typography>
+      {typeof helperTextPrimary === 'object' ? helperTextPrimary : <Typography variant="body2">{helperTextPrimary}</Typography>}
     </Grid>
     return null;
   }
 
   const renderSecondaryText = () => {
     if (helperTextSecondary) return <Grid item xs={(error || helperText || helperTextPrimary) ? 6 : 12}>
-      <Typography variant="body2" align="right">{helperTextSecondary}</Typography>
+      {typeof helperTextSecondary === 'object' ? helperTextSecondary : <Typography variant="body2" align="right">{helperTextSecondary}</Typography>}
     </Grid>
     return null;
   }
@@ -77,5 +77,10 @@ const TextField = forwardRef((props, ref) => {
   if (variant === 'contained') return <TextFieldContained {...others} ref={ref} />
   return <MuiTextField variant={variant} {...others} ref={ref} />
 });
+
+TextField.propTypes = {
+  helperTextPrimary: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  helperTextSecondary: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+}
 
 export default TextField;
