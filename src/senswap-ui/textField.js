@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { makeStyles } from 'senswap-ui/styles';
 import Grid from 'senswap-ui/grid';
-import Typography from '@material-ui/typography';
+import Typography from 'senswap-ui/typography';
 
 import InputBase from '@material-ui/core/InputBase';
 import MuiTextField from '@material-ui/core/TextField';
