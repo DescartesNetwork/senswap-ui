@@ -4,12 +4,14 @@ export default makeStyles(theme => ({
   xsmall: {
     width: '25px',
     height: '25px',
-    backgroundColor: theme.palette.background.secondary
+    backgroundColor: theme.palette.background.secondary,
+    fontSize: 10
   },
   small: {
     width: '34px',
     height: '34px',
-    backgroundColor: theme.palette.background.secondary
+    backgroundColor: theme.palette.background.secondary,
+    fontSize: 14
   },
   medium: {
     width: '48px',

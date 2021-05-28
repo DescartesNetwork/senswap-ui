@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router-dom';
 
 import { withStyles } from 'senswap-ui/styles';
-import Grid from 'senswap-ui/grid';
+import Grid, { Box } from 'senswap-ui/grid';
 import Typography from 'senswap-ui/typography';
 import Drain from 'senswap-ui/drain';
 import Link from 'senswap-ui/link';
@@ -29,6 +29,15 @@ class GridComponent extends Component {
       </Grid>
       <Grid item xs={12}>
         <Link href="https://material-ui.com/components/grid/">Material UI Grid System</Link>
+      </Grid>
+      <Grid item xs={12}>
+        <Typography variant="h4">Box</Typography>
+      </Grid>
+      <Grid item xs={12}>
+        <Drain size={2} />
+      </Grid>
+      <Grid item xs={12}>
+        <Box mt={3} mb={4}>Box</Box>
       </Grid>
     </Grid>
   }

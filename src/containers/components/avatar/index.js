@@ -77,8 +77,13 @@ class AvatarComponent extends Component {
         <Typography variant="subtitle1">Grouped avatars</Typography>
       </Grid>
       <Grid item xs={12}>
-        <AvatarGroup max={4}>
-          {elements.map(e => <Avatar src={e.src || ICON} />)}
+        <AvatarGroup max={3}>
+          {elements.map((e, idx) => <Avatar src={e.src || ICON} key={idx} />)}
+        </AvatarGroup>
+      </Grid>
+      <Grid item xs={12}>
+        <AvatarGroup max={3} size="medium">
+          {elements.map((e, idx) => <Avatar size="medium" src={e.src || ICON} key={idx} />)}
         </AvatarGroup>
       </Grid>
     </Grid>

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import { makeStyles } from '@material-ui/core/styles';
 import MuiGrid from '@material-ui/core/Grid';
+import MuiBox from '@material-ui/core/Box';
 
 const useStyles = makeStyles(theme => ({
   textColor: {
@@ -10,6 +11,10 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+export function Box(props) {
+  const { ...others } = props;
+  return <MuiBox {...others} />
+}
 function Grid(props) {
   const classes = useStyles();
   const { spacing, classes: userClasses, ...others } = props;
