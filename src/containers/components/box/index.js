@@ -12,14 +12,12 @@ import Link from 'senswap-ui/link';
 import styles from './styles';
 
 
-class GridComponent extends Component {
+class BoxComponent extends Component {
 
   render() {
-    // const { classes } = this.props;
-
     return <Grid container spacing={2}>
       <Grid item xs={12}>
-        <Typography variant="h4">Grid</Typography>
+        <Typography variant="h4">Box</Typography>
       </Grid>
       <Grid item xs={12}>
         <Drain size={2} />
@@ -28,7 +26,7 @@ class GridComponent extends Component {
         <Typography variant="subtitle1">References</Typography>
       </Grid>
       <Grid item xs={12}>
-        <Link href="https://material-ui.com/components/grid/">Material UI Grid System</Link>
+        <Link href="https://material-ui.com/components/box/">Material UI Box System</Link>
       </Grid>
     </Grid>
   }
@@ -44,4 +42,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(withStyles(styles)(GridComponent)));
+)(withStyles(styles)(BoxComponent)));
