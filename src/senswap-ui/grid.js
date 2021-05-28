@@ -9,7 +9,6 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.text.primary
   }
 }));
-
 function Grid(props) {
   const classes = useStyles();
   const { spacing, classes: userClasses, ...others } = props;

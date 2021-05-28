@@ -36,5 +36,17 @@ Avatar.propTypes = {
 export default Avatar;
 
 export const AvatarGroup = forwardRef((props, ref) => {
-  return <MuiAvatarGroup {...props} ref={ref} />
+  const classes = useStyles();
+  const { size, classes: userClasses, ...others } = props;
+  let defaultClasses = { avatar: classes[size] }
+  const combinedClasses = { ...defaultClasses, ...userClasses }
+  return <MuiAvatarGroup classes={combinedClasses} {...others} ref={ref} />
 });
+
+AvatarGroup.defaultProps = {
+  size: 'xsmall',
+}
+
+AvatarGroup.propTypes = {
+  size: PropTypes.string,
+}

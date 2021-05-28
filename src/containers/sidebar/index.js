@@ -60,6 +60,11 @@ class Sidebar extends Component {
         </Link>
       </Grid>
       <Grid item xs={12}>
+        <Link color="textPrimary" to="/components/box" >
+          <Typography>Box</Typography>
+        </Link>
+      </Grid>
+      <Grid item xs={12}>
         <Link color="textPrimary" to="/components/icons" >
           <Typography>Icons</Typography>
         </Link>
