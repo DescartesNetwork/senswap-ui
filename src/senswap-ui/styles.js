@@ -6,8 +6,6 @@ import theme from 'senswap-ui/theme';
 
 function ThemeProvider(props) {
   const { variant, ...others } = props;
-  if (variant === 'light') require('senswap-ui/light.css');
-  else require('senswap-ui/dark.css');
   return <MuiThemeProvider theme={theme(variant)} {...others} />
 }
 

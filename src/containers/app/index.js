@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
+import CssBaseline from 'senswap-ui/cssBaseLine';
 
 import { ThemeProvider, withStyles } from 'senswap-ui/styles';
 import Grid from 'senswap-ui/grid';
@@ -22,9 +23,10 @@ import styles from './styles';
 class App extends Component {
 
   render() {
-    const { classes } = this.props;
+    const { classes, theme } = this.props;
 
-    return <ThemeProvider variant="light">
+    return <ThemeProvider variant={theme}>
+      <CssBaseline />
       <Grid container spacing={2}>
         {/* View */}
         <Grid item xs={12}>
@@ -50,7 +52,7 @@ class App extends Component {
           </Grid>
         </Grid>
         {/* Application */}
-        <Grid item xs={12} >
+        <Grid item xs={12}>
           <UiUx />
         </Grid>
       </Grid>
@@ -59,6 +61,7 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
+  theme: state.theme,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
