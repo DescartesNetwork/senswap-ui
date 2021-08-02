@@ -1,6 +1,6 @@
 {
   "name": "senswap-ui",
-  "version": "0.2.60",
+  "version": "0.2.61",
   "main": "index.js",
   "description": "SenSwap UI maintains the consistency in theme, components and styles for all SenSwap's products",
   "dependencies": {
