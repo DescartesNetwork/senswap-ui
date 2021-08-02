@@ -21,6 +21,11 @@ const useStyles = makeStyles(theme => ({
     borderRadius: theme.shape.borderRadius / 2,
     backgroundColor: theme.palette.background.secondaryGray
   },
+  number: {
+    '& input[type=number]::-webkit-inner-spin-button, & input[type=number]::-webkit-outer-spin-button': {
+      WebkitAppearance: 'none',
+    }
+  }
 }));
 
 
@@ -61,7 +66,7 @@ const TextFieldContained = forwardRef((props, ref) => {
         <Grid container className={classes.noWrap} alignItems="center">
           {startAdornment ? <Grid item>{startAdornment}</Grid> : null}
           <Grid item className={classes.stretch}>
-            <InputBase {...others} ref={ref} fullWidth />
+            <InputBase className={classes[others.type]} {...others} ref={ref} fullWidth />
           </Grid>
           {endAdornment ? <Grid item>{endAdornment}</Grid> : null}
         </Grid>
