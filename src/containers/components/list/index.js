@@ -9,7 +9,7 @@ import Typography from 'senswap-ui/typography';
 import Drain from 'senswap-ui/drain';
 import Link from 'senswap-ui/link';
 import List, { ListItem, ListItemIcon, ListItemText } from 'senswap-ui/list';
-// import ListItemHistory from 'senswap-ui/listItemHistory';
+import ListItemHistory from 'senswap-ui/listItemHistory';
 
 import { InboxRounded, DraftsRounded } from 'senswap-ui/icons';
 
@@ -21,6 +21,7 @@ class ListComponent extends Component {
     super();
 
     this.state = {
+      MAX_LENGTH: 5,
       data: [
         {
           id: 1,
@@ -59,7 +60,7 @@ class ListComponent extends Component {
   }
 
   render() {
-    // const { data } = this.state;
+    const { MAX_LENGTH, data } = this.state;
 
     return <Grid container>
       <Grid item xs={12}>
@@ -85,17 +86,15 @@ class ListComponent extends Component {
           </ListItem>
         </List>
       </Grid>
-
-      {/* <Grid item xs={12}>
+      <Grid item xs={12}>
         <Typography variant="subtitle1">Latest activities</Typography>
         <List>
-          {data.length > 5 ?
-            data.slice(0, 5).map(value => <ListItemHistory key={value.id} {...value} />)
+          {data.length > MAX_LENGTH ?
+            data.slice(0, MAX_LENGTH).map(value => <ListItemHistory key={value.id} {...value} />)
             : data.map(value => <ListItemHistory key={value.id} {...value} />)
           }
         </List>
-      </Grid> */}
-
+      </Grid>
       <Grid item xs={12}>
         <Typography variant="subtitle1">References</Typography>
       </Grid>
