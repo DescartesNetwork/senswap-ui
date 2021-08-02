@@ -79,8 +79,9 @@ const TextFieldContained = forwardRef((props, ref) => {
 
 const TextField = forwardRef((props, ref) => {
   const { variant, ...others } = props;
+  const classes = useStyles();
   if (variant === 'contained') return <TextFieldContained {...others} ref={ref} />
-  return <MuiTextField variant={variant} {...others} ref={ref} />
+  return <MuiTextField variant={variant} className={classes[others.type]}  {...others} ref={ref} />
 });
 
 TextField.propTypes = {
