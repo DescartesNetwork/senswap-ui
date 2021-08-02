@@ -1,6 +1,6 @@
 // eslint-disable-next-line
 export default theme => {
-  console.log(theme);
+  console.log(theme, 'theme sss');
 
   return {
     noWrap: {
@@ -11,6 +11,6 @@ export default theme => {
     },
     safe: {
       margin: -theme.spacing(1) / 2
-    }
+    },
   };
 };

@@ -12,6 +12,7 @@ import Typography from 'senswap-ui/typography';
 import styles from './styles';
 
 const THEME_PROVIDER = `import { ThemeProvider } from 'senswap-ui/styles';
+import CssBaseline from 'senswap-ui/cssBaseline';
 
 class App extends Component {
 
@@ -19,6 +20,8 @@ class App extends Component {
     const { classes } = this.props;
 
     return <ThemeProvider variant="dark">
+      <CssBaseline /> /* Kickstart an elegant, consistent,
+      and simple baseline to build upon. */
       <Grid container spacing={2}>
         // ...
       </Grid>

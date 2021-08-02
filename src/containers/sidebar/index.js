@@ -10,11 +10,21 @@ import Drain from 'senswap-ui/drain';
 import Brand from 'senswap-ui/brand';
 import Link from 'senswap-ui/link';
 import Drawer from 'senswap-ui/drawer';
+import Switch from 'senswap-ui/switch';
+import { WbSunny, NightsStay } from 'senswap-ui/icons';
+
+import { setTheme } from 'modules/theme.reducer';
 
 import styles from './styles';
 
 
 class Sidebar extends Component {
+  constructor() {
+    super();
+
+    this.switchRef = React.createRef();
+  }
+
   core = () => {
     return <Grid container spacing={2}>
       <Grid item xs={12}>
@@ -38,6 +48,11 @@ class Sidebar extends Component {
       </Grid>
       <Grid item xs={12}>
         <Typography variant="h6">Components</Typography>
+      </Grid>
+      <Grid item xs={12}>
+        <Link color="textPrimary" to="/components/css-baseline" >
+          <Typography>CssBaseLine</Typography>
+        </Link>
       </Grid>
       <Grid item xs={12}>
         <Link color="textPrimary" to="/components/avatar" >
@@ -115,11 +130,6 @@ class Sidebar extends Component {
         </Link>
       </Grid>
       <Grid item xs={12}>
-        <Link color="textPrimary" to="/components/form" >
-          <Typography>Form</Typography>
-        </Link>
-      </Grid>
-      <Grid item xs={12}>
         <Link color="textPrimary" to="/components/tooltip" >
           <Typography>Tooltip</Typography>
         </Link>
@@ -151,19 +161,39 @@ class Sidebar extends Component {
   }
 
   render() {
-    // const { classes } = this.props;
+    const { theme } = this.props;
 
+    const onChange = () => {
+      const { setTheme } = this.props;
+      const type = this.switchRef.current.checked;
+      return setTheme(type)
+    }
     return <Drawer>
       {this.core()}
+      <Grid item xs={12} >
+        <Grid container spacing={2}>
+          <Grid item xs={2}>
+            {theme === 'dark' ? <NightsStay /> : <WbSunny />}
+          </Grid>
+          <Grid item xs={10}>
+            <Switch variant="contained" ref={this.switchRef} onChange={onChange} checked={theme === 'dark'} />
+          </Grid>
+        </Grid>
+      </Grid>
+      <Grid item xs={12}>
+        <Drain size={4} />
+      </Grid>
     </Drawer>
   }
 }
 
 const mapStateToProps = state => ({
   ui: state.ui,
+  theme: state.theme,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
+  setTheme,
 }, dispatch);
 
 export default withRouter(connect(

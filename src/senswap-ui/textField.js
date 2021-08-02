@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
   paper: {
     padding: theme.spacing(1),
     borderRadius: theme.shape.borderRadius / 2,
-    backgroundColor: theme.palette.background.secondary
+    backgroundColor: theme.palette.background.secondaryGray
   },
 }));
 

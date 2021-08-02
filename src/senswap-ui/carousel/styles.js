@@ -74,6 +74,8 @@ export default makeStyles(theme => ({
       },
       '&--active': {
         display: 'block',
+        position: 'relative',
+        zIndex: 1,
         '&.zoom': {
           position: 'relative',
           opacity: 1,
@@ -104,7 +106,7 @@ export default makeStyles(theme => ({
         left: '0',
         top: '0',
         objectFit: 'cover',
-        background: theme.palette.background.secondary,
+        background: theme.palette.background.paper,
         zIndex: '-1',
       }
     },

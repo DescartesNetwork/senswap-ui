@@ -39,7 +39,7 @@ const dark = {
       hover: '#ff312280',
       secondary: '#2B2D3A',
       secondaryDark: '#161920',
-      secondaryGray: '#6D6E75',
+      secondaryGray: '#2B2D3A',
       secondaryLight: '#ffffff',
       secondaryBrown: '#44444A',
 
@@ -47,18 +47,42 @@ const dark = {
     border: {
       default: '#e4e4e41a',
     }
-  }
+  },
+  overrides: {
+    MuiCssBaseline: {
+      '@global': {
+        html: {
+          backgroundColor: '#161920'
+        },
+      },
+    },
+  },
 }
 
 const light = {
   palette: {
     type: 'light',
     primary: { main: '#ff3122' },
-    secondary: { main: '#1f2128' },
+    secondary: { main: '#cecece' },
     background: {
-      default: '#FBFBFB',
+      default: '#fafafa',
+      paper: '#dadada',
+      primary: '#ff3122',
+      hover: '#ff312280',
+      secondary: '#6D6E75',
+      secondaryDark: '#161920',
+      secondaryGray: '#dadada',
+      secondaryLight: '#ffffff',
+      secondaryBrown: '#44444A',
     }
-  }
+  },
+  overrides: {
+    '@global': {
+      html: {
+        backgroundColor: '#161920'
+      },
+    },
+  },
 }
 
 const theme = (variant = 'dark') => createMuiTheme({
