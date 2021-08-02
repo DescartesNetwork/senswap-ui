@@ -1,6 +1,5 @@
 // eslint-disable-next-line
 export default theme => {
-  console.log(theme, 'theme sss');
 
   return {
     noWrap: {

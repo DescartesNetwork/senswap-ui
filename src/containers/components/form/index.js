@@ -16,7 +16,6 @@ class BrandComponent extends Component {
 
   render() {
     function handleConnectWallet(e) {
-      console.log(e, '=====>>>>');
     }
 
     return <Grid container spacing={2}>
